@@ -59,6 +59,22 @@ Color and images can be changed by setting ``simplepdf_vars`` inside your ``conf
    css
    tech_details
    examples/index
+   changelog
+
+Why another PDF builder?
+------------------------
+You can use the Sphinx Latex builder to generate PDFs.
+And there is also the great `rinohtype <http://www.mos6581.org/rinohtype/master/#>`__ library.
+
+But both have some drawbacks, which we try to avoid with this solution.
+
+Latex distributions are quite big and Latex as language may not be the language of choice for everybody.
+
+rinohtype makes a lot of things easier, but is does not support additional Sphinx extensions very well
+(if they are using visitor-functions). For instance is it hard to get PlantUML running with rinohtype.
+
+But for sure, there are also scenarios where *Sphinx-SimplePDF** may not be the best solution.
+So if you are unhappy with **Sphinx-SimplePDF** try the others as well :)
 
 One last thing ...
 ------------------
@@ -67,6 +83,11 @@ This theme is heavily based on the excellent work of `Nekmo <https://github.com/
 
 Without this work, this theme would never exist. Thanks for it ♥
 
+
+License
+-------
+
+.. literalinclude:: ../LICENSE
 
 
 

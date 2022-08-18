@@ -1,9 +1,9 @@
 include AUTHORS.rst
 include README.rst
 
-include themes/sphinx_simplepdf/static/styles/*.css
 include themes/sphinx_simplepdf/theme.conf
 
+recursive-include themes/sphinx_simplepdf/static/styles *
 recursive-include themes/sphinx_simplepdf/ *.html
 recursive-include themes/sphinx_simplepdf/static/images *
 recursive-include themes/sphinx_simplepdf/static/fonts *
