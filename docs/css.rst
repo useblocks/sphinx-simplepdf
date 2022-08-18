@@ -1,3 +1,5 @@
+.. _css:
+
 CSS voodoo
 ==========
 The PDF layout is configured via CSS files and their definitions.

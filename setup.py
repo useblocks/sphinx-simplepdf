@@ -46,7 +46,7 @@ setup(
         'Framework :: Sphinx',
         'Framework :: Sphinx :: Theme',
         'Development Status :: 5 - Production/Stable',
-        'License :: Commercial',
+        'License :: OSI Approved :: MIT License',
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
         'Programming Language :: Python :: 3',

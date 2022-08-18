@@ -25,6 +25,9 @@ This values are used then inside the scss files, which define the PDF layout.
 
    background: config("cover-overlay", "rgba(250, 35, 35, 0.6)");
 
+First value is the config name, the second one is a default value, which is used if the name can't be found inside
+``simplepdf_vars``. See :ref:`css` for details.
+
 Config vars
 -----------
 
@@ -33,7 +36,7 @@ Config vars
 :cover: Text color on the cover
 :white: A color representing white
 :links: Color for links
-:cover-bg: Image path to a cover image- Path must be relative to the theme style or an absolute path.
+:cover-bg: Image path to a cover image. Path must be relative to the theme style or an absolute path.
 :cover-overlay: RBG based color overlay for the cover-image. Example: ``rgba(250, 35, 35, 0.5)``
 
 
