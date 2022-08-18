@@ -1,0 +1,42 @@
+table.break {
+    page-break-before: always;
+}
+
+table.docutils {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+    border-spacing: 0;
+
+    td, th {
+        padding: .75rem;
+        vertical-align: top;
+    }
+
+    thead {
+        th {
+            vertical-align: bottom;
+            border-bottom: 2px solid #dee2e6;
+            background: #F0F0F0;
+            border-top: 1px solid #dee2e6;
+        }
+    }
+
+    tbody {
+        tr {
+            &.row-odd {
+                background: #f6f6f6;
+            }
+
+            td {
+                display: table-cell;
+                font-weight: normal !important;
+            }
+            * {
+                border: 0;
+            }
+        }
+    }
+}
+

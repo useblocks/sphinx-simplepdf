@@ -1,0 +1,126 @@
+// Page helpers
+.dont-break {
+    page-break-inside: avoid;
+}
+
+#back-cover {
+    page: back_cover;
+    page-break-before: always;
+}
+
+@page {
+  padding-top: 1em;
+
+  @top-left {
+    background: $primary;
+    color: $white;
+    content: counter(page);
+    height: 1cm;
+    text-align: center;
+    width: 1cm;
+  }
+
+  @top-center {
+    background: $primary;
+    content: "";
+    display: block;
+    height: 0.05cm;
+    opacity: 0.5;
+    width: 100%;
+  }
+
+  @top-right {
+    content: string(heading);
+    font-size: 9pt;
+    height: 1cm;
+    vertical-align: middle;
+    width: 100%;
+  }
+}
+
+@page:blank {
+  @top-left {
+    background: none;
+    content: "";
+  }
+
+  @top-center {
+    content: none;
+  }
+
+  @top-right {
+    content: none;
+  }
+}
+
+@page no-chapter {
+  @top-left {
+    background: none;
+    content: none;
+  }
+
+  @top-center {
+    content: none;
+  }
+
+  @top-right {
+    content: none;
+  }
+}
+
+@page:first {
+  background: url(../images/cover-bg.png) no-repeat center;
+  background-size: cover;
+  margin: 0;
+}
+
+@media screen {
+  #cover {
+    background: url(../images/cover-bg.png) no-repeat center;
+    background-size: cover;
+    margin: 0;
+  }
+}
+
+@page chapter {
+  background: $primary;
+  color: $white;
+  margin: 0;
+
+
+  @top-left {
+    content: none;
+  }
+
+  @top-center {
+    content: none;
+  }
+
+  @top-right {
+    content: none;
+  }
+}
+
+// Back cover
+@page back_cover {
+    background: url(../images/cover-bg.png) no-repeat center;
+    background-size: cover;
+    margin: 0;
+    color: #ffffff;
+}
+
+@page back_cover {
+    @bottom-right {
+        content: none;
+    }
+    @top-left {
+        background: none;
+        content: '';
+    }
+    @top-center {
+        content: none;
+    }
+    @top-right {
+        content: none;
+    }
+}

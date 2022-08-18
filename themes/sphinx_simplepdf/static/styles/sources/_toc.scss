@@ -1,0 +1,70 @@
+.contents {
+    ul {
+        list-style: none;
+    }
+
+    > ul {
+        padding-left: 0;
+
+        > li {
+            font-weight: 500;
+            line-height: 15pt;
+            margin: 3em 0 1em;
+
+            &::before {
+                background: $primary;
+                color: $white;
+                content: "";
+                display: block;
+                height: 0.08cm;
+                margin-bottom: 0.25cm;
+                width: 2cm;
+            }
+
+            a {
+                color: #000000;
+                font-size: 15pt;
+            }
+
+            a::after {
+                color: $primary;
+                content: target-counter(attr(href url), page);
+                // font-size: 15pt;
+
+                float: right;
+            }
+
+            > ul {
+                list-style: none;
+                padding-left: 0;
+
+                li {
+                    border-top: 0.3pt solid #c1c1c1;
+                    margin: 0.25cm 0;
+                    padding-top: 0.25cm;
+                    line-height: 12pt;
+                    // font-size: 12pt;
+                    font-weight: 300;
+
+                    a {
+                        color: #000000;
+                        font-size: 12pt;
+                    }
+
+
+                    p::before {
+                        color: $primary;
+                        content: "• ";
+                        font-size: 40pt;
+                        line-height: 16pt;
+                        vertical-align: bottom;
+                    }
+
+                    ul {
+                        padding-left: 2em;
+                    }
+                }
+            }
+        }
+    }
+}

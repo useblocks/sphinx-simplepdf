@@ -1,0 +1,32 @@
+<article id="cover" class="dont-break">
+  <div class="container">
+
+    <!-- Logo -->
+    <div class="logo">
+      <p>{{ cover_logo_title }}</p>
+    </div>
+
+    <!-- Cover middle -->
+    <div class="cover-middle">
+      <div class="title">
+        <h1 class="title-cover">{{ project|striptags|e }}</h1>
+        <p class="subtitle-cover">Version {{ version }}</p>
+        <span class="meta">
+          {{ cover_meta_data }}
+        </span>
+      </div>
+        <!--
+      <div class="client-logo">
+        <img src="../data/logo_.png" alt="Logotipo">
+      </div>
+      -->
+    </div>
+
+    <!-- Footer -->
+    <div class="cover-footer">
+      <p>
+        {{ cover_footer }}
+      </p>
+    </div>
+  </div>
+</article>
