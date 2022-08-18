@@ -367,13 +367,13 @@ dl.class dl.field-list, dl.type dl.field-list, dl.function dl.field-list, dl.mem
     content: none; } }
 
 @page :first {
-  background: url(../images/cover-bg.png) no-repeat center;
+  background: url(../images/cover-bg.jpg) no-repeat center;
   background-size: cover;
   margin: 0; }
 
 @media screen {
   #cover {
-    background: url(../images/cover-bg.png) no-repeat center;
+    background: url(../images/cover-bg.jpg) no-repeat center;
     background-size: cover;
     margin: 0; } }
 
@@ -389,7 +389,7 @@ dl.class dl.field-list, dl.type dl.field-list, dl.function dl.field-list, dl.mem
     content: none; } }
 
 @page back_cover {
-  background: url(../images/cover-bg.png) no-repeat center;
+  background: url(../images/cover-bg.jpg) no-repeat center;
   background-size: cover;
   margin: 0;
   color: #ffffff; }

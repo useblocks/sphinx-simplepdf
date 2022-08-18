@@ -69,14 +69,14 @@
 }
 
 @page:first {
-  background: url(../images/cover-bg.png) no-repeat center;
+  background: url(config('cover-bg', '../images/cover-bg.jpg')) no-repeat center;
   background-size: cover;
   margin: 0;
 }
 
 @media screen {
   #cover {
-    background: url(../images/cover-bg.png) no-repeat center;
+    background: url(config('cover-bg', '../images/cover-bg.jpg')) no-repeat center;
     background-size: cover;
     margin: 0;
   }
@@ -103,7 +103,7 @@
 
 // Back cover
 @page back_cover {
-    background: url(../images/cover-bg.png) no-repeat center;
+    background: url(config('cover-bg', '../images/cover-bg.jpg')) no-repeat center;
     background-size: cover;
     margin: 0;
     color: #ffffff;

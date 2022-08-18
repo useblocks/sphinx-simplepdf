@@ -32,6 +32,21 @@ It is using `weasyprint <https://weasyprint.org/>`__ as PDF generator.
     The code is stored on github: `useblocks/sphinx-simplepdf <https://github.com/useblocks/sphinx-simplepdf>`__
 
 
+.. toctree::
+   :caption: Content
+   :maxdepth: 2
+   :hidden:
+
+   installation
+   building
+   configuration
+   css
+   tech_details
+   examples/index
+   changelog
+
+
+
 Quickstart
 ----------
 
@@ -47,19 +62,6 @@ Color and images can be changed by setting ``simplepdf_vars`` inside your ``conf
        'primary': '#333333',
        'links': 'FF3333',
    }
-
-
-.. toctree::
-   :caption: Content
-   :maxdepth: 2
-
-   installation
-   building
-   configuration
-   css
-   tech_details
-   examples/index
-   changelog
 
 Why another PDF builder?
 ------------------------

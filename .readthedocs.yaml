@@ -10,6 +10,8 @@ build:
   os: ubuntu-22.04
   tools:
     python: "3.9"
+  # We can only define the content of the final deployment, if we do the complete build on our own.apt_packages:
+  # So we need to handle package installation, build start and copying the right files for deployment.
   commands:
     - pip install .
     - pip install -r docs/doc-requirements.txt
@@ -18,15 +20,6 @@ build:
     - cp docs/_build/simplepdf/Sphinx-SimplePDF.pdf docs/_build/html/_static/Sphinx-SimplePDF.pdf
     - mkdir -p _readthedocs/html/
     - cp -r docs/_build/html/* _readthedocs/html/
-#  jobs:
-#    post_build:
-#      - sphinx-build -M simplepdf docs docs/_build
-#      - ls -la docs/_build/simplepdf/
-#      - cp -f docs/_build/simplepdf/Sphinx-SimplePDF.pdf docs/_build/html/_static/Sphinx-SimplePDF.pdf
-#      - ls -la docs/_build/html/_static/
-#      - ls -la docs
-#      - ls -la docs/_build
-#      - ls -la .
 
 # Build documentation in the docs/ directory with Sphinx
 sphinx:
