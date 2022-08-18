@@ -5,6 +5,8 @@ Changelog
 ---
 :released: under development
 
+* **Bugfix**: Adds missing scss files to installation package.
+
 
 1.0
 ---

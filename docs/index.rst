@@ -15,12 +15,12 @@ It contains:
 
 It is using `weasyprint <https://weasyprint.org/>`__ as PDF generator.
 
-.. image:: /_static/sphinx_simplepdf.png
+.. figure:: /_static/sphinx_simplepdf.png
    :align: center
    :width: 40%
    :target: _static/Sphinx-SimplePDF.pdf
 
-:download:`Download or show Sphinx-SimplePDF </_static/Sphinx-SimplePDF.pdf>`.
+   Click image to see PDF  version of this documentation.
 
 .. note::
 
