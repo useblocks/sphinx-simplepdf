@@ -29,11 +29,6 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 plantuml_output_format = "svg_img"
 
 simplepdf_vars = {
-    # 'primary': '#FA2323',
-    # 'secondary': '#379683',
-    # 'cover': '#ffffff',
-    # 'white': '#ffffff',
-    # 'links': '$cover',
     'cover-overlay': 'rgba(150, 26, 26, 0.7)',
     'cover-bg': 'url(cover-bg.jpg) no-repeat center'
 }

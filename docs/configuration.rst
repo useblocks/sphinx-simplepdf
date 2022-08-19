@@ -1,3 +1,5 @@
+.. _configuration:
+
 Configuration
 =============
 
@@ -14,6 +16,7 @@ The key is used as identifier inside scss-files and the value must be a css/scss
        'cover': '#ffffff',
        'white': '#ffffff',
        'links': 'FA2323',
+       :cover-bg: 'url(cover-bg.jpg) no-repeat center'
        'cover-overlay': 'rgba(250, 35, 35, 0.5)',
    }
 
@@ -63,6 +66,11 @@ File references
        'cover-bg': 'url(cover-bg.jpg) no-repeat center'
    }
 
+SimplePDF docs
+~~~~~~~~~~~~~~
+This is ``simplepdf_vars`` as it is used inside the **Sphinx-SimplePDF** ``conf.py`` file:
 
+.. literalinclude:: conf.py
+   :lines: 31-34
 
 

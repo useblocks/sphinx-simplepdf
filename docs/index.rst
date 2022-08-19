@@ -59,8 +59,10 @@ Color and images can be changed by setting ``simplepdf_vars`` inside your ``conf
 
    simplepdf_vars = {
        'primary': '#333333',
-       'links': 'FF3333',
+       'links': '#FF3333',
    }
+
+For more configuration options take a look into :ref:`configuration`.
 
 Why another PDF builder?
 ------------------------
