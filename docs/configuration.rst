@@ -16,7 +16,7 @@ The key is used as identifier inside scss-files and the value must be a css/scss
        'cover': '#ffffff',
        'white': '#ffffff',
        'links': 'FA2323',
-       :cover-bg: 'url(cover-bg.jpg) no-repeat center'
+       'cover-bg' 'url(cover-bg.jpg) no-repeat center'
        'cover-overlay': 'rgba(250, 35, 35, 0.5)',
    }
 
