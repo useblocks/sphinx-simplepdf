@@ -76,8 +76,8 @@ Latex distributions are quite big and Latex as language may not be the language 
 rinohtype makes a lot of things easier, but is does not support additional Sphinx extensions very well
 (if they are using visitor-functions). For instance is it hard to get PlantUML running with rinohtype.
 
-But for sure, there are also scenarios where *Sphinx-SimplePDF** may not be the best solution.
-So if you are unhappy with **Sphinx-SimplePDF** try the others as well :)
+But for sure, there are also scenarios where **Sphinx-SimplePDF** may not be the best solution.
+So if you are unhappy with **Sphinx-SimplePDF** please try the others as well :)
 
 One last thing ...
 ------------------
