@@ -41,6 +41,14 @@ html_theme = 'alabaster'
 #html_theme = 'sphinx_needs_pdf'
 html_static_path = ['_static']
 
+html_theme_options = {
+    'github_user': 'useblocks',
+    'github_repo': 'sphinx-simplepdf',
+    'fixed_sidebar': True,
+    'github_banner': True,
+    'github_button': False,
+}
+
 
 def setup_jquery(app, exception):
     """
