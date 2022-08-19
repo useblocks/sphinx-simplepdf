@@ -35,7 +35,6 @@ It is using `weasyprint <https://weasyprint.org/>`__ as PDF generator.
 .. toctree::
    :caption: Content
    :maxdepth: 2
-   :numbered:
    :hidden:
 
    installation
