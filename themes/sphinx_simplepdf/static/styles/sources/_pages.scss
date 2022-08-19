@@ -69,14 +69,14 @@
 }
 
 @page:first {
-  background: url(config('cover-bg', '../images/cover-bg.jpg')) no-repeat center;
+  background: $cover-bg;
   background-size: cover;
   margin: 0;
 }
 
 @media screen {
   #cover {
-    background: url(config('cover-bg', '../images/cover-bg.jpg')) no-repeat center;
+    background: $cover-bg;
     background-size: cover;
     margin: 0;
   }
@@ -103,7 +103,7 @@
 
 // Back cover
 @page back_cover {
-    background: url(config('cover-bg', '../images/cover-bg.jpg')) no-repeat center;
+    background: $cover-bg;
     background-size: cover;
     margin: 0;
     color: #ffffff;

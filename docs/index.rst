@@ -6,7 +6,7 @@
 Sphinx-SimplePDF
 ================
 
-This Sphinx extension provides an eas way to build beautiful PDFs based on CSS rules.
+This Sphinx extension provides an easy way to build beautiful PDFs based on CSS rules.
 
 It contains:
 
@@ -52,7 +52,7 @@ Quickstart
 
 Install via ``pip install sphinx-simplepdf``.
 
-Then inside your Sphinx documentation folder run ``make simplepdf``. Your PDF is avaialble under ``_build/simplepdf``.
+Then inside your Sphinx documentation folder run ``make simplepdf``. Your PDF is available under ``_build/simplepdf``.
 
 Color and images can be changed by setting ``simplepdf_vars`` inside your ``conf.py`` file:
 

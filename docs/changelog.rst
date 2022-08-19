@@ -5,6 +5,8 @@ Changelog
 ---
 :released: under development
 
+* **Improvement**: file-path in `url()` css configs are now relative to the Sphinx ``_static`` folder.
+
 1.2
 ---
 :released: 19.08.2022

@@ -283,7 +283,7 @@ dl.class dl.field-list, dl.type dl.field-list, dl.function dl.field-list, dl.mem
     line-height: 15pt;
     margin: 3em 0 1em; }
     .contents > ul > li::before {
-      background: #FA2323;
+      background: #961a1a;
       color: #ffffff;
       content: "";
       display: block;
@@ -294,7 +294,7 @@ dl.class dl.field-list, dl.type dl.field-list, dl.function dl.field-list, dl.mem
       color: #000000;
       font-size: 15pt; }
     .contents > ul > li a::after {
-      color: #FA2323;
+      color: #961a1a;
       content: target-counter(attr(href url), page);
       float: right; }
     .contents > ul > li > ul {
@@ -310,7 +310,7 @@ dl.class dl.field-list, dl.type dl.field-list, dl.function dl.field-list, dl.mem
           color: #000000;
           font-size: 12pt; }
         .contents > ul > li > ul li p::before {
-          color: #FA2323;
+          color: #961a1a;
           content: "• ";
           font-size: 40pt;
           line-height: 16pt;
@@ -328,14 +328,14 @@ dl.class dl.field-list, dl.type dl.field-list, dl.function dl.field-list, dl.mem
 @page {
   padding-top: 1em;
   @top-left {
-    background: #FA2323;
+    background: #961a1a;
     color: #ffffff;
     content: counter(page);
     height: 1cm;
     text-align: center;
     width: 1cm; }
   @top-center {
-    background: #FA2323;
+    background: #961a1a;
     content: "";
     display: block;
     height: 0.05cm;
@@ -367,18 +367,18 @@ dl.class dl.field-list, dl.type dl.field-list, dl.function dl.field-list, dl.mem
     content: none; } }
 
 @page :first {
-  background: url(../images/cover-bg.jpg) no-repeat center;
+  background: url(cover-bg.jpg) no-repeat center;
   background-size: cover;
   margin: 0; }
 
 @media screen {
   #cover {
-    background: url(../images/cover-bg.jpg) no-repeat center;
+    background: url(cover-bg.jpg) no-repeat center;
     background-size: cover;
     margin: 0; } }
 
 @page chapter {
-  background: #FA2323;
+  background: #961a1a;
   color: #ffffff;
   margin: 0;
   @top-left {
@@ -389,7 +389,7 @@ dl.class dl.field-list, dl.type dl.field-list, dl.function dl.field-list, dl.mem
     content: none; } }
 
 @page back_cover {
-  background: url(../images/cover-bg.jpg) no-repeat center;
+  background: url(cover-bg.jpg) no-repeat center;
   background-size: cover;
   margin: 0;
   color: #ffffff; }
@@ -411,12 +411,12 @@ dl.class dl.field-list, dl.type dl.field-list, dl.function dl.field-list, dl.mem
   display: flex;
   flex-wrap: wrap;
   height: 297mm;
-  background: url(../images/cover-bg.jpg) no-repeat center;
+  background: url(cover-bg.jpg) no-repeat center;
   background-size: cover;
   margin: 0; }
   #cover h1 {
     font-family: "Helvetica Neue Bold";
-    color: #FA2323;
+    color: #961a1a;
     font-size: 38pt;
     margin: 5cm 2cm 0 2cm;
     page: no-chapter;
@@ -424,7 +424,7 @@ dl.class dl.field-list, dl.type dl.field-list, dl.function dl.field-list, dl.mem
   #cover .container {
     width: 100%;
     top: 0;
-    background: rgba(250, 35, 35, 0.5); }
+    background: rgba(150, 26, 26, 0.7); }
     #cover .container .logo {
       font-size: 24pt;
       color: #ffffff;
@@ -528,7 +528,7 @@ dl.class dl.field-list, dl.type dl.field-list, dl.function dl.field-list, dl.mem
   color: #007bff !important; }
 
 a {
-  color: $primary;
+  color: #961a1a;
   text-decoration: none; }
 
 a.text-primary:hover, a.text-primary:focus {
@@ -762,7 +762,7 @@ html {
   font-weight: 300;
   line-height: 1.5; }
   html body h1 {
-    color: #FA2323;
+    color: #961a1a;
     font-size: 30pt; }
   html body h2, html body h3, html body h4 {
     color: black;

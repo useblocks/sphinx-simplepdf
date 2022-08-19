@@ -7,7 +7,7 @@
     flex-wrap: wrap;
     height: 297mm;
 
-    background: url(config('cover-bg', '../images/cover-bg.jpg')) no-repeat center;
+    background: $cover-bg;
     background-size: cover;
     margin: 0;
 
@@ -23,7 +23,7 @@
     .container {
         width: 100%;
         top: 0;
-        background: config("cover-overlay", "rgba(250, 35, 35, 0.6)");
+        background: $cover-overlay;
         .logo {
             // font-family: "D3 Euronism", sans-serif;
             font-size: 24pt;
