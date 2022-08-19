@@ -22,15 +22,6 @@ The key is used as identifier inside scss-files and the value must be a css/scss
 
 This values are used then inside the scss files, which define the PDF layout.
 
-**Example _cover.scss**
-
-.. code-block:: scss
-
-   background: config("cover-overlay", "rgba(250, 35, 35, 0.6)");
-
-First value is the config name, the second one is a default value, which is used if the name can't be found inside
-``simplepdf_vars``. See :ref:`css` for details.
-
 Config vars
 -----------
 
@@ -42,12 +33,12 @@ Config vars
 :cover-bg: Cover background image. Can be a single color or even an image path.
 :cover-overlay: RBG based color overlay for the cover-image. Example: ``rgba(250, 35, 35, 0.5)``
 
-All variables are defined inside the `/themes/sphinx_simplepdf/sttuc/stles/sources/_variables.scss` file.
+All variables are defined inside the ``/themes/sphinx_simplepdf/sttuc/stles/sources/_variables.scss` file.
 
 Examples
 --------
-The values from the configuration are taken as they are and injected in to ``scss`` files, which are used to generated
-the css files. So each values or command, which is supported by ``scss`` can be set.
+The values from the configuration are taken as they are and injected into ``scss`` files, which are used to generate
+the css files. So each value or command, which is supported by ``scss``, can be set.
 
 Color selection
 ~~~~~~~~~~~~~~~
@@ -65,6 +56,9 @@ File references
    simplepdf_vars = {
        'cover-bg': 'url(cover-bg.jpg) no-repeat center'
    }
+
+The file path must be relative to the Sphinx _static folder.
+So in the above example the image is stored under ``/_static/cover-bg-jpg``.
 
 SimplePDF docs
 ~~~~~~~~~~~~~~
