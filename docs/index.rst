@@ -35,6 +35,7 @@ It is using `weasyprint <https://weasyprint.org/>`__ as PDF generator.
 .. toctree::
    :caption: Content
    :maxdepth: 2
+   :numbered:
    :hidden:
 
    installation
@@ -44,7 +45,6 @@ It is using `weasyprint <https://weasyprint.org/>`__ as PDF generator.
    tech_details
    examples/index
    changelog
-
 
 
 Quickstart
@@ -90,7 +90,4 @@ License
 -------
 
 .. literalinclude:: ../LICENSE
-
-
-
 

@@ -19,8 +19,14 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
         super().__init__(*args, **kwargs)
 
         if self.app.config.html_theme != "sphinx_simplepdf":
-            print("Setting theme to sphinx_needs_pdf")
+            print("Setting theme to sphinx_simplepdf")
+            # We need to overwrite some config values, as they are set for the normal html build, but
+            # simplepdf can normally not handle them.
             self.app.config.html_theme = "sphinx_simplepdf"
+            self.app.config.html_sidebars = {'**': ["localtoc.html",
+                                                    "relations.html",
+                                                    "sourcelink.html",
+                                                    "searchbox.html"]}
 
         # Generate main.css
         print('Generating css files from scss-templates')
