@@ -1,12 +1,17 @@
 Changelog
 =========
 
-Release 1.3
+Release 1.4
 -----------
 :released: under development
 
+Release 1.3
+-----------
+:released: 25.08.2022
+
 * **Improvement**: file-path in `url()` css configs are now relative to the Sphinx ``_static`` folder.
 * **Improvement**: Toctree is working and page numbers are added.
+* **Improvement**: Introducing :ref:`if-builder` to control content based on builder.
 
 Release 1.2
 -----------

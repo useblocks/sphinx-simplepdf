@@ -6,20 +6,7 @@
 Sphinx-SimplePDF
 ================
 
-.. toctree::
-
-   installation
-   building
-   configuration
-   css
-   tech_details
-   examples/index
-   changelog
-
-
 This Sphinx extension provides an easy way to build beautiful PDFs based on CSS rules.
-
-
 
 It contains:
 
@@ -44,48 +31,62 @@ It is using `weasyprint <https://weasyprint.org/>`__ as PDF generator.
     changes via a PR.
     The code is stored on github: `useblocks/sphinx-simplepdf <https://github.com/useblocks/sphinx-simplepdf>`__
 
-Quickstart
-----------
-
-Install via ``pip install sphinx-simplepdf``.
-
-Then inside your Sphinx documentation folder run ``make simplepdf``. Your PDF is available under ``_build/simplepdf``.
-
-Color and images can be changed by setting ``simplepdf_vars`` inside your ``conf.py`` file:
-
-.. code-block:: python
-
-   simplepdf_vars = {
-       'primary': '#333333',
-       'links': '#FF3333',
-   }
-
-For more configuration options take a look into :ref:`configuration`.
-
-Why another PDF builder?
-------------------------
-You can use the Sphinx Latex builder to generate PDFs.
-And there is also the great `rinohtype <http://www.mos6581.org/rinohtype/master/#>`__ library.
-
-But both have some drawbacks, which we try to avoid with this solution.
-
-Latex distributions are quite big and Latex as language may not be the language of choice for everybody.
-
-rinohtype makes a lot of things easier, but it does not support additional Sphinx extensions very well
-(if they are using visitor-functions). For instance is it hard to get PlantUML running with rinohtype.
-
-But for sure, there are also scenarios where **Sphinx-SimplePDF** may not be the best solution.
-So if you are unhappy with **Sphinx-SimplePDF** please try the others as well :)
-
-One last thing ...
-------------------
-This theme is heavily based on the excellent work of `Nekmo <https://github.com/Nekmo>`__ for the
-`Sphinx Business Theme <https://github.com/Nekmo/sphinx-business-theme>`__.
-
-Without this work, this theme would never exist. Thanks for it ♥
 
 
-License
--------
+.. if-builder:: simplepdf
 
-.. literalinclude:: ../LICENSE
+    .. toctree::
+
+       quickstart
+       installation
+       building
+       configuration
+       directives
+       css
+       tech_details
+       examples/index
+       changelog
+       license
+
+
+.. if-builder:: HTML
+
+    .. include:: quickstart.rst
+
+    Why another PDF builder?
+    ------------------------
+
+    You can use the Sphinx Latex builder to generate PDFs.
+    And there is also the great `rinohtype <http://www.mos6581.org/rinohtype/master/#>`__ library.
+
+    But both have some drawbacks, which we try to avoid with this solution.
+
+    Latex distributions are quite big and Latex as language may not be the language of choice for everybody.
+
+    rinohtype makes a lot of things easier, but it does not support additional Sphinx extensions very well
+    (if they are using visitor-functions). For instance is it hard to get PlantUML running with rinohtype.
+
+    But for sure, there are also scenarios where **Sphinx-SimplePDF** may not be the best solution.
+    So if you are unhappy with **Sphinx-SimplePDF** please try the others as well :)
+
+    One last thing ...
+    ------------------
+    This theme is heavily based on the excellent work of `Nekmo <https://github.com/Nekmo>`__ for the
+    `Sphinx Business Theme <https://github.com/Nekmo/sphinx-business-theme>`__.
+
+    Without this work, this theme would never exist. Thanks for it ♥
+
+
+    .. toctree::
+       :caption: Content
+       :maxdepth: 3
+
+       installation
+       building
+       configuration
+       directives
+       css
+       tech_details
+       examples/index
+       changelog
+       license

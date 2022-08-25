@@ -33,7 +33,7 @@ Config vars
 :cover-bg: Cover background image. Can be a single color or even an image path.
 :cover-overlay: RBG based color overlay for the cover-image. Example: ``rgba(250, 35, 35, 0.5)``
 
-All variables are defined inside the ``/themes/sphinx_simplepdf/sttuc/stles/sources/_variables.scss` file.
+All variables are defined inside ``/themes/sphinx_simplepdf/sttuc/stles/sources/_variables.scss``.
 
 Examples
 --------

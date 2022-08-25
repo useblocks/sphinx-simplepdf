@@ -17,6 +17,7 @@ author = 'team useblocks'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
+    'sphinx_simplepdf',
     'sphinxcontrib.plantuml',
     'sphinxcontrib.needs',
     'sphinx_copybutton',

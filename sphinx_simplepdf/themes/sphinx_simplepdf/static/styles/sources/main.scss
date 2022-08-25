@@ -82,6 +82,7 @@ html {
     h1 {
       color: $primary;
       font-size: 30pt;
+      page-break-before: always;
     }
 
     h2, h3, h4 {

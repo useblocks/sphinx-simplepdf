@@ -21,5 +21,9 @@ Workflow
    Injects also config-vars from ``simplepdf_vars``.
 4. Builder starts a **SingleFileHTML** based build.
 5. Sphinx creates one single ``index.html``.
-6. Builders starts **weasyprint** with ``index.html`` as input
-7. Done, PDF file exists under ``_build/simplepdf``.
+6. Builder manipulates created ``index.html``:
+
+   * Fixes toc-tree links
+
+7. Builders starts **weasyprint** with ``index.html`` as input
+8. Done, PDF file exists under ``_build/simplepdf``.

@@ -804,7 +804,8 @@ html {
   line-height: 1.5; }
   html body h1 {
     color: #961a1a;
-    font-size: 30pt; }
+    font-size: 30pt;
+    page-break-before: always; }
   html body h2, html body h3, html body h4 {
     color: black;
     font-weight: 400; }

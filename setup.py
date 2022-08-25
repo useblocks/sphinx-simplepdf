@@ -19,7 +19,7 @@ setup(
     description='A specific theme for Sphinx-Needs',
     long_description=open(README_PATH, encoding='utf-8').read(),
     zip_safe=False,
-    packages=['builders', 'themes/sphinx_simplepdf'],
+    packages=['sphinx_simplepdf'],
     package_data={'themes/sphinx_simplepdf': [
         'theme.conf',
         '*.html',
@@ -31,17 +31,17 @@ setup(
     # See http://www.sphinx-doc.org/en/stable/theming.html#distribute-your-theme-as-a-python-package
     entry_points={
         'sphinx.html_themes': [
-            'sphinx_simplepdf = themes.sphinx_simplepdf',
+            'sphinx_simplepdf = sphinx_simplepdf.themes.sphinx_simplepdf',
         ],
         'sphinx.builders': [
-            'simplepdf = builders.simplepdf'
+            'simplepdf = sphinx_simplepdf.builders.simplepdf'
         ]
     },
     install_requires=[
         'sphinx',
         'weasyprint',       # the used PDF builder
-        'libsass'           # needed to generate css on the fly
-        'beautifulsoup4'    # needed for HTML manipulations
+        'libsass',           # needed to generate css on the fly
+        'beautifulsoup4',    # needed for HTML manipulations
     ],
     classifiers=[
         'Framework :: Sphinx',
