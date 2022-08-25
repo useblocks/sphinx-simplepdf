@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 from io import open
-from setuptools import setup
+from setuptools import setup, find_packages
 
 directory = os.path.dirname(os.path.abspath(__file__))
 
@@ -19,8 +19,11 @@ setup(
     description='A specific theme for Sphinx-Needs',
     long_description=open(README_PATH, encoding='utf-8').read(),
     zip_safe=False,
-    packages=['sphinx_simplepdf'],
-    package_data={'themes/sphinx_simplepdf': [
+    packages=['sphinx_simplepdf',
+              'sphinx_simplepdf.directives',
+              'sphinx_simplepdf.themes/simplepdf_theme',
+              ],
+    package_data={'sphinx_simplepdf/themes/simplepdf_theme': [
         'theme.conf',
         '*.html',
         'static/styles/*.css',
@@ -31,7 +34,7 @@ setup(
     # See http://www.sphinx-doc.org/en/stable/theming.html#distribute-your-theme-as-a-python-package
     entry_points={
         'sphinx.html_themes': [
-            'sphinx_simplepdf = sphinx_simplepdf.themes.sphinx_simplepdf',
+            'simplepdf_theme = sphinx_simplepdf.themes.simplepdf_theme',
         ],
         'sphinx.builders': [
             'simplepdf = sphinx_simplepdf.builders.simplepdf'

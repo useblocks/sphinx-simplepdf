@@ -20,17 +20,17 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        if self.app.config.html_theme != "sphinx_simplepdf":
+        if self.app.config.html_theme != "simplepdf_theme":
             print("Setting theme to sphinx_simplepdf")
             # We need to overwrite some config values, as they are set for the normal html build, but
             # simplepdf can normally not handle them.
-            self.app.config.html_theme = "sphinx_simplepdf"
+            self.app.config.html_theme = "simplepdf_theme"
             # self.app.config.html_sidebars = {'**': []}
             self.app.config.html_sidebars = {'**': ["localtoc.html"]}
 
         # Generate main.css
         print('Generating css files from scss-templates')
-        css_folder = os.path.join(os.path.dirname(__file__), '../themes/sphinx_simplepdf/static/')
+        css_folder = os.path.join(os.path.dirname(__file__), '../themes/simplepdf_theme/static/')
         scss_folder = os.path.join(css_folder, 'styles/sources')
         sass.compile(dirname=(scss_folder, css_folder), output_style='nested',
                      custom_functions={sass.SassFunction('config', ('$a', '$b'), self.get_config_var)}
