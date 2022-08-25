@@ -1,4 +1,4 @@
-from .directives.ifbuilder import IfBuilderDirective, IfBuilder
+from sphinx_simplepdf.directives.ifbuilder import IfBuilderDirective, IfBuilder
 
 
 def setup(app):

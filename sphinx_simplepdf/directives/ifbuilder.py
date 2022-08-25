@@ -1,7 +1,5 @@
-import sphinx
-
 from docutils import nodes
-from docutils.parsers.rst import directives, Directive
+from docutils.parsers.rst import Directive
 from docutils.statemachine import ViewList
 from sphinx.util.nodes import nested_parse_with_titles
 
