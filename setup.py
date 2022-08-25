@@ -20,6 +20,7 @@ setup(
     long_description=open(README_PATH, encoding='utf-8').read(),
     zip_safe=False,
     packages=['sphinx_simplepdf',
+              'sphinx_simplepdf.builders',
               'sphinx_simplepdf.directives',
               'sphinx_simplepdf.themes/simplepdf_theme',
               ],
