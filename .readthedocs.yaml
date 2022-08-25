@@ -16,7 +16,7 @@ build:
     - pip install .
     - pip install -r docs/doc-requirements.txt
     - sphinx-build -M html docs docs/_build
-    - sphinx-build -M simplepdf docs docs/_build
-    - cp docs/_build/simplepdf/Sphinx-SimplePDF.pdf docs/_build/html/_static/Sphinx-SimplePDF.pdf
+    - sphinx-build -M simplepdf docs docs/_build2  # Use a different build-folder for a really clean build
+    - cp docs/_build2/simplepdf/Sphinx-SimplePDF.pdf docs/_build/html/_static/Sphinx-SimplePDF.pdf
     - mkdir -p _readthedocs/html/
     - cp -r docs/_build/html/* _readthedocs/html/

@@ -36,6 +36,11 @@ chosen builder name. The argument is case-insensitive.
    make simplepdf
    sphinx-build -M html . _build
 
+.. warning::
+
+   ``if-builder`` may not be taken into account, if a Sphinx incremental build is performed.
+   Be sure to always use a clean first build, after a builder switch.
+
 .. note:: Why not using the ``.. only::`` directive?
 
    The ``only`` directive works differently and does not support for instance ``toctree`` and other mechanism for

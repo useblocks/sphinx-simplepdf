@@ -8,7 +8,9 @@
 *egg-info/
 dist
 build
+build2
 _build
+_build2
 .cache/
 *pycache*
 .tox/
