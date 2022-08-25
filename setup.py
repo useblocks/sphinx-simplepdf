@@ -11,7 +11,7 @@ README_PATH = os.path.join(directory, 'README.rst')
 
 setup(
     name='sphinx-simplepdf',
-    version='1.3.0',
+    version='1.4.0',
     url='https://github.com/useblocks/sphinx-simplepdf',
     license='Commercial',
     author='team useblocks',
