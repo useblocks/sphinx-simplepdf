@@ -6,7 +6,20 @@
 Sphinx-SimplePDF
 ================
 
+.. toctree::
+
+   installation
+   building
+   configuration
+   css
+   tech_details
+   examples/index
+   changelog
+
+
 This Sphinx extension provides an easy way to build beautiful PDFs based on CSS rules.
+
+
 
 It contains:
 
@@ -30,21 +43,6 @@ It is using `weasyprint <https://weasyprint.org/>`__ as PDF generator.
     You can help us to make it better by reporting bugs or even better by providing code/docs
     changes via a PR.
     The code is stored on github: `useblocks/sphinx-simplepdf <https://github.com/useblocks/sphinx-simplepdf>`__
-
-
-.. toctree::
-   :caption: Content
-   :maxdepth: 2
-   :hidden:
-
-   installation
-   building
-   configuration
-   css
-   tech_details
-   examples/index
-   changelog
-
 
 Quickstart
 ----------
@@ -91,4 +89,3 @@ License
 -------
 
 .. literalinclude:: ../LICENSE
-

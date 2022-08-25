@@ -22,8 +22,8 @@ If this is set to ``break``, then a page break will be introduced in front of th
        :file: example.csv
        :class: break
 
-Sphinx-Needs objects
-~~~~~~~~~~~~~~~~~~~~
+Sphinx-Needs elements
+~~~~~~~~~~~~~~~~~~~~~
 
 This works also for most Sphinx-Needs elements.
 

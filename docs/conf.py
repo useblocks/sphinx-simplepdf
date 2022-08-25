@@ -7,6 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 import sphinx
+import datetime
 
 project = 'Sphinx-SimplePDF'
 copyright = '2022, team useblocks'
@@ -42,11 +43,19 @@ html_theme = 'alabaster'
 html_static_path = ['_static']
 
 html_theme_options = {
-    'github_user': 'useblocks',
+    'github_user': '',
     'github_repo': 'sphinx-simplepdf',
     'fixed_sidebar': True,
     'github_banner': True,
     'github_button': False,
+}
+
+html_context = {
+    'docs_scope': 'external',
+    'cover_logo_title': '',
+    'cover_meta_data': 'The simple PDF builder for Sphinx.',
+    'cover_footer': f'Build: {datetime.datetime.now().strftime("%d.%m.%Y")}<br>'
+                    f'Maintained by <a href="https://useblocks.com">team useblocks</a>',
 }
 
 

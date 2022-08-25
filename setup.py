@@ -39,8 +39,9 @@ setup(
     },
     install_requires=[
         'sphinx',
-        'weasyprint',   # the used PDF builder
-        'libsass'       # needed to generate css on the fly
+        'weasyprint',       # the used PDF builder
+        'libsass'           # needed to generate css on the fly
+        'beautifulsoup4'    # needed for HTML manipulations
     ],
     classifiers=[
         'Framework :: Sphinx',
