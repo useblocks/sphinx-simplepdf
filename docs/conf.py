@@ -44,7 +44,7 @@ html_theme = 'alabaster'
 html_static_path = ['_static']
 
 html_theme_options = {
-    'github_user': '',
+    'github_user': 'useblocks',
     'github_repo': 'sphinx-simplepdf',
     'fixed_sidebar': True,
     'github_banner': True,

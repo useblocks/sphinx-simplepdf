@@ -24,12 +24,12 @@ It is using `weasyprint <https://weasyprint.org/>`__ as PDF generator.
 
 .. note::
 
-    This extension is in an early alpha phase.
+    This extension is in a beta phase.
 
-    It is not bug free and documentation is also missing a lot of stuff.
-    You can help us to make it better by reporting bugs or even better by providing code/docs
+    It is not bug free and documentation is also missing some minor stuff.
+    You can help us to make it better by reporting bugs or by providing code/docs
     changes via a PR.
-    The code is stored on github: `useblocks/sphinx-simplepdf <https://github.com/useblocks/sphinx-simplepdf>`__
+    The code is available on github: `useblocks/sphinx-simplepdf <https://github.com/useblocks/sphinx-simplepdf>`__
 
 
 
