@@ -359,6 +359,12 @@ dl.class dl.field-list, dl.type dl.field-list, dl.function dl.field-list, dl.mem
 .dont-break {
   page-break-inside: avoid; }
 
+.break-before {
+  page-break-before: always; }
+
+.break-after {
+  page-break-after: always; }
+
 #back-cover {
   page: back_cover;
   page-break-before: always; }
