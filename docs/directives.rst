@@ -1,6 +1,17 @@
 Directives
 ==========
 
+.. warning::
+
+   To use the directives, your ``conf.py`` file must contain Sphinx-SimplePDF in the extension list::
+
+       extensions = [
+           'sphinx_simplepdf',
+           # additional extensions
+       ]
+
+
+
 .. _if-builder:
 
 if-builder

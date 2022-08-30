@@ -5,6 +5,9 @@ Release 1.4
 -----------
 :released: under development
 
+* **Bugfix**: ``html_theme_options`` gets overwritten to suppress Sphinx warnings.
+* **Bugfix**: HTML file operations are using hard-coded `utf-8` de/encoding.
+
 Release 1.3
 -----------
 :released: 25.08.2022

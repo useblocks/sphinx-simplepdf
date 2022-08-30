@@ -788,7 +788,6 @@ body {
 
 .highlight pre {
   padding: 1em;
-  white-space: -moz-pre-wrap;
   white-space: -o-pre-wrap;
   word-wrap: break-word;
   white-space: pre-wrap; }
@@ -853,9 +852,6 @@ html {
   font-size: 23pt; }
 
 .docutils.literal.notranslate {
-  -moz-hyphens: none;
-  -ms-hyphens: none;
-  -webkit-hyphens: none;
   hyphens: none;
   color: #552977;
   background-color: #f1f1f1;
