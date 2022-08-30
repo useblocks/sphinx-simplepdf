@@ -85,6 +85,12 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
 
         return soup.prettify(formatter='html')
 
+
 def setup(app: Sphinx) -> Dict[str, Any]:
     app.add_config_value("simplepdf_vars", {}, "html", types=[dict])
     app.add_builder(SimplePdfBuilder)
+
+    return {
+        "parallel_read_safe": True,
+        "parallel_write_safe": True,
+    }
