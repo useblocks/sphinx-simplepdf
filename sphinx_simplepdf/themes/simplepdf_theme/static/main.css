@@ -320,40 +320,40 @@ dl.class dl.field-list, dl.type dl.field-list, dl.function dl.field-list, dl.mem
 
 .sphinxsidebarwrapper {
   page-break-before: always; }
-  .sphinxsidebarwrapper ul {
+  .sphinxsidebarwrapper div ul {
     list-style: none; }
-  .sphinxsidebarwrapper > ul {
+  .sphinxsidebarwrapper div > ul {
     padding-left: 0; }
-    .sphinxsidebarwrapper > ul > li {
+    .sphinxsidebarwrapper div > ul > li {
       font-weight: 500;
       line-height: 12pt;
       margin: 2em 0 1em; }
-      .sphinxsidebarwrapper > ul > li a {
+      .sphinxsidebarwrapper div > ul > li a {
         color: #000000;
         font-size: 13pt; }
-      .sphinxsidebarwrapper > ul > li a::after {
+      .sphinxsidebarwrapper div > ul > li a::after {
         color: #961a1a;
         content: target-counter(attr(href url), page);
         float: right; }
-      .sphinxsidebarwrapper > ul > li > ul {
+      .sphinxsidebarwrapper div > ul > li > ul {
         list-style: none;
         padding-left: 0; }
-        .sphinxsidebarwrapper > ul > li > ul li {
+        .sphinxsidebarwrapper div > ul > li > ul li {
           border-top: 0.3pt solid #c1c1c1;
           margin: 0.15cm 0;
           padding-top: 0.15cm;
           line-height: 10pt;
           font-weight: 300; }
-          .sphinxsidebarwrapper > ul > li > ul li a {
+          .sphinxsidebarwrapper div > ul > li > ul li a {
             color: #000000;
             font-size: 12pt; }
-          .sphinxsidebarwrapper > ul > li > ul li a::before {
+          .sphinxsidebarwrapper div > ul > li > ul li a::before {
             color: #961a1a;
             content: "• ";
             font-size: 30pt;
             line-height: 10pt;
             vertical-align: bottom; }
-          .sphinxsidebarwrapper > ul > li > ul li ul {
+          .sphinxsidebarwrapper div > ul > li > ul li ul {
             padding-left: 2em; }
 
 .dont-break {
