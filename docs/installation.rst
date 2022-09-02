@@ -1,6 +1,9 @@
 Installation
 ============
 
+.. warning::
+    Sphinx-SimplePDF requires **Sphinx version >= 4.4.4** to properly render the Table of Content with page counts
+    
 From PyPi
 ---------
 
