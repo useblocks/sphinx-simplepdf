@@ -25,8 +25,8 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
             # We need to overwrite some config values, as they are set for the normal html build, but
             # simplepdf can normally not handle them.
             self.app.config.html_theme = "simplepdf_theme"
-            # self.app.config.html_sidebars = {'**': []}
             self.app.config.html_sidebars = {'**': ["localtoc.html"]}
+            self.app.config.html_theme_options = {}  # Sphinx would write warnings, if given options are unsupported.
 
         # Generate main.css
         print('Generating css files from scss-templates')
@@ -58,12 +58,12 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
         index_path = os.path.join(self.app.outdir, 'index.html')
 
         # Manipulate index.html
-        with open(index_path, 'r') as index_file:
+        with open(index_path, 'rt', encoding='utf-8') as index_file:
             index_html = "".join(index_file.readlines())
 
         new_index_html = self._toctree_fix(index_html)
 
-        with open(index_path, 'w') as index_file:
+        with open(index_path, 'wt', encoding='utf-8') as index_file:
             index_file.writelines(new_index_html)
 
 
@@ -85,6 +85,12 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
 
         return soup.prettify(formatter='html')
 
+
 def setup(app: Sphinx) -> Dict[str, Any]:
     app.add_config_value("simplepdf_vars", {}, "html", types=[dict])
     app.add_builder(SimplePdfBuilder)
+
+    return {
+        "parallel_read_safe": True,
+        "parallel_write_safe": True,
+    }

@@ -20,6 +20,19 @@ From source
    cd sphinx-simplepdf
    pip install .
 
+Using Sphinx-SimplePDF directives
+---------------------------------
+Sphinx-SimplePDF can be called directly after the installation.
+
+However, if you want to use the included directives, like :ref:`if-builder`, you need to add Sphinx-SimplePDF
+to the list of extensions in your ``conf.py`` file::
+
+    extensions = [
+        'sphinx_simplepdf',
+        # additional extensions
+    ]
+
+
 
 ReadTheDocs configuration
 -------------------------

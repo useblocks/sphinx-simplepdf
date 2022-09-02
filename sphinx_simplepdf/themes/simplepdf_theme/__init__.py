@@ -18,3 +18,8 @@ def get_html_theme_path():
 def setup(app):
     app.add_html_theme('simplepdf_theme', path.abspath(path.dirname(__file__)))
     app.add_css_file('styles/main.css')
+
+    return {
+        "parallel_read_safe": True,
+        "parallel_write_safe": True,
+    }
