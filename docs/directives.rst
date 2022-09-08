@@ -57,3 +57,42 @@ chosen builder name. The argument is case-insensitive.
    The ``only`` directive works differently and does not support for instance ``toctree`` and other mechanism for
    controlling the documentation structure.
 
+.. _if-include::
+
+if-include
+----------
+
+``if-include`` can be used to include files only when the specified builder is used. This is the same as using a
+include nested in a if-builder statement. You can list multiple files and use different builders.
+
+.. code-block:: rst
+   
+   .. if-builder:: simplepdf
+
+      .. include:: ./path/to/my/file.xy
+
+      .. include:: ./path/to/my/other/file.xy
+
+
+is the same as
+
+.. code-block:: rst
+   
+   .. if-include:: simplepdf 
+      
+      ./path/to/my/file.xy
+      ./path/to/my/other/file.xy
+
+.. warning::
+   in some cases content meant for html only builds will get included in the PDF if you build the html documentation
+   and do not delete the build files.
+
+   Always make sure to use ``make clean`` or similar to delete build files before building the PDF.
+
+
+The following chapter should only be visible in the PDF version of this documentation
+
+.. if-include:: simplepdf  
+
+   ./if_pdf_include.rst
+
