@@ -16,6 +16,7 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
     format = "html"  # Must be html instead of "pdf", otherwise plantuml has problems
     file_suffix = ".pdf"
     links_suffix = None
+    root_doc = None
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -35,6 +36,8 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
         sass.compile(dirname=(scss_folder, css_folder), output_style='nested',
                      custom_functions={sass.SassFunction('config', ('$a', '$b'), self.get_config_var)}
                      )
+        # store root document name
+        self.root_doc = self.app.config.root_doc
 
     def get_config_var(self, name, default):
         """
@@ -55,7 +58,7 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
     def finish(self) -> None:
         super().finish()
 
-        index_path = os.path.join(self.app.outdir, 'index.html')
+        index_path = os.path.join(self.app.outdir, f'{self.root_doc}.html')
 
         # Manipulate index.html
         with open(index_path, 'rt', encoding='utf-8') as index_file:
@@ -81,7 +84,7 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
 
         links = sidebar.find_all('a', class_='reference internal')
         for link in links:
-            link['href'] = link['href'].replace('index.html', '')
+            link['href'] = link['href'].replace(f'{self.root_doc}.html', '')
 
         return soup.prettify(formatter='html')
 
