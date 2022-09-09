@@ -55,7 +55,7 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
     def finish(self) -> None:
         super().finish()
 
-        index_path = os.path.join(self.app.outdir, 'index.html')
+        index_path = os.path.join(self.app.outdir, f'{self.app.config.root_doc}.html')
 
         # Manipulate index.html
         with open(index_path, 'rt', encoding='utf-8') as index_file:
@@ -81,7 +81,7 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
 
         links = sidebar.find_all('a', class_='reference internal')
         for link in links:
-            link['href'] = link['href'].replace('index.html', '')
+            link['href'] = link['href'].replace(f'{self.app.config.root_doc}.html', '')
 
         return soup.prettify(formatter='html')
 
