@@ -9,5 +9,6 @@ Demo Sphinx-SimplePDF
     demo
     lists_tables
     api
+    sphinx_needs
     level1/index
     long

@@ -38,7 +38,7 @@ plantuml_output_format = "svg_img"
 simplepdf_vars = {
     'cover-overlay': 'rgba(26, 150, 26, 0.7)',
     'cover-bg': 'url(frog.jpg) no-repeat center',
-    'primary': '##1a961a',
+    'primary': '#1a961a',
     'secondary': '#379683',
     'cover': '#ffffff',
     'white': '#ffffff',
