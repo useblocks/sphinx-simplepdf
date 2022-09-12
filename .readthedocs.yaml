@@ -8,6 +8,8 @@ version: 2
 # Set the version of Python and other tools you might need
 build:
   os: ubuntu-22.04
+  apt_packages:
+    - default-jre  # This seems to be ignored
   tools:
     python: "3.9"
   # We can only define the content of the final deployment, if we do the complete build on our own.apt_packages:
