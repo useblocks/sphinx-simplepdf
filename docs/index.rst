@@ -17,17 +17,18 @@ It contains:
 It is using `weasyprint <https://weasyprint.org/>`__ as PDF generator.
 
 .. list-table::
+   :width: 100%
 
    * - .. figure:: /_static/sphinx_simplepdf.png
           :align: center
-          :width: 70%
+          :height: 300px
           :target: _static/Sphinx-SimplePDF.pdf
 
           :download:`PDF Documentation <_static/Sphinx-SimplePDF.pdf>`
 
      - .. figure:: /_static/sphinx_simplepdf_demo.png
           :align: center
-          :width: 70%
+          :height: 300px
           :target: _static/Sphinx-SimplePDF-DEMO.pdf
 
           :download:`PDF Demo <_static/Sphinx-SimplePDF-DEMO.pdf>`
