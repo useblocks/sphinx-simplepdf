@@ -59,6 +59,10 @@ html_context = {
                     f'Maintained by <a href="https://useblocks.com">team useblocks</a>',
 }
 
+plantuml_output_format = "svg_img"
+local_plantuml_path = os.path.join(os.path.dirname(__file__), "../", "docs", "utils", "plantuml.jar")
+plantuml = f"java -Djava.awt.headless=true -jar {local_plantuml_path}"
+
 
 def setup_jquery(app, exception):
     """
