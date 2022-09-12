@@ -30,8 +30,10 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
 
         # Generate main.css
         print('Generating css files from scss-templates')
-        css_folder = os.path.join(os.path.dirname(__file__), '../themes/simplepdf_theme/static/')
-        scss_folder = os.path.join(css_folder, 'styles/sources')
+        css_folder = os.path.join(self.app.outdir, f'_static/styles')
+        scss_folder = os.path.join(os.path.dirname(__file__), '../themes/simplepdf_theme/static/styles/sources')
+        #print(f'css_folder: {css_folder}')
+        #print(f'scss_folder: {scss_folder}')
         sass.compile(dirname=(scss_folder, css_folder), output_style='nested',
                      custom_functions={sass.SassFunction('config', ('$a', '$b'), self.get_config_var)}
                      )
