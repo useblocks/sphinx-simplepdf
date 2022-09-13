@@ -10,6 +10,6 @@ This is a SVG file with the dimensions 3000x3000 pixels.
 
 JPG
 ---
-This jpg file has the dimensions 260x2176.
+This jpg file has the dimensions 2600x2176.
 
 .. image:: /_static/phetus_2560x2176.jpg
