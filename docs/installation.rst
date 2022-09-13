@@ -1,9 +1,6 @@
 Installation
 ============
 
-.. warning::
-    Sphinx-SimplePDF requires **Sphinx version >= 4.4.4** to properly render the Table of Content with page counts
-    
 From PyPi
 ---------
 
@@ -19,6 +16,17 @@ From source
    git clone git@github.com:useblocks/sphinx-simplepdf.git
    cd sphinx-simplepdf
    pip install .
+
+Requirements
+------------
+**Sphinx-SimplePDF** requires **Sphinx version >= 4.4.4** to properly render the Table of Content with page counts.
+
+.. warning::
+
+   If you are using **macOS** as operating system, the chance is high that the package **pango** gets not automatically
+   installed when installing **Sphinx-SimplePDF**.
+
+   In this case please run also ``brew install pango``.
 
 Using Sphinx-SimplePDF directives
 ---------------------------------

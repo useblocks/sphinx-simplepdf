@@ -12,7 +12,7 @@ It contains:
 
  * A PDF specific, CSS based Sphinx theme: ``sphinx_simplepdf``.
  * A Sphinx builder, called ``simplepdf``
- * :ref:`Directives <directives>` to control different structures and content for ``HTML`` and ``PDF builds
+ * :ref:`Directives <directives>` to control different structures and content for ``HTML`` and ``PDF`` builds
 
 It is using `weasyprint <https://weasyprint.org/>`__ as PDF generator.
 
@@ -55,7 +55,6 @@ It is using `weasyprint <https://weasyprint.org/>`__ as PDF generator.
        directives
        css
        tech_details
-       examples/index
        changelog
        license
 
