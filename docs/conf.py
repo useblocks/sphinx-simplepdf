@@ -6,6 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
+import os
 import sphinx
 import datetime
 
@@ -29,6 +30,8 @@ templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 plantuml_output_format = "svg_img"
+local_plantuml_path = os.path.join(os.path.dirname(__file__), "utils", "plantuml.jar")
+plantuml = f"java -Djava.awt.headless=true -jar {local_plantuml_path}"
 
 simplepdf_vars = {
     'cover-overlay': 'rgba(150, 26, 26, 0.7)',

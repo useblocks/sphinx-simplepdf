@@ -1,0 +1,1249 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="3000"
+   height="3000"
+   viewBox="0 0 793.74998 793.75"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   sodipodi:docname="svg_3000x3000.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.38128507"
+     inkscape:cx="1224.8054"
+     inkscape:cy="999.25234"
+     inkscape:window-width="2560"
+     inkscape:window-height="1375"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <marker
+       style="overflow:visible"
+       id="marker2566"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Tail"
+       markerWidth="10.33044"
+       markerHeight="7"
+       viewBox="0 0 10.33044 7"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         id="path2564"
+         style="fill:none;fill-rule:evenodd;stroke:context-stroke;stroke-width:1;stroke-linecap:round"
+         d="m -3.0000001,-3 -3.1102256,3 3.1102256,3 M -4.0952644e-8,-3 -3.0000001,0 -4.0952644e-8,3 M 3,3 -4.0952644e-8,0 3,-3"
+         sodipodi:nodetypes="ccccccccc" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Tail"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Tail"
+       markerWidth="10.33044"
+       markerHeight="7"
+       viewBox="0 0 10.33044 7"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         id="tail"
+         style="fill:none;fill-rule:evenodd;stroke:context-stroke;stroke-width:1;stroke-linecap:round"
+         d="m -3.0000001,-3 -3.1102256,3 3.1102256,3 M -4.0952644e-8,-3 -3.0000001,0 -4.0952644e-8,3 M 3,3 -4.0952644e-8,0 3,-3"
+         sodipodi:nodetypes="ccccccccc" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow2"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Arrow2"
+       markerWidth="7.6999998"
+       markerHeight="5.5999999"
+       viewBox="0 0 7.7 5.6"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="arrow2L" />
+    </marker>
+    <rect
+       x="135.3553"
+       y="261.34533"
+       width="441.42983"
+       height="228.55269"
+       id="rect773" />
+    <rect
+       x="135.3553"
+       y="261.34534"
+       width="441.42984"
+       height="228.55269"
+       id="rect773-8" />
+    <rect
+       x="135.3553"
+       y="261.34534"
+       width="441.42984"
+       height="228.55269"
+       id="rect773-8-1" />
+    <rect
+       x="135.3553"
+       y="261.34534"
+       width="441.42984"
+       height="228.55269"
+       id="rect773-8-1-0" />
+    <rect
+       x="135.3553"
+       y="261.34534"
+       width="441.42984"
+       height="228.55269"
+       id="rect773-8-1-0-4" />
+    <rect
+       x="135.3553"
+       y="261.34534"
+       width="441.42984"
+       height="228.55269"
+       id="rect773-4" />
+    <rect
+       x="135.3553"
+       y="261.34534"
+       width="441.42984"
+       height="228.55269"
+       id="rect773-8-8" />
+    <rect
+       x="135.3553"
+       y="261.34534"
+       width="441.42984"
+       height="228.55269"
+       id="rect773-8-1-7" />
+    <rect
+       x="135.3553"
+       y="261.34534"
+       width="441.42984"
+       height="228.55269"
+       id="rect773-8-1-0-1" />
+    <rect
+       x="135.3553"
+       y="261.34534"
+       width="441.42984"
+       height="228.55269"
+       id="rect773-8-1-0-4-7" />
+    <marker
+       style="overflow:visible"
+       id="Arrow2-2"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Arrow2"
+       markerWidth="7.6999998"
+       markerHeight="5.5999999"
+       viewBox="0 0 7.7 5.6"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="arrow2L-7" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Tail-2"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Tail"
+       markerWidth="10.33044"
+       markerHeight="7"
+       viewBox="0 0 10.33044 7"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         id="tail-2"
+         style="fill:none;fill-rule:evenodd;stroke:context-stroke;stroke-width:1;stroke-linecap:round"
+         d="m -3.0000001,-3 -3.1102256,3 3.1102256,3 M -4.0952644e-8,-3 -3.0000001,0 -4.0952644e-8,3 M 3,3 -4.0952644e-8,0 3,-3"
+         sodipodi:nodetypes="ccccccccc" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker2566-6"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Tail"
+       markerWidth="10.33044"
+       markerHeight="7"
+       viewBox="0 0 10.33044 7"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         id="path2564-1"
+         style="fill:none;fill-rule:evenodd;stroke:context-stroke;stroke-width:1;stroke-linecap:round"
+         d="m -3.0000001,-3 -3.1102256,3 3.1102256,3 M -4.0952644e-8,-3 -3.0000001,0 -4.0952644e-8,3 M 3,3 -4.0952644e-8,0 3,-3"
+         sodipodi:nodetypes="ccccccccc" />
+    </marker>
+    <rect
+       x="135.3553"
+       y="261.34534"
+       width="441.42984"
+       height="228.55269"
+       id="rect773-3" />
+    <rect
+       x="135.3553"
+       y="261.34534"
+       width="441.42984"
+       height="228.55269"
+       id="rect773-8-6" />
+    <rect
+       x="135.3553"
+       y="261.34534"
+       width="441.42984"
+       height="228.55269"
+       id="rect773-8-1-5" />
+    <rect
+       x="135.3553"
+       y="261.34534"
+       width="441.42984"
+       height="228.55269"
+       id="rect773-8-1-0-6" />
+    <rect
+       x="135.3553"
+       y="261.34534"
+       width="441.42984"
+       height="228.55269"
+       id="rect773-8-1-0-4-3" />
+    <marker
+       style="overflow:visible"
+       id="Arrow2-9"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Arrow2"
+       markerWidth="7.6999998"
+       markerHeight="5.5999999"
+       viewBox="0 0 7.7 5.6"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.7)"
+         d="M -2,-4 9,0 -2,4 c 2,-2.33 2,-5.66 0,-8 z"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         id="arrow2L-4" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Tail-8"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Tail"
+       markerWidth="10.33044"
+       markerHeight="7"
+       viewBox="0 0 10.33044 7"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         id="tail-1"
+         style="fill:none;fill-rule:evenodd;stroke:context-stroke;stroke-width:1;stroke-linecap:round"
+         d="m -3.0000001,-3 -3.1102256,3 3.1102256,3 M -4.0952644e-8,-3 -3.0000001,0 -4.0952644e-8,3 M 3,3 -4.0952644e-8,0 3,-3"
+         sodipodi:nodetypes="ccccccccc" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker2566-2"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Tail"
+       markerWidth="10.33044"
+       markerHeight="7"
+       viewBox="0 0 10.33044 7"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         id="path2564-9"
+         style="fill:none;fill-rule:evenodd;stroke:context-stroke;stroke-width:1;stroke-linecap:round"
+         d="m -3.0000001,-3 -3.1102256,3 3.1102256,3 M -4.0952644e-8,-3 -3.0000001,0 -4.0952644e-8,3 M 3,3 -4.0952644e-8,0 3,-3"
+         sodipodi:nodetypes="ccccccccc" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g838"
+       transform="translate(230.86588,-50.353543)">
+      <rect
+         style="fill:#800000;fill-opacity:1;stroke:#000000;stroke-width:0.7"
+         id="rect234"
+         width="121.38818"
+         height="64.97657"
+         x="30.047752"
+         y="59.962505" />
+      <text
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,-3.265036,-6.0209418)"
+         id="text771"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:0.8;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect773);fill:#000000;fill-opacity:1;stroke:none"><tspan
+           x="135.35547"
+           y="287.85054"
+           id="tspan4316"><tspan
+             style="fill:#ececec"
+             id="tspan4314">This is a test
+</tspan></tspan><tspan
+           x="135.35547"
+           y="319.85054"
+           id="tspan4320"><tspan
+             style="fill:#ececec"
+             id="tspan4318">
+</tspan></tspan><tspan
+           x="135.35547"
+           y="351.85054"
+           id="tspan4324"><tspan
+             style="fill:#ececec"
+             id="tspan4322">And another test on a </tspan></tspan><tspan
+           x="135.35547"
+           y="383.85054"
+           id="tspan4328"><tspan
+             style="fill:#ececec"
+             id="tspan4326">newline with automatic </tspan></tspan><tspan
+           x="135.35547"
+           y="415.85054"
+           id="tspan4332"><tspan
+             style="fill:#ececec"
+             id="tspan4330">newline-breaks.
+</tspan></tspan><tspan
+           x="135.35547"
+           y="447.85054"
+           id="tspan4336"><tspan
+             style="fill:#ececec"
+             id="tspan4334">
+</tspan></tspan><tspan
+           x="135.35547"
+           y="479.85054"
+           id="tspan4340"><tspan
+             style="fill:#ececec"
+             id="tspan4338">1234567890  ®</tspan></tspan></text>
+    </g>
+    <g
+       id="g838-8"
+       transform="translate(464.13571,58.226493)"
+       inkscape:transform-center-x="249.21797"
+       inkscape:transform-center-y="-4.3628474">
+      <rect
+         style="fill:#c87137;fill-opacity:1;stroke:#000000;stroke-width:0.7"
+         id="rect234-4"
+         width="121.38818"
+         height="64.97657"
+         x="30.047752"
+         y="59.962505" />
+      <text
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,-3.265036,-6.0209418)"
+         id="text771-3"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:0.8;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect773-8);fill:#000000;fill-opacity:1;stroke:none"><tspan
+           x="135.35547"
+           y="287.85054"
+           id="tspan4344"><tspan
+             style="fill:#ececec"
+             id="tspan4342">This is a test
+</tspan></tspan><tspan
+           x="135.35547"
+           y="319.85054"
+           id="tspan4348"><tspan
+             style="fill:#ececec"
+             id="tspan4346">
+</tspan></tspan><tspan
+           x="135.35547"
+           y="351.85054"
+           id="tspan4352"><tspan
+             style="fill:#ececec"
+             id="tspan4350">And another test on a </tspan></tspan><tspan
+           x="135.35547"
+           y="383.85054"
+           id="tspan4356"><tspan
+             style="fill:#ececec"
+             id="tspan4354">newline with automatic </tspan></tspan><tspan
+           x="135.35547"
+           y="415.85054"
+           id="tspan4360"><tspan
+             style="fill:#ececec"
+             id="tspan4358">newline-breaks.
+</tspan></tspan><tspan
+           x="135.35547"
+           y="447.85054"
+           id="tspan4364"><tspan
+             style="fill:#ececec"
+             id="tspan4362">
+</tspan></tspan><tspan
+           x="135.35547"
+           y="479.85054"
+           id="tspan4368"><tspan
+             style="fill:#ececec"
+             id="tspan4366">1234567890  ®</tspan></tspan></text>
+    </g>
+    <g
+       id="g838-8-4"
+       transform="translate(15.323167,141.68006)"
+       inkscape:transform-center-x="249.21797"
+       inkscape:transform-center-y="-4.3628474">
+      <rect
+         style="fill:#668000;fill-opacity:1;stroke:#000000;stroke-width:0.7"
+         id="rect234-4-9"
+         width="121.38818"
+         height="64.97657"
+         x="30.047752"
+         y="59.962505" />
+      <text
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,-3.265036,-6.0209418)"
+         id="text771-3-2"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:0.8;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect773-8-1);fill:#000000;fill-opacity:1;stroke:none"><tspan
+           x="135.35547"
+           y="287.85054"
+           id="tspan4372"><tspan
+             style="fill:#ececec"
+             id="tspan4370">This is a test
+</tspan></tspan><tspan
+           x="135.35547"
+           y="319.85054"
+           id="tspan4376"><tspan
+             style="fill:#ececec"
+             id="tspan4374">
+</tspan></tspan><tspan
+           x="135.35547"
+           y="351.85054"
+           id="tspan4380"><tspan
+             style="fill:#ececec"
+             id="tspan4378">And another test on a </tspan></tspan><tspan
+           x="135.35547"
+           y="383.85054"
+           id="tspan4384"><tspan
+             style="fill:#ececec"
+             id="tspan4382">newline with automatic </tspan></tspan><tspan
+           x="135.35547"
+           y="415.85054"
+           id="tspan4388"><tspan
+             style="fill:#ececec"
+             id="tspan4386">newline-breaks.
+</tspan></tspan><tspan
+           x="135.35547"
+           y="447.85054"
+           id="tspan4392"><tspan
+             style="fill:#ececec"
+             id="tspan4390">
+</tspan></tspan><tspan
+           x="135.35547"
+           y="479.85054"
+           id="tspan4396"><tspan
+             style="fill:#ececec"
+             id="tspan4394">1234567890  ®</tspan></tspan></text>
+    </g>
+    <g
+       id="g1505"
+       transform="translate(629.39779,134.76318)">
+      <rect
+         style="fill:#0088aa;fill-opacity:1;stroke:#000000;stroke-width:0.7"
+         id="rect234-4-9-8"
+         width="121.38818"
+         height="64.97657"
+         x="30.047752"
+         y="59.962505" />
+      <text
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,-3.265036,-6.0209418)"
+         id="text771-3-2-9"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:0.8;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect773-8-1-0);fill:#000000;fill-opacity:1;stroke:none"><tspan
+           x="135.35547"
+           y="287.85054"
+           id="tspan4400"><tspan
+             style="fill:#ececec"
+             id="tspan4398">This is a test
+</tspan></tspan><tspan
+           x="135.35547"
+           y="319.85054"
+           id="tspan4404"><tspan
+             style="fill:#ececec"
+             id="tspan4402">
+</tspan></tspan><tspan
+           x="135.35547"
+           y="351.85054"
+           id="tspan4408"><tspan
+             style="fill:#ececec"
+             id="tspan4406">And another test on a </tspan></tspan><tspan
+           x="135.35547"
+           y="383.85054"
+           id="tspan4412"><tspan
+             style="fill:#ececec"
+             id="tspan4410">newline with automatic </tspan></tspan><tspan
+           x="135.35547"
+           y="415.85054"
+           id="tspan4416"><tspan
+             style="fill:#ececec"
+             id="tspan4414">newline-breaks.
+</tspan></tspan><tspan
+           x="135.35547"
+           y="447.85054"
+           id="tspan4420"><tspan
+             style="fill:#ececec"
+             id="tspan4418">
+</tspan></tspan><tspan
+           x="135.35547"
+           y="479.85054"
+           id="tspan4424"><tspan
+             style="fill:#ececec"
+             id="tspan4422">1234567890  ®</tspan></tspan></text>
+    </g>
+    <g
+       id="g1487"
+       transform="translate(614.92727,6.2357425)">
+      <rect
+         style="fill:#800033;fill-opacity:1;stroke:#000000;stroke-width:0.7"
+         id="rect234-4-9-8-9"
+         width="121.38818"
+         height="64.97657"
+         x="-253.64319"
+         y="192.15433" />
+      <text
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,-286.95598,126.17088)"
+         id="text771-3-2-9-5"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:0.8;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect773-8-1-0-4);fill:#000000;fill-opacity:1;stroke:none"><tspan
+           x="135.35547"
+           y="287.85054"
+           id="tspan4428"><tspan
+             style="fill:#ececec"
+             id="tspan4426">This is a test
+</tspan></tspan><tspan
+           x="135.35547"
+           y="319.85054"
+           id="tspan4432"><tspan
+             style="fill:#ececec"
+             id="tspan4430">
+</tspan></tspan><tspan
+           x="135.35547"
+           y="351.85054"
+           id="tspan4436"><tspan
+             style="fill:#ececec"
+             id="tspan4434">And another test on a </tspan></tspan><tspan
+           x="135.35547"
+           y="383.85054"
+           id="tspan4440"><tspan
+             style="fill:#ececec"
+             id="tspan4438">newline with automatic </tspan></tspan><tspan
+           x="135.35547"
+           y="415.85054"
+           id="tspan4444"><tspan
+             style="fill:#ececec"
+             id="tspan4442">newline-breaks.
+</tspan></tspan><tspan
+           x="135.35547"
+           y="447.85054"
+           id="tspan4448"><tspan
+             style="fill:#ececec"
+             id="tspan4446">
+</tspan></tspan><tspan
+           x="135.35547"
+           y="479.85054"
+           id="tspan4452"><tspan
+             style="fill:#ececec"
+             id="tspan4450">1234567890  ®</tspan></tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="69.596283"
+       y="116.97224"
+       id="text829"><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.264583"
+         x="69.596283"
+         y="116.97224"
+         id="tspan831" /></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.765;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2)"
+       d="M 382.30182,70.348508 494.18346,122.42602"
+       id="path2378"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:connection-start="#g838"
+       inkscape:connection-end="#g838-8" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 142.53057,201.64257 285.14216,74.585532"
+       id="path2448"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:connection-start="#g838-8-4"
+       inkscape:connection-end="#g838" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 166.7591,233.50597 194.52498,-2.00274"
+       id="path2484"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:connection-start="#g838-8-4"
+       inkscape:connection-end="#g1487" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.565;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Tail);marker-end:url(#marker2566)"
+       d="M 482.67227,230.13243 659.44554,227.9599"
+       id="path2486"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:connection-start="#g1487"
+       inkscape:connection-end="#g1505" />
+    <g
+       id="g838-0"
+       transform="translate(200.35012,194.17841)">
+      <rect
+         style="fill:#800000;fill-opacity:1;stroke:#000000;stroke-width:0.7"
+         id="rect234-6"
+         width="121.38818"
+         height="64.97657"
+         x="30.047752"
+         y="59.962505" />
+      <text
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,-3.265036,-6.0209418)"
+         id="text771-1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:0.8;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect773-4);fill:#000000;fill-opacity:1;stroke:none"><tspan
+           x="135.35547"
+           y="287.85054"
+           id="tspan4456"><tspan
+             style="fill:#ececec"
+             id="tspan4454">This is a test
+</tspan></tspan><tspan
+           x="135.35547"
+           y="319.85054"
+           id="tspan4460"><tspan
+             style="fill:#ececec"
+             id="tspan4458">
+</tspan></tspan><tspan
+           x="135.35547"
+           y="351.85054"
+           id="tspan4464"><tspan
+             style="fill:#ececec"
+             id="tspan4462">And another test on a </tspan></tspan><tspan
+           x="135.35547"
+           y="383.85054"
+           id="tspan4468"><tspan
+             style="fill:#ececec"
+             id="tspan4466">newline with automatic </tspan></tspan><tspan
+           x="135.35547"
+           y="415.85054"
+           id="tspan4472"><tspan
+             style="fill:#ececec"
+             id="tspan4470">newline-breaks.
+</tspan></tspan><tspan
+           x="135.35547"
+           y="447.85054"
+           id="tspan4476"><tspan
+             style="fill:#ececec"
+             id="tspan4474">
+</tspan></tspan><tspan
+           x="135.35547"
+           y="479.85054"
+           id="tspan4480"><tspan
+             style="fill:#ececec"
+             id="tspan4478">1234567890  ®</tspan></tspan></text>
+    </g>
+    <g
+       id="g838-8-5"
+       transform="translate(433.61995,302.75844)"
+       inkscape:transform-center-x="249.21797"
+       inkscape:transform-center-y="-4.3628474">
+      <rect
+         style="fill:#c87137;fill-opacity:1;stroke:#000000;stroke-width:0.7"
+         id="rect234-4-94"
+         width="121.38818"
+         height="64.97657"
+         x="30.047752"
+         y="59.962505" />
+      <text
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,-3.265036,-6.0209418)"
+         id="text771-3-9"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:0.8;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect773-8-8);fill:#000000;fill-opacity:1;stroke:none"><tspan
+           x="135.35547"
+           y="287.85054"
+           id="tspan4484"><tspan
+             style="fill:#ececec"
+             id="tspan4482">This is a test
+</tspan></tspan><tspan
+           x="135.35547"
+           y="319.85054"
+           id="tspan4488"><tspan
+             style="fill:#ececec"
+             id="tspan4486">
+</tspan></tspan><tspan
+           x="135.35547"
+           y="351.85054"
+           id="tspan4492"><tspan
+             style="fill:#ececec"
+             id="tspan4490">And another test on a </tspan></tspan><tspan
+           x="135.35547"
+           y="383.85054"
+           id="tspan4496"><tspan
+             style="fill:#ececec"
+             id="tspan4494">newline with automatic </tspan></tspan><tspan
+           x="135.35547"
+           y="415.85054"
+           id="tspan4500"><tspan
+             style="fill:#ececec"
+             id="tspan4498">newline-breaks.
+</tspan></tspan><tspan
+           x="135.35547"
+           y="447.85054"
+           id="tspan4504"><tspan
+             style="fill:#ececec"
+             id="tspan4502">
+</tspan></tspan><tspan
+           x="135.35547"
+           y="479.85054"
+           id="tspan4508"><tspan
+             style="fill:#ececec"
+             id="tspan4506">1234567890  ®</tspan></tspan></text>
+    </g>
+    <g
+       id="g838-8-4-0"
+       transform="translate(-15.192601,386.21201)"
+       inkscape:transform-center-x="249.21797"
+       inkscape:transform-center-y="-4.3628474">
+      <rect
+         style="fill:#668000;fill-opacity:1;stroke:#000000;stroke-width:0.7"
+         id="rect234-4-9-9"
+         width="121.38818"
+         height="64.97657"
+         x="30.047752"
+         y="59.962505" />
+      <text
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,-3.265036,-6.0209418)"
+         id="text771-3-2-1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:0.8;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect773-8-1-7);fill:#000000;fill-opacity:1;stroke:none"><tspan
+           x="135.35547"
+           y="287.85054"
+           id="tspan4512"><tspan
+             style="fill:#ececec"
+             id="tspan4510">This is a test
+</tspan></tspan><tspan
+           x="135.35547"
+           y="319.85054"
+           id="tspan4516"><tspan
+             style="fill:#ececec"
+             id="tspan4514">
+</tspan></tspan><tspan
+           x="135.35547"
+           y="351.85054"
+           id="tspan4520"><tspan
+             style="fill:#ececec"
+             id="tspan4518">And another test on a </tspan></tspan><tspan
+           x="135.35547"
+           y="383.85054"
+           id="tspan4524"><tspan
+             style="fill:#ececec"
+             id="tspan4522">newline with automatic </tspan></tspan><tspan
+           x="135.35547"
+           y="415.85054"
+           id="tspan4528"><tspan
+             style="fill:#ececec"
+             id="tspan4526">newline-breaks.
+</tspan></tspan><tspan
+           x="135.35547"
+           y="447.85054"
+           id="tspan4532"><tspan
+             style="fill:#ececec"
+             id="tspan4530">
+</tspan></tspan><tspan
+           x="135.35547"
+           y="479.85054"
+           id="tspan4536"><tspan
+             style="fill:#ececec"
+             id="tspan4534">1234567890  ®</tspan></tspan></text>
+    </g>
+    <g
+       id="g1505-7"
+       transform="translate(598.88203,379.29513)">
+      <rect
+         style="fill:#0088aa;fill-opacity:1;stroke:#000000;stroke-width:0.7"
+         id="rect234-4-9-8-7"
+         width="121.38818"
+         height="64.97657"
+         x="30.047752"
+         y="59.962505" />
+      <text
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,-3.265036,-6.0209418)"
+         id="text771-3-2-9-1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:0.8;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect773-8-1-0-1);fill:#000000;fill-opacity:1;stroke:none"><tspan
+           x="135.35547"
+           y="287.85054"
+           id="tspan4540"><tspan
+             style="fill:#ececec"
+             id="tspan4538">This is a test
+</tspan></tspan><tspan
+           x="135.35547"
+           y="319.85054"
+           id="tspan4544"><tspan
+             style="fill:#ececec"
+             id="tspan4542">
+</tspan></tspan><tspan
+           x="135.35547"
+           y="351.85054"
+           id="tspan4548"><tspan
+             style="fill:#ececec"
+             id="tspan4546">And another test on a </tspan></tspan><tspan
+           x="135.35547"
+           y="383.85054"
+           id="tspan4552"><tspan
+             style="fill:#ececec"
+             id="tspan4550">newline with automatic </tspan></tspan><tspan
+           x="135.35547"
+           y="415.85054"
+           id="tspan4556"><tspan
+             style="fill:#ececec"
+             id="tspan4554">newline-breaks.
+</tspan></tspan><tspan
+           x="135.35547"
+           y="447.85054"
+           id="tspan4560"><tspan
+             style="fill:#ececec"
+             id="tspan4558">
+</tspan></tspan><tspan
+           x="135.35547"
+           y="479.85054"
+           id="tspan4564"><tspan
+             style="fill:#ececec"
+             id="tspan4562">1234567890  ®</tspan></tspan></text>
+    </g>
+    <g
+       id="g1487-1"
+       transform="translate(584.41151,250.76769)">
+      <rect
+         style="fill:#800033;fill-opacity:1;stroke:#000000;stroke-width:0.7"
+         id="rect234-4-9-8-9-5"
+         width="121.38818"
+         height="64.97657"
+         x="-253.64319"
+         y="192.15433" />
+      <text
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,-286.95598,126.17088)"
+         id="text771-3-2-9-5-9"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:0.8;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect773-8-1-0-4-7);fill:#000000;fill-opacity:1;stroke:none"><tspan
+           x="135.35547"
+           y="287.85054"
+           id="tspan4568"><tspan
+             style="fill:#ececec"
+             id="tspan4566">This is a test
+</tspan></tspan><tspan
+           x="135.35547"
+           y="319.85054"
+           id="tspan4572"><tspan
+             style="fill:#ececec"
+             id="tspan4570">
+</tspan></tspan><tspan
+           x="135.35547"
+           y="351.85054"
+           id="tspan4576"><tspan
+             style="fill:#ececec"
+             id="tspan4574">And another test on a </tspan></tspan><tspan
+           x="135.35547"
+           y="383.85054"
+           id="tspan4580"><tspan
+             style="fill:#ececec"
+             id="tspan4578">newline with automatic </tspan></tspan><tspan
+           x="135.35547"
+           y="415.85054"
+           id="tspan4584"><tspan
+             style="fill:#ececec"
+             id="tspan4582">newline-breaks.
+</tspan></tspan><tspan
+           x="135.35547"
+           y="447.85054"
+           id="tspan4588"><tspan
+             style="fill:#ececec"
+             id="tspan4586">
+</tspan></tspan><tspan
+           x="135.35547"
+           y="479.85054"
+           id="tspan4592"><tspan
+             style="fill:#ececec"
+             id="tspan4590">1234567890  ®</tspan></tspan></text>
+    </g>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.765;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2-2)"
+       d="M 351.78606,314.88046 463.6677,366.95797"
+       id="path2378-7"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:connection-start="#g838-0"
+       inkscape:connection-end="#g838-8-5" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 112.01481,446.17452 254.6264,319.11749"
+       id="path2448-7"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:connection-start="#g838-8-4-0"
+       inkscape:connection-end="#g838-0" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 136.24333,478.03792 194.52499,-2.00274"
+       id="path2484-6"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:connection-start="#g838-8-4-0"
+       inkscape:connection-end="#g1487-1" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.565;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Tail-2);marker-end:url(#marker2566-6)"
+       d="m 452.15651,474.66438 176.77327,-2.17253"
+       id="path2486-7"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:connection-start="#g1487-1"
+       inkscape:connection-end="#g1505-7" />
+    <g
+       id="g838-3"
+       transform="translate(194.13447,460.89243)">
+      <rect
+         style="fill:#800000;fill-opacity:1;stroke:#000000;stroke-width:0.7"
+         id="rect234-9"
+         width="121.38818"
+         height="64.97657"
+         x="30.047752"
+         y="59.962505" />
+      <text
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,-3.265036,-6.0209418)"
+         id="text771-0"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:0.8;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect773-3);display:inline;fill:#000000;fill-opacity:1;stroke:none"><tspan
+           x="135.35547"
+           y="287.85054"
+           id="tspan4596"><tspan
+             style="fill:#ececec"
+             id="tspan4594">This is a test
+</tspan></tspan><tspan
+           x="135.35547"
+           y="319.85054"
+           id="tspan4600"><tspan
+             style="fill:#ececec"
+             id="tspan4598">
+</tspan></tspan><tspan
+           x="135.35547"
+           y="351.85054"
+           id="tspan4604"><tspan
+             style="fill:#ececec"
+             id="tspan4602">And another test on a </tspan></tspan><tspan
+           x="135.35547"
+           y="383.85054"
+           id="tspan4608"><tspan
+             style="fill:#ececec"
+             id="tspan4606">newline with automatic </tspan></tspan><tspan
+           x="135.35547"
+           y="415.85054"
+           id="tspan4612"><tspan
+             style="fill:#ececec"
+             id="tspan4610">newline-breaks.
+</tspan></tspan><tspan
+           x="135.35547"
+           y="447.85054"
+           id="tspan4616"><tspan
+             style="fill:#ececec"
+             id="tspan4614">
+</tspan></tspan><tspan
+           x="135.35547"
+           y="479.85054"
+           id="tspan4620"><tspan
+             style="fill:#ececec"
+             id="tspan4618">1234567890  ®</tspan></tspan></text>
+    </g>
+    <g
+       id="g838-8-8"
+       transform="translate(427.4043,569.47246)"
+       inkscape:transform-center-x="249.21797"
+       inkscape:transform-center-y="-4.3628474">
+      <rect
+         style="fill:#c87137;fill-opacity:1;stroke:#000000;stroke-width:0.7"
+         id="rect234-4-8"
+         width="121.38818"
+         height="64.97657"
+         x="30.047752"
+         y="59.962505" />
+      <text
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,-3.265036,-6.0209418)"
+         id="text771-3-5"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:0.8;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect773-8-6);display:inline;fill:#000000;fill-opacity:1;stroke:none"><tspan
+           x="135.35547"
+           y="287.85054"
+           id="tspan4624"><tspan
+             style="fill:#ececec"
+             id="tspan4622">This is a test
+</tspan></tspan><tspan
+           x="135.35547"
+           y="319.85054"
+           id="tspan4628"><tspan
+             style="fill:#ececec"
+             id="tspan4626">
+</tspan></tspan><tspan
+           x="135.35547"
+           y="351.85054"
+           id="tspan4632"><tspan
+             style="fill:#ececec"
+             id="tspan4630">And another test on a </tspan></tspan><tspan
+           x="135.35547"
+           y="383.85054"
+           id="tspan4636"><tspan
+             style="fill:#ececec"
+             id="tspan4634">newline with automatic </tspan></tspan><tspan
+           x="135.35547"
+           y="415.85054"
+           id="tspan4640"><tspan
+             style="fill:#ececec"
+             id="tspan4638">newline-breaks.
+</tspan></tspan><tspan
+           x="135.35547"
+           y="447.85054"
+           id="tspan4644"><tspan
+             style="fill:#ececec"
+             id="tspan4642">
+</tspan></tspan><tspan
+           x="135.35547"
+           y="479.85054"
+           id="tspan4648"><tspan
+             style="fill:#ececec"
+             id="tspan4646">1234567890  ®</tspan></tspan></text>
+    </g>
+    <g
+       id="g838-8-4-09"
+       transform="translate(-21.408239,652.92603)"
+       inkscape:transform-center-x="249.21797"
+       inkscape:transform-center-y="-4.3628474">
+      <rect
+         style="fill:#668000;fill-opacity:1;stroke:#000000;stroke-width:0.7"
+         id="rect234-4-9-6"
+         width="121.38818"
+         height="64.97657"
+         x="30.047752"
+         y="59.962505" />
+      <text
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,-3.265036,-6.0209418)"
+         id="text771-3-2-3"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:0.8;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect773-8-1-5);display:inline;fill:#000000;fill-opacity:1;stroke:none"><tspan
+           x="135.35547"
+           y="287.85054"
+           id="tspan4652"><tspan
+             style="fill:#ececec"
+             id="tspan4650">This is a test
+</tspan></tspan><tspan
+           x="135.35547"
+           y="319.85054"
+           id="tspan4656"><tspan
+             style="fill:#ececec"
+             id="tspan4654">
+</tspan></tspan><tspan
+           x="135.35547"
+           y="351.85054"
+           id="tspan4660"><tspan
+             style="fill:#ececec"
+             id="tspan4658">And another test on a </tspan></tspan><tspan
+           x="135.35547"
+           y="383.85054"
+           id="tspan4664"><tspan
+             style="fill:#ececec"
+             id="tspan4662">newline with automatic </tspan></tspan><tspan
+           x="135.35547"
+           y="415.85054"
+           id="tspan4668"><tspan
+             style="fill:#ececec"
+             id="tspan4666">newline-breaks.
+</tspan></tspan><tspan
+           x="135.35547"
+           y="447.85054"
+           id="tspan4672"><tspan
+             style="fill:#ececec"
+             id="tspan4670">
+</tspan></tspan><tspan
+           x="135.35547"
+           y="479.85054"
+           id="tspan4676"><tspan
+             style="fill:#ececec"
+             id="tspan4674">1234567890  ®</tspan></tspan></text>
+    </g>
+    <g
+       id="g1505-8"
+       transform="translate(592.66638,646.00915)">
+      <rect
+         style="fill:#0088aa;fill-opacity:1;stroke:#000000;stroke-width:0.7"
+         id="rect234-4-9-8-5"
+         width="121.38818"
+         height="64.97657"
+         x="30.047752"
+         y="59.962505" />
+      <text
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,-3.265036,-6.0209418)"
+         id="text771-3-2-9-6"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:0.8;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect773-8-1-0-6);display:inline;fill:#000000;fill-opacity:1;stroke:none"><tspan
+           x="135.35547"
+           y="287.85054"
+           id="tspan4680"><tspan
+             style="fill:#ececec"
+             id="tspan4678">This is a test
+</tspan></tspan><tspan
+           x="135.35547"
+           y="319.85054"
+           id="tspan4684"><tspan
+             style="fill:#ececec"
+             id="tspan4682">
+</tspan></tspan><tspan
+           x="135.35547"
+           y="351.85054"
+           id="tspan4688"><tspan
+             style="fill:#ececec"
+             id="tspan4686">And another test on a </tspan></tspan><tspan
+           x="135.35547"
+           y="383.85054"
+           id="tspan4692"><tspan
+             style="fill:#ececec"
+             id="tspan4690">newline with automatic </tspan></tspan><tspan
+           x="135.35547"
+           y="415.85054"
+           id="tspan4696"><tspan
+             style="fill:#ececec"
+             id="tspan4694">newline-breaks.
+</tspan></tspan><tspan
+           x="135.35547"
+           y="447.85054"
+           id="tspan4700"><tspan
+             style="fill:#ececec"
+             id="tspan4698">
+</tspan></tspan><tspan
+           x="135.35547"
+           y="479.85054"
+           id="tspan4704"><tspan
+             style="fill:#ececec"
+             id="tspan4702">1234567890  ®</tspan></tspan></text>
+    </g>
+    <g
+       id="g1487-11"
+       transform="translate(578.19586,517.48171)">
+      <rect
+         style="fill:#800033;fill-opacity:1;stroke:#000000;stroke-width:0.7"
+         id="rect234-4-9-8-9-59"
+         width="121.38818"
+         height="64.97657"
+         x="-253.64319"
+         y="192.15433" />
+      <text
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,-286.95598,126.17088)"
+         id="text771-3-2-9-5-8"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:0.8;font-family:'Liberation Serif';-inkscape-font-specification:'Liberation Serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect773-8-1-0-4-3);display:inline;fill:#000000;fill-opacity:1;stroke:none"><tspan
+           x="135.35547"
+           y="287.85054"
+           id="tspan4708"><tspan
+             style="fill:#ececec"
+             id="tspan4706">This is a test
+</tspan></tspan><tspan
+           x="135.35547"
+           y="319.85054"
+           id="tspan4712"><tspan
+             style="fill:#ececec"
+             id="tspan4710">
+</tspan></tspan><tspan
+           x="135.35547"
+           y="351.85054"
+           id="tspan4716"><tspan
+             style="fill:#ececec"
+             id="tspan4714">And another test on a </tspan></tspan><tspan
+           x="135.35547"
+           y="383.85054"
+           id="tspan4720"><tspan
+             style="fill:#ececec"
+             id="tspan4718">newline with automatic </tspan></tspan><tspan
+           x="135.35547"
+           y="415.85054"
+           id="tspan4724"><tspan
+             style="fill:#ececec"
+             id="tspan4722">newline-breaks.
+</tspan></tspan><tspan
+           x="135.35547"
+           y="447.85054"
+           id="tspan4728"><tspan
+             style="fill:#ececec"
+             id="tspan4726">
+</tspan></tspan><tspan
+           x="135.35547"
+           y="479.85054"
+           id="tspan4732"><tspan
+             style="fill:#ececec"
+             id="tspan4730">1234567890  ®</tspan></tspan></text>
+    </g>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.765;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2-9)"
+       d="m 345.57041,581.59448 111.88164,52.07751"
+       id="path2378-4"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:connection-start="#g838-3"
+       inkscape:connection-end="#g838-8-8" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 105.79917,712.88854 248.41075,585.83151"
+       id="path2448-8"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:connection-start="#g838-8-4-09"
+       inkscape:connection-end="#g838-3" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 130.0277,744.75194 324.55267,742.7492"
+       id="path2484-1"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:connection-start="#g838-8-4-09"
+       inkscape:connection-end="#g1487-11" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.565;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Tail-8);marker-end:url(#marker2566-2)"
+       d="m 445.94086,741.3784 176.77327,-2.17253"
+       id="path2486-0"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:connection-start="#g1487-11"
+       inkscape:connection-end="#g1505-8" />
+  </g>
+</svg>

@@ -8,6 +8,8 @@ version: 2
 # Set the version of Python and other tools you might need
 build:
   os: ubuntu-22.04
+  apt_packages:
+    - default-jre  # This seems to be ignored
   tools:
     python: "3.9"
   # We can only define the content of the final deployment, if we do the complete build on our own.apt_packages:
@@ -15,8 +17,10 @@ build:
   commands:
     - pip install .
     - pip install -r docs/doc-requirements.txt
-    - sphinx-build -M html docs docs/_build
     - sphinx-build -M simplepdf docs docs/_build2  # Use a different build-folder for a really clean build
-    - cp docs/_build2/simplepdf/Sphinx-SimplePDF.pdf docs/_build/html/_static/Sphinx-SimplePDF.pdf
+    - sphinx-build -M simplepdf demo demo/_build  # Use a different build-folder for a really clean build
+    - cp demo/_build/simplepdf/Sphinx-SimplePDF-DEMO.pdf docs/_static/Sphinx-SimplePDF-DEMO.pdf
+    - cp docs/_build2/simplepdf/Sphinx-SimplePDF.pdf docs/_static/Sphinx-SimplePDF.pdf
+    - sphinx-build -M html docs docs/_build  # HTML latest, because it needs the built PDF files
     - mkdir -p _readthedocs/html/
     - cp -r docs/_build/html/* _readthedocs/html/
