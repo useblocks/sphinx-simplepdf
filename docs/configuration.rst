@@ -18,6 +18,8 @@ The key is used as identifier inside scss-files and the value must be a css/scss
        'links': 'FA2323',
        'cover-bg' 'url(cover-bg.jpg) no-repeat center'
        'cover-overlay': 'rgba(250, 35, 35, 0.5)',
+       'top-left-content': 'counter(page)',
+       'bottom-center-content': '"Custom footer content"',
    }
 
 This values are used then inside the scss files, which define the PDF layout.
@@ -26,14 +28,27 @@ Config vars
 -----------
 
 :primary: Primary color
+:primary_opaque: Primary color with opaqueness. Example ``rgba(150, 26, 26, .5)``
 :secondary: Secondary color
 :cover: Text color on the cover
 :white: A color representing white
 :links: Color for links
 :cover-bg: Cover background image. Can be a single color or even an image path.
 :cover-overlay: RBG based color overlay for the cover-image. Example: ``rgba(250, 35, 35, 0.5)``
+:top-left-content: Text or css function to display on pdf output. Example: ``counter(page)``
+:top-center-content: Text or css function to display on pdf output.
+:top-right-content: Text or css function to display on pdf output.
+:bottom-left-content: Text or css function to display on pdf output.
+:bottom-center-content: Text or css function to display on pdf output.
+:bottom-right-content: Text or css function to display on pdf output.
+
 
 All variables are defined inside ``/themes/sphinx_simplepdf/sttuc/stles/sources/_variables.scss``.
+
+.. hint::
+
+   If a content-string shall be set, please make sure to use extra `"` around the string.
+   Example: `'bottom-center-content': '"Custom footer content"'`.
 
 Examples
 --------
