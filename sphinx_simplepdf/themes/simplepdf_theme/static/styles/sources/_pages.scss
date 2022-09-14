@@ -22,27 +22,79 @@
   @top-left {
     background: $primary;
     color: $white;
-    content: counter(page);
+    content: $top-left-content;
     height: 1cm;
     text-align: center;
     width: 1cm;
   }
 
   @top-center {
-    background: $primary;
-    content: "";
-    display: block;
-    height: 0.05cm;
-    opacity: 0.5;
+    content: $top-center-content;
+    font-size: 9pt;
+    height: 1cm;
+    text-align: center;
+    vertical-align: middle;
     width: 100%;
+    border-bottom-color: $primary-opaque;
+    border-bottom-style: solid;
+    border-bottom-width: 0.05cm;
   }
 
   @top-right {
-    content: string(heading);
+    content: $top-right-content;
+    font-size: 9pt;
+    height: 1cm;
+    text-align: right;
+    vertical-align: middle;
+    width: 100%;
+    border-bottom-color: $primary-opaque;
+    border-bottom-style: solid;
+    border-bottom-width: 0.05cm;
+  }
+
+  @bottom-left {
+    content: $bottom-left-content;
+    text-align: left;
     font-size: 9pt;
     height: 1cm;
     vertical-align: middle;
     width: 100%;
+    border-top-color: $primary-opaque;
+    border-top-style: solid;
+    border-top-width: 0.05cm;
+    margin-top: 3px;
+    position: absolute;
+    bottom: 30pt;
+  }
+
+  @bottom-center {
+    content: $bottom-center-content;
+    text-align: center;
+    font-size: 9pt;
+    height: 1cm;
+    vertical-align: middle;
+    width: 100%;
+    border-top-color: $primary-opaque;
+    border-top-style: solid;
+    border-top-width: 0.05cm;
+    margin-top: 3px;
+    position: absolute;
+    bottom: 30pt;
+  }
+
+  @bottom-right {
+    content: $bottom-right-content;
+    text-align: right;
+    font-size: 9pt;
+    height: 1cm;
+    vertical-align: middle;
+    width: 100%;
+    margin-top: 3px;
+    position: absolute;
+    bottom: 30pt;
+    border-top-color: $primary-opaque;
+    border-top-style: solid;
+    border-top-width: 0.05cm;
   }
 }
 

@@ -26,12 +26,20 @@ Config vars
 -----------
 
 :primary: Primary color
+:primary_opaque: Primary color with opaqueness. Example ``rgba(150, 26, 26, .5)``
 :secondary: Secondary color
 :cover: Text color on the cover
 :white: A color representing white
 :links: Color for links
 :cover-bg: Cover background image. Can be a single color or even an image path.
 :cover-overlay: RBG based color overlay for the cover-image. Example: ``rgba(250, 35, 35, 0.5)``
+:top-left-content: Text or css function to display on pdf output. Example: ``counter(page)``
+:top-center-content: Text or css function to display on pdf output. Strings could be defined with extra quotation mark. Example: ``"DRAFT"``
+:top-right-content: Text or css function to display on pdf output. Examples see above.
+:bottom-left-content: Text or css function to display on pdf output.  Examples see above.
+:bottom-center-content: Text or css function to display on pdf output. Examples see above.
+:bottom-right-content: Text or css function to display on pdf output. Examples see above.
+
 
 All variables are defined inside ``/themes/sphinx_simplepdf/sttuc/stles/sources/_variables.scss``.
 
