@@ -27,3 +27,17 @@ Workflow
 
 7. Builders starts **weasyprint** with ``index.html`` as input
 8. Done, PDF file exists under ``_build/simplepdf``.
+
+DEMO project
+------------
+The DEMO project is stored under `/demo/` and provides a common way for all
+developers and users to test everything on a common base.
+
+It can be build by the following steps:
+
+- ``git clone git@github.com:useblocks/sphinx-simplepdf.git``
+- ``cd sphinx-simplepdf``
+- ``pip install .``
+- ``cd demo``
+- ``pip install -r doc-requirements.txt``
+- ``sphinx-build -a -E -b simplepdf . _build/``
