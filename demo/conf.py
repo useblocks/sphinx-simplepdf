@@ -25,7 +25,6 @@ extensions = [
     'sphinx_simplepdf',
     'sphinxcontrib.plantuml',
     'sphinxcontrib.needs',
-    'sphinx_copybutton',
     'sphinx.ext.autodoc',
 ]
 
