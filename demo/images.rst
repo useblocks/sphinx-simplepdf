@@ -26,3 +26,22 @@ JPG
 This jpg file has the dimensions 2600x2176.
 
 .. image:: /_static/phetus_2560x2176.jpg
+
+Images in lists
+---------------
+
+* An image on level 1
+* .. image:: /_static/phetus_2560x2176.jpg
+
+  * An image on level 2
+  * .. image:: /_static/svg_3000x3000.svg
+
+Images in tables
+----------------
+
+.. list-table::
+
+   - * Image 1
+     * Image 2
+   - * .. image:: /_static/phetus_2560x2176.jpg
+     * .. image:: /_static/svg_process.svg
