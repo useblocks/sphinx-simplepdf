@@ -6,6 +6,10 @@ Release 1.4
 :released: under development
 
 * **Enhancement**: Adds `demo` PDF to test various layout & style elements.
+* **Enhancement**: Replace not-open fonts with open-source fonts.
+* **Enhancement**: All fonts are provided by this package. No pre-installed fonts are needed.
+* **Bugfix**: Image handling is done much better.
+* **Bugfix**: Font location fixes -> No fonts warnings anymore.
 * **Bugfix**: ``html_theme_options`` gets overwritten to suppress Sphinx warnings.
 * **Bugfix**: HTML file operations are using hard-coded `utf-8` de/encoding.
 

@@ -12,7 +12,7 @@
     margin: 0;
 
     h1 {
-        font-family: "Helvetica Neue Bold";
+        font-family: "Work Sans", sans-serif;
         color: $primary;
         font-size: 38pt;
         margin: 5cm 2cm 0 2cm;
@@ -30,7 +30,6 @@
         top: 0;
         background: $cover-overlay;
         .logo {
-            // font-family: "D3 Euronism", sans-serif;
             font-size: 24pt;
             color: $cover;
             width: 200px;
@@ -56,7 +55,7 @@
                 height: 150pt;
 
                 .title-cover {
-                    font-family: "Helvetica Neue Bold", sans-serif;
+                    font-family: "Work Sans Bold", sans-serif;
                     font-size: 45pt;
                     margin-bottom: 0;
                     margin-top: 0;
@@ -65,7 +64,7 @@
                 }
 
                 .subtitle-cover {
-                    font-family: "Helvetica Neue Light", sans-serif;
+                    font-family: "Work Sans Bold", sans-serif;
                     font-weight: bolder;
                     font-size: 28pt;
                     // text-transform: uppercase;
@@ -74,7 +73,7 @@
                 }
 
                 .meta {
-                    font-family: 'Helvetica Neue Medium';
+                    font-family: 'Work Sans';
                     font-size: 18pt;
                     margin-top: 12pt;
                     margin-bottom: 0;
@@ -101,7 +100,7 @@
         }
 
         .cover-footer {
-            font-family: 'Helvetica Neue';
+            font-family: 'Work Sans';
             font-size: 11pt;
             margin-top: 3px;
             position: absolute;

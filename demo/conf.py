@@ -13,7 +13,8 @@ import datetime
 
 sys.path.append(os.path.dirname(__file__))  # Needed for test_py_module
 
-project = 'Sphinx-SimplePDF-DEMO'
+# project = 'Sphinx-SimplePDF-DEMO'
+project = 'Demo Versions'
 copyright = '2022, team useblocks'
 author = 'team useblocks'
 

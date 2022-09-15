@@ -61,6 +61,24 @@
 //}
 
 @font-face {
+    font-family: Work Sans Bold;
+    font-weight: bold;
+    src: url(fonts/WorkSans-Bold.ttf);
+}
+
+@font-face {
+    font-family: Work Sans Bold;
+    font-weight: 400;
+    src: url(fonts/WorkSans-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: Work Sans;
+    font-weight: 400;
+    src: url(fonts/WorkSans-Regular.ttf);
+}
+
+@font-face {
     font-family: Fira Sans;
     font-weight: 400;
     src: url(fonts/FiraSans-Regular.otf);
@@ -97,6 +115,6 @@
 	//font-weight: normal;
 	//font-style: normal;
 	src: url("fonts/fa-solid-900.eot");
-	src: url("fonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("../fonts/fa-solid-900.ttf") format("truetype"), url("../fonts/fa-solid-900.svg#fontawesome-webfont") format("svg")
+	src: url("fonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("fonts/fa-solid-900.ttf") format("truetype"), url("fonts/fa-solid-900.svg#fontawesome-webfont") format("svg")
     // src: url("../fonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("../fonts/fa-solid-900.woff") format("woff"), url("../fonts/fa-solid-900.woff2") format("woff2"), url("../fonts/fa-solid-900.ttf") format("truetype"), url("../fonts/fa-solid-900.svg#fontawesome-webfont") format("svg");
 }
