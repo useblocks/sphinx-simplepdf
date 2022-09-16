@@ -49,9 +49,8 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
         # Generate main.css
         print('Generating css files from scss-templates')
         css_folder = os.path.join(self.app.outdir, f'_static')
-        scss_folder = os.path.join(os.path.dirname(__file__), '../themes/simplepdf_theme/static/styles/sources')
-        #print(f'css_folder: {css_folder}')
-        #print(f'scss_folder: {scss_folder}')
+        scss_folder = os.path.join(os.path.dirname(__file__), '..', 'themes', 'simplepdf_theme',
+                                   'static', 'styles', 'sources')
         sass.compile(dirname=(scss_folder, css_folder), output_style='nested',
                      custom_functions={sass.SassFunction('config', ('$a', '$b'), self.get_config_var)}
                      )
@@ -104,8 +103,6 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
             link['href'] = link['href'].replace(f'{self.app.config.root_doc}.html', '')
 
         return soup.prettify(formatter='html')
-
-
 
 
 def setup(app: Sphinx) -> Dict[str, Any]:
