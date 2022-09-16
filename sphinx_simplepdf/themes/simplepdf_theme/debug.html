@@ -1,0 +1,63 @@
+<h1>
+  SimplePDF Debug output
+</h1>
+
+<p>
+  This is some build environment specific output.
+  It shall help to identify problems during the build process.
+</p>
+
+<p>
+  You see this output because <b>simplepdf_debug=True</b> is set on the <b>conf.py</b> file.
+</p>
+
+<h2>Sphinx</h2>
+
+<b>Version</b>: {{spd.version}} <br>
+<b>Srcdir</b>: {{spd.confidr}} <br>
+<b>Confdir</b>: {{spd.srcdir}} <br>
+<b>Outdir</b>: {{spd.outdir}} <br>
+
+<h3>Extensions</h3>
+<p>
+Used sphinx extension can be also find in the packages list of Python, which also includes the used version.
+</p>
+
+<p>
+  {% for x in spd.extensions %}
+    {{ x }}<br>
+  {% endfor %}
+</p>
+
+<h3>SimplePDF Configs</h3>
+  {% for key, value in spd.simple_config.items() %}
+    <b>{{ key }}</b>: {{ value}}<br>
+  {% endfor %}
+
+
+<h2>Python</h2>
+
+<b>Executable</b>: {{pyd.py_exec}} <br>
+<b>Operating System</b>: {{pyd.os[0]}} (Release: {{pyd.os[1]}}) <br>
+
+<h3>Packages</h3>
+<p>
+  This chapter shows a list of installed packages in the current Python environment, which was used to build this
+  PDF. The second value is the version number.
+</p>
+
+<p>
+  Import libraries for the PDF build are printed in bold.
+</p>
+
+<p>
+  {% set packages = pyd.get_packages()%}
+  {% set vips = ['sphinx_simplepdf', 'sphinx', 'weasyprint'] %}
+
+  {% for x in packages|sort %}
+    {% if x in  vips%}<b>{% endif %}
+    {{ x }}: {{ packages[x] }} <br>
+    {% if x in  vips%}</b>{% endif %}
+  {% endfor %}
+</p>
+

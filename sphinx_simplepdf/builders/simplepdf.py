@@ -6,9 +6,13 @@ import sass
 
 from bs4 import BeautifulSoup
 
+
+from sphinx import __version__
 from sphinx.application import Sphinx
 
 from sphinx.builders.singlehtml import SingleFileHTMLBuilder
+
+from sphinx_simplepdf.builders.debug import DebugPython
 
 
 class SimplePdfBuilder(SingleFileHTMLBuilder):
@@ -27,6 +31,20 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
             self.app.config.html_theme = "simplepdf_theme"
             self.app.config.html_sidebars = {'**': ["localtoc.html"]}
             self.app.config.html_theme_options = {}  # Sphinx would write warnings, if given options are unsupported.
+
+            # Add SimplePDf specific functions to the html_context. Mostly needed for printing debug information.
+            self.app.config.html_context['simplepdf_debug'] = self.config['simplepdf_debug']
+            self.app.config.html_context['pyd'] = DebugPython()
+
+            debug_sphinx = {
+                'version': __version__,
+                'confidr': self.app.confdir,
+                'srcdir': self.app.srcdir,
+                'outdir': self.app.outdir,
+                'extensions': self.app.config.extensions,
+                'simple_config': {x.name: x.value for x in self.app.config if x.name.startswith('simplepdf')}
+            }
+            self.app.config.html_context['spd'] = debug_sphinx
 
         # Generate main.css
         print('Generating css files from scss-templates')
@@ -88,8 +106,11 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
         return soup.prettify(formatter='html')
 
 
+
+
 def setup(app: Sphinx) -> Dict[str, Any]:
     app.add_config_value("simplepdf_vars", {}, "html", types=[dict])
+    app.add_config_value("simplepdf_debug", False, "html", types=bool)
     app.add_builder(SimplePdfBuilder)
 
     return {

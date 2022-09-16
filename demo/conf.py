@@ -35,6 +35,8 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 plantuml_output_format = "svg_img"
 
+simplepdf_debug = True
+
 simplepdf_vars = {
     'cover-overlay': 'rgba(26, 150, 26, 0.7)',
     'primary-opaque': 'rgba(26, 150, 26, 0.7)',

@@ -3,6 +3,9 @@
 Configuration
 =============
 
+simplepdf_vars
+--------------
+
 **Sphinx-SimplePDF** provides the config variable ``simplepdf_vars``, which must be a dictionary.
 The key is used as identifier inside scss-files and the value must be a css/scss compatible string.
 
@@ -25,7 +28,7 @@ The key is used as identifier inside scss-files and the value must be a css/scss
 This values are used then inside the scss files, which define the PDF layout.
 
 Config vars
------------
+~~~~~~~~~~~
 
 :primary: Primary color
 :primary_opaque: Primary color with opaqueness. Example ``rgba(150, 26, 26, .5)``
@@ -51,12 +54,12 @@ All variables are defined inside ``/themes/sphinx_simplepdf/sttuc/stles/sources/
    Example: `'bottom-center-content': '"Custom footer content"'`.
 
 Examples
---------
+~~~~~~~~
 The values from the configuration are taken as they are and injected into ``scss`` files, which are used to generate
 the css files. So each value or command, which is supported by ``scss``, can be set.
 
 Color selection
-~~~~~~~~~~~~~~~
++++++++++++++++
 .. code-block:: python
 
    simplepdf_vars = {
@@ -65,7 +68,7 @@ Color selection
    }
 
 File references
-~~~~~~~~~~~~~~~
++++++++++++++++
 .. code-block:: python
 
    simplepdf_vars = {
@@ -76,10 +79,27 @@ The file path must be relative to the Sphinx _static folder.
 So in the above example the image is stored under ``/_static/cover-bg-jpg``.
 
 SimplePDF docs
-~~~~~~~~~~~~~~
+++++++++++++++
 This is ``simplepdf_vars`` as it is used inside the **Sphinx-SimplePDF** ``conf.py`` file:
 
 .. literalinclude:: conf.py
    :lines: 31-34
+
+
+simplepldf_debug
+----------------
+A boolean value. If set to ``True``, **Sphinx-SimplePDF** will add some debug information add the end of the PDF.
+
+This contains data about the used Python Environment and the Sphinx project.
+It is mainly used if any problems occur and extra information is needed.
+
+``simplepdf_debug = True``
+
+You can see an example in our :download:`PDF Demo <_static/Sphinx-SimplePDF-DEMO.pdf>` at the end of the file.
+
+.. warning::
+
+   The debug output contains absolute file paths and maybe other critical information.
+   Do not use for official PDF releases.
 
 
