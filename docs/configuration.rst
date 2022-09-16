@@ -86,7 +86,7 @@ This is ``simplepdf_vars`` as it is used inside the **Sphinx-SimplePDF** ``conf.
    :lines: 31-34
 
 
-simplepldf_debug
+simplepdf_debug
 ----------------
 A boolean value. If set to ``True``, **Sphinx-SimplePDF** will add some debug information add the end of the PDF.
 
