@@ -20,7 +20,7 @@
 
 <h3>Extensions</h3>
 <p>
-Used sphinx extension can be also find in the packages list of Python, which also includes the used version.
+Used Sphinx extension can be also found in the packages list of Python, which also includes the used version.
 </p>
 
 <p>
@@ -46,18 +46,24 @@ Used sphinx extension can be also find in the packages list of Python, which als
   PDF. The second value is the version number.
 </p>
 
+{% set packages = pyd.get_packages()%}
+{% set vips = ['sphinx_simplepdf', 'sphinx', 'weasyprint', 'PIL', 'pillow'] %}
+
+<h4>Important packages</h4>
 <p>
-  Import libraries for the PDF build are printed in bold.
+  {% for x in packages|sort %}
+    {% if x in  vips %}
+      <b>{{ x }}: {{ packages[x] }}</b> <br>
+    {% endif %}
+  {% endfor %}
 </p>
 
+<h4>Other packages</h4>
 <p>
-  {% set packages = pyd.get_packages()%}
-  {% set vips = ['sphinx_simplepdf', 'sphinx', 'weasyprint'] %}
-
   {% for x in packages|sort %}
-    {% if x in  vips%}<b>{% endif %}
+    {% if x not in  vips%}
     {{ x }}: {{ packages[x] }} <br>
-    {% if x in  vips%}</b>{% endif %}
+    {% endif %}
   {% endfor %}
 </p>
 
