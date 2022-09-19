@@ -296,6 +296,8 @@ False  True   True
 True   True   True
 =====  =====  ======
 
+.. rst-class:: break_before, ssp-landscape, break_after
+
 Giant Tables
 ^^^^^^^^^^^^
 
@@ -310,6 +312,7 @@ Giant Tables
 +------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+
 | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  |
 +------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+
+
 
 List Tables
 -----------
@@ -375,7 +378,7 @@ Tables with non-breakable text
 
 .. list-table::
   :widths: 10,80
-  :class: table-wrap
+  :class: ssp-table-wrap
 
   * - True
     - This text could be broken at all whitespaces occuring in the text

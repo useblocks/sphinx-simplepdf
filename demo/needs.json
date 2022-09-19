@@ -1,0 +1,70 @@
+{
+    "created": "2022-09-19T15:12:30.462819",
+    "current_version": "1.0",
+    "project": "Sphinx-SimplePDF-DEMO",
+    "versions": {
+        "1.0": {
+            "created": "2022-09-19T15:12:30.462811",
+            "filters": {},
+            "filters_amount": 0,
+            "needs": {
+                "REQ_021": {
+                    "avatar": "",
+                    "closed_at": "",
+                    "completion": "",
+                    "created_at": "",
+                    "description": "The ``Sphinx-Needs Theme`` for PDF shall support also text even if imported. This_is_a_non_breakable_line_due_to_no_whitespaces_in_text_at_all_which_is_not_readable_without_breaking_it_working_if_you_can_read_THIS",
+                    "docname": "sphinx_needs",
+                    "duration": "",
+                    "external_css": "external_link",
+                    "external_url": null,
+                    "full_title": "Sphinx-Needs Theme extension from import",
+                    "has_dead_links": "",
+                    "has_forbidden_dead_links": "",
+                    "hidden": "",
+                    "id": "REQ_021",
+                    "id_complete": "REQ_021",
+                    "id_parent": "REQ_021",
+                    "id_prefix": "",
+                    "is_external": false,
+                    "is_modified": false,
+                    "is_need": true,
+                    "is_part": false,
+                    "layout": "",
+                    "links": [],
+                    "max_amount": "",
+                    "max_content_lines": "",
+                    "modifications": 0,
+                    "parent_need": null,
+                    "parent_needs": [],
+                    "parent_needs_back": [],
+                    "parts": {},
+                    "post_template": null,
+                    "pre_template": null,
+                    "query": "",
+                    "section_name": "Another",
+                    "sections": [
+                        "Another"
+                    ],
+                    "service": "",
+                    "signature": "",
+                    "specific": "",
+                    "status": "done",
+                    "style": null,
+                    "tags": [
+                        "sphinx",
+                        "extension"
+                    ],
+                    "template": null,
+                    "title": "Sphinx-Needs Theme extension support with code examples from imported needs",
+                    "type": "req",
+                    "type_name": "Requirement",
+                    "updated_at": "",
+                    "url": "",
+                    "user": ""
+                }
+            },
+            "needs_amount": 1
+        }
+    }
+}

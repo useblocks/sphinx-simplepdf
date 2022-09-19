@@ -46,7 +46,6 @@ This is the same table, but with datatables style. This normally adds a scrollba
 .. needtable::
    :filter: 'sphinx' in tags
    :style: datatables
-   :class: table-wrap
    :colwidths: 10,10,10,10,60
    :columns: id, title, status, tags, content
 
@@ -59,6 +58,12 @@ Using ``plantuml`` to render image.
 .. needflow::
    :filter: 'sphinx' in tags
 
+Sphinx-Needs needimport
+=======================
+
+.. needimport:: needs.json
+   :tags: imported
+   :collapse: True
 
 CSV Table
 ---------

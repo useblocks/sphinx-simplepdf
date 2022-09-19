@@ -2,7 +2,7 @@ table.break {
     page-break-before: always;
 }
 
-table.table-wrap {
+table.ssp-table-wrap {
     table-layout: fixed;
     td, th {
         overflow-wrap: break-word;
