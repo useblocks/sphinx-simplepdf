@@ -2,6 +2,13 @@ table.break {
     page-break-before: always;
 }
 
+table.table-wrap {
+    table-layout: fixed;
+    td, th {
+        overflow-wrap: break-word;
+    }
+}
+
 table.docutils {
     width: 100%;
     max-width: 100%;
