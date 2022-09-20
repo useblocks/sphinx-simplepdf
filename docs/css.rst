@@ -22,6 +22,44 @@ If this is set to ``break``, then a page break will be introduced in front of th
        :file: example.csv
        :class: break
 
+Page Orientation
+~~~~~~~~~~~~~~~~
+
+The default orientation is portrait. To change the page orientation for a side, you can add the css class
+``ssp-landscape`` to
+
+* directives supporting the option ``:class:``
+* or by using the ``.. rst-class::`` directive in the document with classes as arguments
+* or by using the ``.. container::`` directive with the options for the used classes
+
+**Example**::
+
+    .. rst-class:: break_before, ssp-landscape, break_after
+
+    .. csv-table:: CSV Table
+       :file: example.csv
+
+If the default page orientation is changed to landscape, you can use ``ssp-portrait`` to change to portrait.
+
+Table content wrap
+~~~~~~~~~~~~~~~~~~
+
+By default table content is wrapped at whitespaces. If you have table content that can not be wrapped due to
+side limitations, the table is drawn out of the margins. This behaviour can be changed by using the css class
+``ssp-table-wrap``. This allows the table to break the content anywhere.
+
+This requires a fixed table layout, so you have to set the ``widths`` options (or e.g. ``colwidths`` option
+in needtable) to get good results.
+
+This option is by default added to all ``Sphinx-Needs`` elements or could be explicitly set by applying the
+``ssp-table-wrap`` as ``style`` option to ``Sphinx-Needs`` directives.
+
+**Example**::
+
+    .. list-table::
+        :widths: 10,80
+        :class: ssp-table-wrap
+
 Sphinx-Needs elements
 ~~~~~~~~~~~~~~~~~~~~~
 
