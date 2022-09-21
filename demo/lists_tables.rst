@@ -388,3 +388,20 @@ Tables with non-breakable text
     - This_is_a_non_breakable_line_due_to_no_whitespaces_in_text_at_all_which_is_not_readable_without_breaking_it_working_if_you_can_read_THIS
 
 
+CSV Table
+---------
+The following table is too big for the PDF.
+There is no way to get a nice looking picture of it.
+
+.. csv-table:: CSV Table
+   :file: /_static/example.csv
+   :header-rows: 2
+   :class: break
+
+.. rst-class:: break_before,ssp-landscape
+
+   **Landscape page orientation**
+
+   .. csv-table:: CSV Table
+      :file: /_static/example.csv
+      :header-rows: 2

@@ -65,14 +65,4 @@ Sphinx-Needs needimport
    :tags: imported
    :collapse: True
 
-CSV Table
----------
-The following table is too big for the PDF.
-There is no way to get a nice looking picture of it.
-
-.. csv-table:: CSV Table
-   :file: /_static/example.csv
-   :header-rows: 2
-   :class: break
-
 
