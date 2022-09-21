@@ -22,6 +22,8 @@ If this is set to ``break``, then a page break will be introduced in front of th
        :file: example.csv
        :class: break
 
+.. _css_orientation:
+
 Page Orientation
 ~~~~~~~~~~~~~~~~
 
@@ -32,12 +34,22 @@ The default orientation is portrait. To change the page orientation for a side, 
 * or by using the ``.. rst-class::`` directive in the document with classes as arguments
 * or by using the ``.. container::`` directive with the options for the used classes
 
-**Example**::
+**Examples**::
 
     .. rst-class:: break_before, ssp-landscape, break_after
 
     .. csv-table:: CSV Table
        :file: example.csv
+
+    .. or as alternaitve
+
+    .. container:: break_before ssp-landscape
+
+       **Landscape page orientation**
+
+       .. csv-table:: CSV Table
+          :file: /_static/example.csv
+          :header-rows: 2
 
 If the default page orientation is changed to landscape, you can use ``ssp-portrait`` to change to portrait.
 
@@ -59,6 +71,22 @@ This option is by default added to all ``Sphinx-Needs`` elements or could be exp
     .. list-table::
         :widths: 10,80
         :class: ssp-table-wrap
+
+Table size
+~~~~~~~~~~
+``ssp-tinier`` and ``ssp-tiny`` can be set for a table to reduce the font-size and the internal padding of
+rows and columns. Together with  :ref:`css_orientation` huge tables can be presented inside a PDF.
+
+**Example**::
+
+   .. container:: break_before ssp-landscape
+
+       .. csv-table:: CSV Table
+          :file: /_static/example.csv
+          :class: ssp-tiny
+
+Take a look into our `Demo PDF </_static/Sphinx-SimplePDF-DEMO.pdf>`_ for some examples of how tables could look like.
+
 
 Sphinx-Needs elements
 ~~~~~~~~~~~~~~~~~~~~~

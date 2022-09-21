@@ -47,3 +47,21 @@ table.docutils {
     }
 }
 
+table.docutils.ssp-tinier {
+    td, th {
+        padding: .4rem;
+        vertical-align: top;
+        font-size: 0.75em;
+    }
+}
+
+table.docutils.ssp-tiny {
+    td, th {
+        padding: .05rem;
+        vertical-align: top;
+        font-size: 0.5em;
+    }
+}
+
+
+
