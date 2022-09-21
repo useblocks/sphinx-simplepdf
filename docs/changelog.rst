@@ -11,6 +11,7 @@ Release 1.4
 * **Enhancement**: All fonts are provided by this package. No pre-installed fonts are needed.
 * **Enhancement**: [#19] Simple PDF customization with header and bottom page content
 * **Enhancement**: Add class wrapper to switch paper orientation, e.g. for large tables
+* **Enhancement**: Tables font-size and padding can be reduced by using ``ssp-tinier`` or ``ssp-tiny``.
 * **Bugfix**: [#34] handling word wrap in tables
 * **Bugfix**: Image handling is done much better.
 * **Bugfix**: Font location fixes -> No fonts warnings anymore.
