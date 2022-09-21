@@ -16,6 +16,22 @@
     page-break-before: always;
 }
 
+@page landscape_page {
+    size: landscape;
+}
+
+@page portrait_page {
+    size: portrait;
+}
+
+.ssp-portrait {
+    page: portrait_page;
+
+}
+.ssp-landscape {
+    page: landscape_page;
+}
+
 @page {
   padding-top: 1em;
 

@@ -296,6 +296,8 @@ False  True   True
 True   True   True
 =====  =====  ======
 
+.. rst-class:: break_before, ssp-landscape, break_after
+
 Giant Tables
 ^^^^^^^^^^^^
 
@@ -310,6 +312,7 @@ Giant Tables
 +------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+
 | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  | body row 1 | column 2   | column 3  |
 +------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+------------+------------+-----------+
+
 
 List Tables
 -----------
@@ -368,4 +371,20 @@ Test to see that tables behave well with nested paragraphs.
 |            |          |                         |
 |            | .{ }     | Bit-field concatenation |
 +------------+----------+-------------------------+
+
+
+Tables with non-breakable text
+------------------------------
+
+.. list-table::
+  :widths: 10,80
+  :class: ssp-table-wrap
+
+  * - True
+    - This text could be broken at all whitespaces occuring in the text
+  * - False
+    - This is a code block line, normaly could also be broken at all whitespaces in text
+  * - True
+    - This_is_a_non_breakable_line_due_to_no_whitespaces_in_text_at_all_which_is_not_readable_without_breaking_it_working_if_you_can_read_THIS
+
 
