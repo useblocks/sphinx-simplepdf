@@ -21,12 +21,21 @@ Requirements
 ------------
 **Sphinx-SimplePDF** requires **Sphinx version >= 4.4.4** to properly render the Table of Content with page counts.
 
-.. warning::
+macOS installation
+~~~~~~~~~~~~~~~~~~
+If you are using **macOS** as operating system, the chance is high that the package **pango** gets not automatically
+installed when installing **Sphinx-SimplePDF**.
 
-   If you are using **macOS** as operating system, the chance is high that the package **pango** gets not automatically
-   installed when installing **Sphinx-SimplePDF**.
+In this case please run also ``brew install pango``.
 
-   In this case please run also ``brew install pango``.
+Windows installation
+~~~~~~~~~~~~~~~~~~~~
+**Sphinx-SimplePDF** is based on WeasypPrint, which is not so easy to get installed on Windows.
+
+Please follow their instructions about
+`how to install WeasyPrint on Windows <https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#windows>`_.
+
+
 
 Using Sphinx-SimplePDF directives
 ---------------------------------

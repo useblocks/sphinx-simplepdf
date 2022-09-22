@@ -1,9 +1,13 @@
 Changelog
 =========
 
-Release 1.4
+Release 1.5
 -----------
 :released: under development
+
+Release 1.4
+-----------
+:released: 22.09.2022
 
 * **Enhancement**: Adds ``simplepdf_debug`` option, to collect and print some environment specific details.
 * **Enhancement**: Adds `demo` PDF to test various layout & style elements.
