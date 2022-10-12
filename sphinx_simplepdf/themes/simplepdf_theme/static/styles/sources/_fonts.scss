@@ -49,9 +49,27 @@
 }
 
 @font-face {
-	font-family: fontawesome-webfont;
-	//font-weight: normal;
-	//font-style: normal;
-	src: url("fonts/fa-solid-900.eot");
-	src: url("fonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("fonts/fa-solid-900.ttf") format("truetype"), url("fonts/fa-solid-900.svg#fontawesome-webfont") format("svg")
+    font-family: fontawesome-webfont;
+    //font-weight: normal;
+    //font-style: normal;
+    src: url("fonts/fa-solid-900.eot");
+    src: url("fonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("fonts/fa-solid-900.ttf") format("truetype"), url("fonts/fa-solid-900.svg#fontawesome-webfont") format("svg")
  }
+
+@font-face {
+    font-family: monospace;
+    src: url(fonts/FiraMono-Regular.ttf);
+}
+
+
+@font-face {
+    font-family: monospace;
+    font-weight: 400;
+    src: url(fonts/FiraMono-Medium.ttf);
+}
+
+@font-face {
+    font-family: monospace;
+    font-weight: bold;
+    src: url(fonts/FiraMono-Bold.ttf);
+}
