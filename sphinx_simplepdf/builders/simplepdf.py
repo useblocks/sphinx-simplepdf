@@ -85,14 +85,19 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
         with open(index_path, 'wt', encoding='utf-8') as index_file:
             index_file.writelines(new_index_html)
 
+        args = [ 'weasyprint' ]
 
-        args = [
-            'weasyprint',
+        if isinstance(self.config['simplepdf_weasyprint_flags'], list) and (0 < len(self.config['simplepdf_weasyprint_flags'])) :
+            args.extend(self.config['simplepdf_weasyprint_flags'])
+
+        args.extend( [
             index_path,
             os.path.join(self.app.outdir, f'{self.app.config.project}.pdf'),
+        ])
 
-        ]
-        subprocess.run(args)
+        timeout = self.config['simplepdf_weasyprint_timeout']
+
+        subprocess.check_output(args, timeout=timeout, text=True)
 
     def _toctree_fix(self, html):
         soup = BeautifulSoup(html, "html.parser")
@@ -108,6 +113,8 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
 def setup(app: Sphinx) -> Dict[str, Any]:
     app.add_config_value("simplepdf_vars", {}, "html", types=[dict])
     app.add_config_value("simplepdf_debug", False, "html", types=bool)
+    app.add_config_value("simplepdf_weasyprint_timeout", None, "html", types=[int])
+    app.add_config_value("simplepdf_weasyprint_flags", None, "html", types=[list])
     app.add_builder(SimplePdfBuilder)
 
     return {
