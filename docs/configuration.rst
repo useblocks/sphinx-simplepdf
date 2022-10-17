@@ -85,6 +85,24 @@ This is ``simplepdf_vars`` as it is used inside the **Sphinx-SimplePDF** ``conf.
 .. literalinclude:: conf.py
    :lines: 36-39
 
+.. _simplepdf_file_name:
+
+simplepdf_file_name
+-------------------
+File name of the resulting PDF file in the ``simplepdf`` build folder.
+If not set, the project name is used.
+
+File name and extension can be set. But it should not be used to manipulate the output path.
+
+Example::
+
+   simplepdf_file_name = "my_cool.pdf"
+
+
+
+Default: project name
+
+
 
 simplepdf_debug
 ----------------

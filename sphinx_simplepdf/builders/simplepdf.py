@@ -90,9 +90,11 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
         if isinstance(self.config['simplepdf_weasyprint_flags'], list) and (0 < len(self.config['simplepdf_weasyprint_flags'])) :
             args.extend(self.config['simplepdf_weasyprint_flags'])
 
-        args.extend( [
+        file_name = self.app.config.simplepdf_file_name or f"{self.app.config.project}.pdf"
+
+        args.extend([
             index_path,
-            os.path.join(self.app.outdir, f'{self.app.config.project}.pdf'),
+            os.path.join(self.app.outdir, f'{file_name}'),
         ])
 
         timeout = self.config['simplepdf_weasyprint_timeout']
@@ -112,6 +114,7 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
 
 def setup(app: Sphinx) -> Dict[str, Any]:
     app.add_config_value("simplepdf_vars", {}, "html", types=[dict])
+    app.add_config_value("simplepdf_file_name", None, "html", types=[str])
     app.add_config_value("simplepdf_debug", False, "html", types=bool)
     app.add_config_value("simplepdf_weasyprint_timeout", None, "html", types=[int])
     app.add_config_value("simplepdf_weasyprint_flags", None, "html", types=[list])

@@ -5,6 +5,7 @@ Release 1.5
 -----------
 :released: under development
 
+* **Enhancement**: New config option :ref:`simplepdf_file_name` allows to specify the output file name.
 * **Enhancement**: Provides :ref:`pdf-include` directive to embed PDF files in HTML views.
 
 Release 1.4
