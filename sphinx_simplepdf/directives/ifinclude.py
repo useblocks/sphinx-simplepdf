@@ -11,10 +11,6 @@ from sphinx.util import logging
 logger = logging.getLogger(__name__)
 
 
-class IfInclude(nodes.General, nodes.Element):
-    pass
-
-
 class IfIncludeDirective(Directive):
     """
     Directive to add a file based on builder.

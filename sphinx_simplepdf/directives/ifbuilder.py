@@ -8,10 +8,6 @@ from sphinx.util import logging
 logger = logging.getLogger(__name__)
 
 
-class IfBuilder(nodes.General, nodes.Element):
-    pass
-
-
 class IfBuilderDirective(Directive):
     """
     Directive to add content based on builder.

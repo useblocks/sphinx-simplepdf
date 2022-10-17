@@ -59,7 +59,7 @@ chosen builder name. The argument is case-insensitive.
    The ``only`` directive works differently and does not support for instance ``toctree`` and other mechanism for
    controlling the documentation structure.
 
-.. _if-include::
+.. _if-include:
 
 if-include
 ----------
@@ -98,3 +98,82 @@ The following chapter should only be visible in the PDF version of this document
 
    ./if_pdf_include.rst
 
+.. _pdf-include:
+
+pdf-include
+-----------
+Includes a PDF file inside the the HTML code.
+The browser decides mostly, what kind of PDF-viewer.
+
+
+.. code-block:: rst
+
+   .. pdf-include:: _static/SimplePDF_test.pdf
+
+
+.. pdf-include:: _static/SimplePDF_test.pdf
+
+
+Options
+~~~~~~~
+
+.. contents::
+   :local:
+
+For more options of how to configure the PDF viewer, take a look into the documentation of
+`sphinxcontrib-pdfembed <https://github.com/SuperKogito/sphinxcontrib-pdfembed#parameters>`_
+
+width / height
+~~~~~~~~~~~~~~
+Provide a number and unit for width/height.
+
+Examples: ``:width: 50%``, ``height: 800px``.
+
+| Defaults:
+| ``:width: 100%``
+| ``:height: 400px``.
+
+.. code-block:: rst
+
+   .. pdf-include:: _static/SimplePDF_test.pdf
+      :width: 40%
+      :height: 200px
+
+
+.. pdf-include:: _static/SimplePDF_test.pdf
+   :width: 40%
+   :height: 200px
+
+page
+~~~~
+Specify the page to show when PDF gets loaded.
+
+Default: `None`
+
+If not given the browser decides what page to open (normally page 1) and may also reuse the last seen page number.
+
+.. code-block:: rst
+
+   .. pdf-include:: _static/SimplePDF_test.pdf
+      :page: 2
+
+
+.. pdf-include:: _static/SimplePDF_test.pdf
+   :page: 2
+
+
+toolbar
+~~~~~~~
+If set to ``0``, the toolbar is hidden in most browsers (seems not to work on Firefox).
+
+Default: ``1``
+
+
+.. code-block:: rst
+
+   .. pdf-include:: _static/SimplePDF_test.pdf
+      :toolbar: 0
+
+
+.. pdf-include:: _static/SimplePDF_test.pdf
+   :toolbar: 0

@@ -12,26 +12,13 @@ It contains:
 
  * A PDF specific, CSS based Sphinx theme: ``sphinx_simplepdf``.
  * A Sphinx builder, called ``simplepdf``
- * :ref:`Directives <directives>` to control different structures and content for ``HTML`` and ``PDF`` builds
+ * :ref:`Directives <directives>` to
+
+   * control different structures and content for ``HTML`` and ``PDF`` builds.
+   * embed PDF inside HTML views.
 
 It is using `weasyprint <https://weasyprint.org/>`__ as PDF generator.
 
-.. list-table::
-   :width: 100%
-
-   * - .. figure:: /_static/sphinx_simplepdf.png
-          :align: center
-          :height: 300px
-          :target: _static/Sphinx-SimplePDF.pdf
-
-          :download:`PDF Documentation <_static/Sphinx-SimplePDF.pdf>`
-
-     - .. figure:: /_static/sphinx_simplepdf_demo.png
-          :align: center
-          :height: 300px
-          :target: _static/Sphinx-SimplePDF-DEMO.pdf
-
-          :download:`PDF Demo <_static/Sphinx-SimplePDF-DEMO.pdf>`
 
 .. note::
 
@@ -42,6 +29,21 @@ It is using `weasyprint <https://weasyprint.org/>`__ as PDF generator.
     changes via a PR.
     The code is available on github: `useblocks/sphinx-simplepdf <https://github.com/useblocks/sphinx-simplepdf>`__
 
+
+Showcase
+--------
+| **Sphinx-SimplePDF Documentation**
+| The PDF is based on the current HTML documentation.
+| :download:`Download PDF </_static/Sphinx-SimplePDF.pdf>`
+
+.. pdf-include:: _static/Sphinx-SimplePDF.pdf#view=Fit
+
+
+| **Sphinx-SimplePDF Demo**
+| A PDF containing different content types to check the handling of them by Sphinx-SimplePDF.
+| :download:`Download PDF </_static/Sphinx-SimplePDF-DEMO.pdf>`
+
+.. pdf-include:: _static/Sphinx-SimplePDF-DEMO.pdf#view=Fit
 
 
 .. if-builder:: simplepdf

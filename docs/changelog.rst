@@ -5,6 +5,8 @@ Release 1.5
 -----------
 :released: under development
 
+* **Enhancement**: Provides :ref:`pdf-include` directive to embed PDF files in HTML views.
+
 Release 1.4
 -----------
 :released: 22.09.2022

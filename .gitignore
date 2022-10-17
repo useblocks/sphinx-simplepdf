@@ -30,4 +30,7 @@ main.css
 
 need_bar_*.png
 need_pie_*.png
-*.pdf
+
+# Files get build on CI
+Sphinx-SimplePDF-DEMO.pdf
+Sphinx-SimplePDF.pdf

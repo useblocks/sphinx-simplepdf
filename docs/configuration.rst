@@ -83,7 +83,7 @@ SimplePDF docs
 This is ``simplepdf_vars`` as it is used inside the **Sphinx-SimplePDF** ``conf.py`` file:
 
 .. literalinclude:: conf.py
-   :lines: 31-34
+   :lines: 36-39
 
 
 simplepdf_debug
