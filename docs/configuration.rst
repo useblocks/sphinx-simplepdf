@@ -102,4 +102,20 @@ You can see an example in our :download:`PDF Demo <_static/Sphinx-SimplePDF-DEMO
    The debug output contains absolute file paths and maybe other critical information.
    Do not use for official PDF releases.
 
+simplepdf_weasyprint_flags
+--------------------------
+List of flags to pass to **weasyprint** subprocess. This may be helpfull in debugging the pdf creation
 
+``simplepdf_weasyprint_flags = ['-v']``
+
+.. warning::
+
+   The flags should only pass switches to **weasyprint**, input and output file names are appended by **Sphinx-SimplePDF**
+
+simplepdf_weasyprint_timeout
+----------------------------
+
+In rare cases **weasyprint** seems to run into infinite loops during processing of the input file.
+To avoid blocking CI jobs a timeout can be configured. The build is aborted with a `` subprocess.TimeoutExpired¶`` exception.
+
+``simplepdf_weasyprint_timeout = 300``
