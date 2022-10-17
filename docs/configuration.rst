@@ -116,6 +116,6 @@ simplepdf_weasyprint_timeout
 ----------------------------
 
 In rare cases **weasyprint** seems to run into infinite loops during processing of the input file.
-To avoid blocking CI jobs a timeout can be configured. The build is aborted with a `` subprocess.TimeoutExpired¶`` exception.
+To avoid blocking CI jobs a timeout can be configured. The build is aborted with a ``subprocess.TimeoutExpired`` exception.
 
 ``simplepdf_weasyprint_timeout = 300``
