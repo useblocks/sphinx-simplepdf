@@ -16,9 +16,10 @@ build:
   # So we need to handle package installation, build start and copying the right files for deployment.
   commands:
     - pip install .
+    - pip install -r demo/doc-requirements.txt
+    - sphinx-build -M simplepdf demo demo/_build  # Use a different build-folder for a really clean build
     - pip install -r docs/doc-requirements.txt
     - sphinx-build -M simplepdf docs docs/_build2  # Use a different build-folder for a really clean build
-    - sphinx-build -M simplepdf demo demo/_build  # Use a different build-folder for a really clean build
     - cp demo/_build/simplepdf/Sphinx-SimplePDF-DEMO.pdf docs/_static/Sphinx-SimplePDF-DEMO.pdf
     - cp docs/_build2/simplepdf/Sphinx-SimplePDF.pdf docs/_static/Sphinx-SimplePDF.pdf
     - sphinx-build -M html docs docs/_build  # HTML latest, because it needs the built PDF files
