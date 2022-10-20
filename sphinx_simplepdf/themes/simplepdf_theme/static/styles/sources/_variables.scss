@@ -23,3 +23,6 @@ $top-right-content: config('top-right-content', 'string(heading)') !default;
 $bottom-left-content: config('bottom-left-content', '') !default;
 $bottom-center-content: config('bottom-center-content', '') !default;
 $bottom-right-content: config('bottom-right-content', '') !default;
+
+$nocover: theme_option('nocover', false) !default;
+

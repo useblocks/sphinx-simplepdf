@@ -23,28 +23,28 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        if self.app.config.simplepdf_theme is not None:
+            print(f"Setting theme to {self.app.config.simplepdf_theme}")
+            self.app.config.html_theme = self.app.config.simplepdf_theme
 
-        if self.app.config.html_theme != "simplepdf_theme":
-            print("Setting theme to sphinx_simplepdf")
-            # We need to overwrite some config values, as they are set for the normal html build, but
-            # simplepdf can normally not handle them.
-            self.app.config.html_theme = "simplepdf_theme"
-            self.app.config.html_sidebars = {'**': ["localtoc.html"]}
-            self.app.config.html_theme_options = {}  # Sphinx would write warnings, if given options are unsupported.
+        # We need to overwrite some config values, as they are set for the normal html build, but
+        # simplepdf can normally not handle them.
+        self.app.config.html_sidebars = self.app.config.simplepdf_sidebars;
+        self.app.config.html_theme_options = self.app.config.simplepdf_theme_options;  # Sphinx would write warnings, if given options are unsupported.
 
-            # Add SimplePDf specific functions to the html_context. Mostly needed for printing debug information.
-            self.app.config.html_context['simplepdf_debug'] = self.config['simplepdf_debug']
-            self.app.config.html_context['pyd'] = DebugPython()
+        # Add SimplePDf specific functions to the html_context. Mostly needed for printing debug information.
+        self.app.config.html_context['simplepdf_debug'] = self.config['simplepdf_debug']
+        self.app.config.html_context['pyd'] = DebugPython()
 
-            debug_sphinx = {
-                'version': __version__,
-                'confidr': self.app.confdir,
-                'srcdir': self.app.srcdir,
-                'outdir': self.app.outdir,
-                'extensions': self.app.config.extensions,
-                'simple_config': {x.name: x.value for x in self.app.config if x.name.startswith('simplepdf')}
-            }
-            self.app.config.html_context['spd'] = debug_sphinx
+        debug_sphinx = {
+            'version': __version__,
+            'confidr': self.app.confdir,
+            'srcdir': self.app.srcdir,
+            'outdir': self.app.outdir,
+            'extensions': self.app.config.extensions,
+            'simple_config': {x.name: x.value for x in self.app.config if x.name.startswith('simplepdf')}
+        }
+        self.app.config.html_context['spd'] = debug_sphinx
 
         # Generate main.css
         print('Generating css files from scss-templates')
@@ -52,16 +52,17 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
         scss_folder = os.path.join(os.path.dirname(__file__), '..', 'themes', 'simplepdf_theme',
                                    'static', 'styles', 'sources')
         sass.compile(dirname=(scss_folder, css_folder), output_style='nested',
-                     custom_functions={sass.SassFunction('config', ('$a', '$b'), self.get_config_var)}
+                     custom_functions={sass.SassFunction('config', ('$a', '$b'), self.get_config_var),
+                                       sass.SassFunction('theme_option', ('$a', '$b'), self.get_theme_option_var)}
                      )
 
     def get_config_var(self, name, default):
         """
         Gets a config variables for scss out of the Sphinx configuration.
-        If name is not found in config, the specified defualt var is returned.
+        If name is not found in config, the specified default var is returned.
 
         Args:
-            name: Name of the config vr to use
+            name: Name of the config var to use
             default: Default value, if name can not be found in config
 
         Returns: Value
@@ -70,6 +71,23 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
         if name not in simplepdf_vars:
             return default
         return simplepdf_vars[name]
+
+    def get_theme_option_var(self, name, default):
+        """
+        Gets a option  variables for scss out of the Sphinx theme options.
+        If name is not found in theme options, the specified default var is returned.
+
+        Args:
+            name: Name of the option var to use
+            default: Default value, if name can not be found in config
+
+        Returns: Value
+        """
+        simplepdf_theme_options = self.app.config.simplepdf_theme_options
+        if name not in simplepdf_theme_options:
+            return default
+        return simplepdf_theme_options[name]
+
 
     def finish(self) -> None:
         super().finish()
@@ -105,9 +123,10 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
         soup = BeautifulSoup(html, "html.parser")
         sidebar = soup.find("div", class_="sphinxsidebarwrapper")
 
-        links = sidebar.find_all('a', class_='reference internal')
-        for link in links:
-            link['href'] = link['href'].replace(f'{self.app.config.root_doc}.html', '')
+        if sidebar is not None:
+            links = sidebar.find_all('a', class_='reference internal')
+            for link in links:
+                link['href'] = link['href'].replace(f'{self.app.config.root_doc}.html', '')
 
         return soup.prettify(formatter='html')
 
@@ -118,6 +137,9 @@ def setup(app: Sphinx) -> Dict[str, Any]:
     app.add_config_value("simplepdf_debug", False, "html", types=bool)
     app.add_config_value("simplepdf_weasyprint_timeout", None, "html", types=[int])
     app.add_config_value("simplepdf_weasyprint_flags", None, "html", types=[list])
+    app.add_config_value("simplepdf_theme", "simplepdf_theme", "html", types=[str])
+    app.add_config_value("simplepdf_theme_options", {}, "html", types=[dict])
+    app.add_config_value("simplepdf_sidebars", {'**': ["localtoc.html"]}, "html", types=[dict])
     app.add_builder(SimplePdfBuilder)
 
     return {

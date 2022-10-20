@@ -144,10 +144,14 @@
   }
 }
 
+@if not $nocover {
+
 @page:first {
   background: $cover-bg;
   background-size: cover;
   margin: 0;
+}
+
 }
 
 @media screen {
