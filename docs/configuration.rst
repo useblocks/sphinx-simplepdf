@@ -137,3 +137,20 @@ In rare cases **weasyprint** seems to run into infinite loops during processing 
 To avoid blocking CI jobs a timeout can be configured. The build is aborted with a ``subprocess.TimeoutExpired`` exception.
 
 ``simplepdf_weasyprint_timeout = 300``
+
+simplepdf_theme
+---------------
+
+Add custom theme for simplepdf. This overrides the default theme `simplepdf_theme`
+
+simplepdf_theme_options
+--------------------
+
+Additional options for the theme. The default theme `simplepdf_theme`inherits all options frome the **Sphinx Basic Theme**.
+
+*simplepdf_theme* options:
+
+:nocover: Do not display cover pages (front and back cover)
+
+
+
