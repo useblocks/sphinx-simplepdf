@@ -11,7 +11,7 @@ README_PATH = os.path.join(directory, 'README.rst')
 
 setup(
     name='sphinx-simplepdf',
-    version='1.5.0',
+    version='1.6.0',
     url='https://sphinx-simplepdf.readthedocs.io',
     download_url='https://github.com/useblocks/sphinx-simplepdf',
     license='MIT',

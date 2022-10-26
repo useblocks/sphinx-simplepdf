@@ -24,7 +24,7 @@ extensions = [
     'sphinx_copybutton',
 ]
 
-version = "1.5"
+version = "1.6"
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
