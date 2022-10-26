@@ -89,6 +89,8 @@ This is ``simplepdf_vars`` as it is used inside the **Sphinx-SimplePDF** ``conf.
 
 simplepdf_file_name
 -------------------
+.. versionadded:: 1.5
+
 File name of the resulting PDF file in the ``simplepdf`` build folder.
 If not set, the project name is used.
 
@@ -101,8 +103,6 @@ Example::
 
 
 Default: project name
-
-
 
 simplepdf_debug
 ----------------
@@ -122,6 +122,8 @@ You can see an example in our :download:`PDF Demo <_static/Sphinx-SimplePDF-DEMO
 
 simplepdf_weasyprint_flags
 --------------------------
+.. versionadded:: 1.5
+
 List of flags to pass to **weasyprint** subprocess. This may be helpfull in debugging the pdf creation
 
 ``simplepdf_weasyprint_flags = ['-v']``
@@ -132,6 +134,7 @@ List of flags to pass to **weasyprint** subprocess. This may be helpfull in debu
 
 simplepdf_weasyprint_timeout
 ----------------------------
+.. versionadded:: 1.5
 
 In rare cases **weasyprint** seems to run into infinite loops during processing of the input file.
 To avoid blocking CI jobs a timeout can be configured. The build is aborted with a ``subprocess.TimeoutExpired`` exception.
@@ -140,15 +143,19 @@ To avoid blocking CI jobs a timeout can be configured. The build is aborted with
 
 simplepdf_theme
 ---------------
+.. versionadded:: 1.5
 
-Add custom theme for simplepdf. This overrides the default theme `simplepdf_theme`
+Add custom theme for simplepdf. This overrides the default theme ``simplepdf_theme``
+
+.. _theme_options:
 
 simplepdf_theme_options
---------------------
+-----------------------
+.. versionadded:: 1.5
 
-Additional options for the theme. The default theme `simplepdf_theme`inherits all options frome the **Sphinx Basic Theme**.
+Additional options for the theme. The default theme ``simplepdf_theme`` inherits all options from the **Sphinx Basic Theme**.
 
-*simplepdf_theme* options:
+``simplepdf_theme`` options:
 
 :nocover: Do not display cover pages (front and back cover)
 

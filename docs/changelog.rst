@@ -1,10 +1,17 @@
 Changelog
 =========
 
-Release 1.5
+Release 1.6
 -----------
 :released: under development
 
+
+Release 1.5
+-----------
+:released: 26.10.2022
+
+* **Enhancement**: ``nocover`` option for :ref:`theme_options`.
+* **Enhancement**: New config options to directly configue the weasyprint build.
 * **Enhancement**: New config option :ref:`simplepdf_file_name` allows to specify the output file name.
 * **Enhancement**: Provides :ref:`pdf-include` directive to embed PDF files in HTML views.
 
