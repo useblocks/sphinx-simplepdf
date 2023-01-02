@@ -5,6 +5,7 @@ Release 1.6
 -----------
 :released: under development
 
+* **Bugfix** [#60] Fix TOC hrefs for sections that use file title anchors.
 
 Release 1.5
 -----------
@@ -56,6 +57,3 @@ Release 1.1
 Release 1.0
 -----------
 :released: 18.08.2022
-
-
-
