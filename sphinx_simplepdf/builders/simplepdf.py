@@ -5,6 +5,7 @@ import subprocess
 import sass
 
 from bs4 import BeautifulSoup
+from docutils.nodes import make_id
 
 
 from sphinx import __version__
@@ -127,6 +128,8 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
             links = sidebar.find_all('a', class_='reference internal')
             for link in links:
                 link['href'] = link['href'].replace(f'{self.app.config.root_doc}.html', '')
+                if link['href'].startswith('#document-'):
+                    link['href'] = '#' + make_id(link.text)
 
         return soup.prettify(formatter='html')
 

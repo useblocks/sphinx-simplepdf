@@ -7,3 +7,4 @@ Contributors
 ------------
 
 Jörg Kreuzberger <j.kreuzberger@procitec.de>
+Sandi Šaban <saban.sandi@gmail.com>
