@@ -60,7 +60,7 @@ You must configure the following in the **conf.py** file of the Sphinx documenta
         ```
     * Add the custom JS files to the `html_js_files` variable.
       ```python
-      html_js_files = ["ub-theme.js"]
+      html_js_files = ["ub-theme.js", "jquery.js"]
         ```
   
 The final configuration should look like below:
@@ -91,7 +91,7 @@ html_theme_options.update(other_options)
 
 html_static_path = ["_static", "ub_theme/css", "ub_theme/js"]
 html_css_files = ["ub-theme.css"]
-html_js_files = ["ub-theme.js"]
+html_js_files = ["ub-theme.js", "jquery.js"]
 
 ```
 
