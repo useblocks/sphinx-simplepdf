@@ -18,6 +18,7 @@ To install the files from this repository, you must have [Git](https://git-scm.c
   ```bash
   git clone https://github.com/useblocks/useblocks-theme.git 
   ```
+* Delete both the **.git** hidden directory and **.gitignore** hidden file from the **ub_theme** folder.
 
 ## Configuration
 
@@ -26,9 +27,9 @@ You must configure the following in the **conf.py** file of the Sphinx documenta
 * In order to import the **ub_theme** package, Python searches through the directories on `sys.path` looking for the package subdirectory. 
     * Add the parent path of the **ub_theme** folder to `sys.path`.
       ```python
-        import os
-        import sys
-        sys.path.append(os.path.abspath(".")) # Example if `ub_theme` folder is in the same folder as the `conf.py` file
+      import os
+      import sys
+      sys.path.append(os.path.abspath(".")) # Example if `ub_theme` folder is in the same folder as the `conf.py` file
         ```
 * Add the `html_theme_options` to your **conf.py**:
     * Import the theme options for Useblocks.
