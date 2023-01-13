@@ -27,6 +27,10 @@ div.wy-table-responsive{
     display: none !important;
 }
 
+div.need_container {
+    overflow-x: auto;
+}
+
 table.need{
     display: table !important;
     width: 100% !important;
@@ -81,9 +85,13 @@ h3 {
 }
 
 table.dataTable tbody tr {
+    background-color: transparent;
+}
+/*
+table.dataTable tbody tr {
     background-color: transparent !important;
 }
-
+*/
 .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
     color: var(--md-typeset-color) !important;
 }
@@ -141,4 +149,3 @@ table.NEEDS_DATATABLES, table.NEEDS_TABLE{
 .md-header__button.md-logo :is(img, png) {
     height: 2.2rem !important;
 }
-
