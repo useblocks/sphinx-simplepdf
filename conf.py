@@ -14,11 +14,28 @@ html_theme_options = {
         "toc.follow",
         "content.tabs.link"
     ],
-    "palette": {
-        "scheme": "slate",
-        "primary": "yellow",
-        "accent": "yellow",
-    },
+    "palette": [
+        {
+            "media": "(prefers-color-scheme: light)",
+            "scheme": "default",
+            "primary": "yellow",
+            "accent": "yellow",
+            "toggle": {
+                "icon": "material/weather-night",
+                "name": "Switch to dark mode",
+            },
+        },
+        {
+            "media": "(prefers-color-scheme: dark)",
+            "scheme": "slate",
+            "primary": "yellow",
+            "accent": "yellow",
+            "toggle": {
+                "icon": "material/weather-sunny",
+                "name": "Switch to light mode",
+            },
+        },
+    ],
     "toc_title_is_page_title": True,
     "toc_title": "Contents",
 }

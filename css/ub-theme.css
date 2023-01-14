@@ -6,6 +6,41 @@
   --md-primary-fg-color--dark: #957700;
 }
 
+/* Nav */
+.md-tabs {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+}
+.md-tabs__item span {
+    font-size: medium;
+    font-weight: 600;
+}
+.md-header {
+    background-color: var(--md-primary-fg-color);
+    color: #000;
+}
+
+.md-top {
+    top: 70px!important;
+}
+
+/*Light Mode*/
+[data-md-color-scheme=default]{
+--md-default-fg-color--light: #0000008a;
+--img-filter: none;
+}
+
+/*Night Mode*/
+[data-md-color-scheme=slate]{
+--md-default-fg-color--light: #d2d7f9;
+--img-filter: brightness(0) invert(1);
+}
+
+.md-typeset h1{
+    color: var(--md-default-fg-color--light);
+}
+
 td.needs_title {
     font-weight: bold;
 }
@@ -21,6 +56,11 @@ div.wy-table-responsive{
 .underline{
     text-decoration: underline;
 }
+
+figure[id^="needflow-"]  {
+    overflow-x: auto;
+}
+
 
 /*Remove READTHEDOCS version badge*/
 .injected {
@@ -38,6 +78,9 @@ table.need{
 tbody tr td {
     font-size: medium !important;
 }
+img.needs_image {
+    filter: var(--img-filter);
+}
 
 /* Sphinx-Immaterial */
 
@@ -52,7 +95,6 @@ input {
     font-size: 18px !important;
     line-height: 1.5 !important;
 }
-
 
 h1, h2, h3 {
     font-weight: 500 !important;
@@ -74,6 +116,7 @@ h3 {
     margin-bottom: 10px !important;
 }
 
+/* datatables */
 .dataTables_filter input {
     border: 1px solid var(--md-typeset-color);
     margin-bottom: 10px;
