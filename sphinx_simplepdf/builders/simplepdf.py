@@ -119,7 +119,6 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
 
         timeout = self.config['simplepdf_weasyprint_timeout']
 
-        
         if self.config['simplepdf_use_weasyprint_api']:
             
             doc = weasyprint.HTML(index_path)

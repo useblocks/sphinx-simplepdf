@@ -126,6 +126,8 @@ simplepdf_use_weasyprint_api
 
 This forces simplepdf to use the weasyprint `python API <https://doc.courtbouillon.org/weasyprint/stable/api_reference.html#python-api>`_ instead of calling the binary via subproces.
 
+``simplepdf_use_weasyprint_api = True``
+
 .. warning::
 
    Other variables like `simplepdf_weasyprint_flags`_ will not work when using the API.
