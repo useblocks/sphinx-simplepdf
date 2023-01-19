@@ -38,7 +38,7 @@ simplepdf_vars = {
     'cover-bg': 'url(cover-bg.jpg) no-repeat center'
 }
 
-# use this to force 
+# use this to force using the weasyprint python API instead of building via the binary
 # simplepdf_use_weasyprint_api = True
 
 # -- Options for HTML output -------------------------------------------------
