@@ -1,6 +1,7 @@
 import os
 from typing import Any, Dict
 import subprocess
+import weasyprint
 
 import sass
 
@@ -118,7 +119,17 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
 
         timeout = self.config['simplepdf_weasyprint_timeout']
 
-        subprocess.check_output(args, timeout=timeout, text=True)
+        
+        if self.config['simplepdf_use_weasyprint_api']:
+            
+            doc = weasyprint.HTML(index_path)
+
+            doc.write_pdf(
+                target=os.path.join(self.app.outdir, f'{file_name}'),
+            )
+        
+        else:
+            subprocess.check_output(args, timeout=timeout, text=True)
 
     def _toctree_fix(self, html):
         soup = BeautifulSoup(html, "html.parser")
@@ -140,6 +151,7 @@ def setup(app: Sphinx) -> Dict[str, Any]:
     app.add_config_value("simplepdf_debug", False, "html", types=bool)
     app.add_config_value("simplepdf_weasyprint_timeout", None, "html", types=[int])
     app.add_config_value("simplepdf_weasyprint_flags", None, "html", types=[list])
+    app.add_config_value("simplepdf_use_weasyprint_api", None, "html", types=[bool])
     app.add_config_value("simplepdf_theme", "simplepdf_theme", "html", types=[str])
     app.add_config_value("simplepdf_theme_options", {}, "html", types=[dict])
     app.add_config_value("simplepdf_sidebars", {'**': ["localtoc.html"]}, "html", types=[dict])

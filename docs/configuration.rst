@@ -120,6 +120,16 @@ You can see an example in our :download:`PDF Demo <_static/Sphinx-SimplePDF-DEMO
    The debug output contains absolute file paths and maybe other critical information.
    Do not use for official PDF releases.
 
+simplepdf_use_weasyprint_api
+----------------------------
+.. versionadded:: 1.6
+
+This forces simplepdf to use the weasyprint `python API <https://doc.courtbouillon.org/weasyprint/stable/api_reference.html#python-api>`_ instead of calling the binary via subproces.
+
+.. warning::
+
+   Other variables like `simplepdf_weasyprint_flags`_ will not work when using the API.
+
 simplepdf_weasyprint_flags
 --------------------------
 .. versionadded:: 1.5

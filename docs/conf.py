@@ -38,6 +38,9 @@ simplepdf_vars = {
     'cover-bg': 'url(cover-bg.jpg) no-repeat center'
 }
 
+# use this to force 
+# simplepdf_use_weasyprint_api = True
+
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
