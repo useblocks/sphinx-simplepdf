@@ -24,7 +24,7 @@ extensions = [
     'sphinx_copybutton',
 ]
 
-version = "1.6"
+version = "1.6.0"
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
@@ -37,6 +37,9 @@ simplepdf_vars = {
     'cover-overlay': 'rgba(150, 26, 26, 0.7)',
     'cover-bg': 'url(cover-bg.jpg) no-repeat center'
 }
+
+# use this to force using the weasyprint python API instead of building via the binary
+# simplepdf_use_weasyprint_api = True
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
