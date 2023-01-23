@@ -88,7 +88,7 @@ input {
 
 .md-typeset, .md-nav, .md-typeset table:not([class]),
  .md-typeset table.data:not(.plain){
-    font-size: 16px !important;
+    font-size: 18px !important;
     line-height: 1.5 !important;
 }
 

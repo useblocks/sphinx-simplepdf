@@ -1,4 +1,4 @@
-html_theme_options = {
+ub_html_theme_options = {
     "icon": {
         "repo": "fontawesome/brands/github",
     },

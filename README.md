@@ -34,11 +34,11 @@ You must configure the following in the **conf.py** file of the Sphinx documenta
 * Add the `html_theme_options` to your **conf.py**:
     * Import the theme options for Useblocks.
       ```python
-      from ub_theme.conf import html_theme_options
+      from ub_theme.conf import ub_html_theme_options
         ```
     * Set it as the value for the `html_theme_options` variable.
       ```python
-      html_theme_options = html_theme_options
+      html_theme_options = ub_html_theme_options
         ```
 * Add the custom template changes folder to the `templates_path` variable.
   ```python
@@ -60,17 +60,17 @@ You must configure the following in the **conf.py** file of the Sphinx documenta
         ```
     * Add the custom JS files to the `html_js_files` variable.
       ```python
-      html_js_files = ["ub-theme.js", "jquery.js"]
+      html_js_files = ["ub-theme.js"]
         ```
   
 The final configuration should look like below:
 ```python
-import sys
 import os
+import sys
 
 sys.path.append(os.path.abspath("."))
 
-from ub_theme.conf import html_theme_options
+from ub_theme.conf import ub_html_theme_options
 
 extensions = [
     "sphinx_immaterial",
@@ -79,7 +79,7 @@ extensions = [
 templates_path = ["_templates", "ub_theme/templates"]
 
 html_theme = "sphinx_immaterial"
-html_theme_options = html_theme_options
+html_theme_options = ub_html_theme_options
 
 # You can add other Sphinx-Immaterial theme options like below
 other_options = {
@@ -91,11 +91,12 @@ html_theme_options.update(other_options)
 
 html_static_path = ["_static", "ub_theme/css", "ub_theme/js"]
 html_css_files = ["ub-theme.css"]
-html_js_files = ["ub-theme.js", "jquery.js"]
+html_js_files = ["ub-theme.js"]
 
 ```
 
 ## Changelog
 
+* 23.01.2023 - Updated CSS for theme, changelog and conf.py
 * 13.01.2023 - Updated CSS stylesheets and docs on how to apply the theme customization.
 * 28.12.2022 - Setup and added the initial Useblocks theme codes. 
