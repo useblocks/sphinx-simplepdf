@@ -9,6 +9,11 @@
 import os
 import sphinx
 import datetime
+import sys
+
+sys.path.append(os.path.abspath("."))  # Example if `ub_theme` folder is in the same folder as the `conf.py` file
+
+from ub_theme.conf import ub_html_theme_options
 
 project = 'Sphinx-SimplePDF'
 copyright = '2022, team useblocks'
@@ -21,12 +26,13 @@ extensions = [
     'sphinx_simplepdf',
     'sphinxcontrib.plantuml',
     'sphinxcontrib.needs',
+    'sphinx_immaterial',
     'sphinx_copybutton',
 ]
 
 version = "1.6"
 
-templates_path = ['_templates']
+templates_path = ["_templates", "ub_theme/templates"]
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 plantuml_output_format = "svg_img"
@@ -41,26 +47,28 @@ simplepdf_vars = {
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-#html_theme = 'sphinx_immaterial'
-html_theme = 'alabaster'
-#html_theme = 'sphinx_needs_pdf'
-html_static_path = ['_static']
+html_theme = 'sphinx_immaterial'
+html_title = 'Sphinx-SimplePDF'
+# html_theme = 'alabaster'
+# html_theme = 'sphinx_needs_pdf'
 
-html_theme_options = {
-    'github_user': 'useblocks',
-    'github_repo': 'sphinx-simplepdf',
-    'fixed_sidebar': True,
-    'github_banner': True,
-    'github_button': False,
+html_theme_options = ub_html_theme_options
+# You can add other Sphinx-Immaterial theme options like below
+other_options = {
+    "repo_url": "https://github.com/useblocks/sphinx-simplepdf",
+    "repo_name": "sphinx-simplepdf",
+    "repo_type": "github",
 }
+html_theme_options.update(other_options)
 
 html_context = {
     'docs_scope': 'external',
-    'cover_logo_title': '',
     'cover_meta_data': 'The simple PDF builder for Sphinx.',
-    'cover_footer': f'Build: {datetime.datetime.now().strftime("%d.%m.%Y")}<br>'
-                    f'Maintained by <a href="https://useblocks.com">team useblocks</a>',
 }
+
+html_static_path = ["_static", "ub_theme/css", "ub_theme/js"]
+html_css_files = ["ub-theme.css"]
+html_js_files = ["ub-theme.js"]
 
 
 def setup_jquery(app, exception):
@@ -83,4 +91,3 @@ def setup_jquery(app, exception):
             }
         ))
         app.config.html_js_files = html_js_files
-

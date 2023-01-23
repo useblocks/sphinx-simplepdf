@@ -5,7 +5,8 @@ Release 1.6
 -----------
 :released: under development
 
-* **Bugfix** [#60] Fix TOC hrefs for sections that use file title anchors.
+* **Improvement**: Updated project documentation to use the Useblocks theme customization.
+* **Bugfix**: [#60] Fix TOC hrefs for sections that use file title anchors.
 
 Release 1.5
 -----------
