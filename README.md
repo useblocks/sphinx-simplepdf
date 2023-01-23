@@ -16,7 +16,7 @@ To install the files from this repository, you must have [Git](https://git-scm.c
   ```
 * Download the files from the repository:
   ```bash
-  git clone https://github.com/useblocks/useblocks-theme.git 
+  git clone https://github.com/useblocks/ub_theme.git 
   ```
 * Delete both the **.git** hidden directory and **.gitignore** hidden file from the **ub_theme** folder.
 
@@ -31,12 +31,12 @@ You must configure the following in the **conf.py** file of the Sphinx documenta
       import sys
       sys.path.append(os.path.abspath(".")) # Example if `ub_theme` folder is in the same folder as the `conf.py` file
         ```
-* Add the `html_theme_options` to your **conf.py**:
+* Add the `ub_html_theme_options` to your **conf.py**:
     * Import the theme options for Useblocks.
       ```python
       from ub_theme.conf import ub_html_theme_options
         ```
-    * Set it as the value for the `html_theme_options` variable.
+    * Set it as the value for the `ub_html_theme_options` variable.
       ```python
       html_theme_options = ub_html_theme_options
         ```
@@ -83,7 +83,7 @@ html_theme_options = ub_html_theme_options
 
 # You can add other Sphinx-Immaterial theme options like below
 other_options = {
-    "repo_url": "https://github.com/useblocks/useblocks-theme",
+    "repo_url": "https://github.com/useblocks/ub_theme",
     "repo_name": "useblocks-theme",
     "repo_type": "github",
 }
