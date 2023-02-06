@@ -4,7 +4,7 @@ ub_html_theme_options = {
     },
     "font": {
         "code": "JetBrains Mono",
-        "text": "Urbanist"
+        "text": "Recursive"
     },
     "globaltoc_collapse": True,
     "features": [
