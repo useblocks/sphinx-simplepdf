@@ -50,7 +50,7 @@ setup(
     ],
     classifiers=[
         'Framework :: Sphinx',
-        'Framework :: Sphinx :: Theme',
+        'Framework :: Sphinx :: Extension',
         'Development Status :: 5 - Production/Stable',
         'License :: OSI Approved :: MIT License',
         'Intended Audience :: Developers',
