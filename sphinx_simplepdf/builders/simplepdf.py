@@ -16,6 +16,8 @@ from sphinx.builders.singlehtml import SingleFileHTMLBuilder
 
 from sphinx_simplepdf.builders.debug import DebugPython
 
+from sphinx.util import logging
+logger = logging.getLogger(__name__)
 
 class SimplePdfBuilder(SingleFileHTMLBuilder):
     name = "simplepdf"
@@ -128,7 +130,16 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
             )
         
         else:
-            subprocess.check_output(args, timeout=timeout, text=True)
+            retries = self.config['simplepdf_weasyprint_retries']
+            for n in range(retries):
+                try:
+                    subprocess.check_output(args, timeout=timeout, text=True)
+                    break
+                except subprocess.TimeoutExpired:
+                    logger.warning(f"TimeoutExpired in weasyprint, retrying")
+
+                    if  n == retries-1:
+                        raise RuntimeError(f"maximum number of retries {retries} failed in weasyprint")
 
     def _toctree_fix(self, html):
         soup = BeautifulSoup(html, "html.parser")
@@ -149,6 +160,7 @@ def setup(app: Sphinx) -> Dict[str, Any]:
     app.add_config_value("simplepdf_file_name", None, "html", types=[str])
     app.add_config_value("simplepdf_debug", False, "html", types=bool)
     app.add_config_value("simplepdf_weasyprint_timeout", None, "html", types=[int])
+    app.add_config_value("simplepdf_weasyprint_retries", 0, "html", types=[int])
     app.add_config_value("simplepdf_weasyprint_flags", None, "html", types=[list])
     app.add_config_value("simplepdf_use_weasyprint_api", None, "html", types=[bool])
     app.add_config_value("simplepdf_theme", "simplepdf_theme", "html", types=[str])
