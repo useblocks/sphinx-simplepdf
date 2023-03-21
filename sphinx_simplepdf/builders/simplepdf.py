@@ -131,7 +131,7 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
         
         else:
             retries = self.config['simplepdf_weasyprint_retries']
-            for n in range(retries):
+            for n in range(1 + retries):
                 try:
                     subprocess.check_output(args, timeout=timeout, text=True)
                     break
