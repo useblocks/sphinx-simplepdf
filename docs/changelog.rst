@@ -1,6 +1,12 @@
 Changelog
 =========
 
+Release 1.7
+-----------
+
+* **Bugfix** [#70] Added config option to build PDFs retries times if weasyprint binary fails to build.
+
+
 Release 1.6
 -----------
 :released: 20.01.2023
