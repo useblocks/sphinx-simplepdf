@@ -181,4 +181,13 @@ Additional options for the theme. The default theme ``simplepdf_theme`` inherits
 :nocover: Do not display cover pages (front and back cover)
 
 
+simplepdf_weasyprint_filter
+---------------------------
+.. versionadded:: 1.6
 
+If **weasyprint** is used as executable the output contains warnings and errors from **weasyprint**.
+To reduce output noise the output can be filtered by a list of regular expressions given in this configuration option.
+
+``simplepdf_weasyprint_filter = ["WARNING: Ignored"]``
+
+To suppress all output, the quite flag `-q` should be used.
