@@ -153,8 +153,8 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
                         else:
                             print(line)
                     break
-                except subprocess.TimeoutExpired:
-                    logger.warning(f"TimeoutExpired in weasyprint, retrying")
+                except: # subprocess.TimeoutExpired or subprocess.CalledProcessError
+                    logger.warning(f"exception in weasyprint, retrying")
 
                     if n == retries - 1:
                         raise RuntimeError(f"maximum number of retries {retries} failed in weasyprint")
