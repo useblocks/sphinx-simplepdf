@@ -5,7 +5,7 @@ Release 1.7
 -----------
 
 * **Bugfix** [#70] Added config option to build PDFs retries times if weasyprint binary fails to build.
-
+* **Enhancement** [#40] Added config option to filter warnings from weasyprint.
 
 Release 1.6
 -----------
