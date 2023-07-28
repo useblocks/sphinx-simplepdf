@@ -169,11 +169,20 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
                 link["href"] = link["href"].replace(f"{self.app.config.root_doc}.html", "")
 
         for heading_tag in ["h1", "h2"]:
-            logger.debug(f"search heading {heading_tag}")
-            heading = soup.find(heading_tag, class_="")
-            logger.debug(f"found heading {heading.attrs}")
-            if not heading.has_attr("id"):
-                heading.attrs["id"] = f"{heading_tag}-0"
+            headings = soup.find_all(heading_tag, class_="")
+            for number, heading in enumerate(headings):
+                class_attr = heading.attrs["class"] if heading.has_attr("class") else []
+                logger.debug(f"found heading {heading}")
+                if 0 == number:
+                    class_attr.append("first")
+                if 0 == number % 2:
+                    class_attr.append("even")
+                else:
+                    class_attr.append("odd")
+                if len(headings) - 1 == number:
+                    class_attr.append("last")
+
+                heading.attrs["class"] = class_attr
 
         return soup.prettify(formatter="html")
 
