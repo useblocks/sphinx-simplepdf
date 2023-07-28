@@ -6,8 +6,6 @@ import weasyprint
 import sass
 
 from bs4 import BeautifulSoup
-from docutils.nodes import make_id
-
 
 from sphinx import __version__
 from sphinx.application import Sphinx
