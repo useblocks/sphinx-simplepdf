@@ -7,8 +7,6 @@ import weasyprint
 import sass
 
 from bs4 import BeautifulSoup
-from docutils.nodes import make_id
-
 
 from sphinx import __version__
 from sphinx.application import Sphinx
@@ -137,7 +135,6 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
         filter_pattern = "(?:% s)" % "|".join(filter_list) if 0 < len(filter_list) else None
 
         if self.config["simplepdf_use_weasyprint_api"]:
-
             doc = weasyprint.HTML(index_path)
 
             doc.write_pdf(
@@ -156,7 +153,7 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
                         else:
                             print(line)
                     break
-                except: # subprocess.TimeoutExpired or subprocess.CalledProcessError
+                except:  # subprocess.TimeoutExpired or subprocess.CalledProcessError
                     logger.warning(f"exception in weasyprint, retrying")
 
                     if n == retries - 1:
@@ -170,8 +167,13 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
             links = sidebar.find_all("a", class_="reference internal")
             for link in links:
                 link["href"] = link["href"].replace(f"{self.app.config.root_doc}.html", "")
-                if link["href"].startswith("#document-"):
-                    link["href"] = "#" + make_id(link.text)
+
+        for heading_tag in ["h1", "h2"]:
+            logger.debug(f"search heading {heading_tag}")
+            heading = soup.find(heading_tag, class_="")
+            logger.debug(f"found heading {heading.attrs}")
+            if not heading.has_attr("id"):
+                heading.attrs["id"] = f"{heading_tag}-0"
 
         return soup.prettify(formatter="html")
 
