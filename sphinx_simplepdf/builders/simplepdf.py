@@ -135,7 +135,6 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
         filter_pattern = "(?:% s)" % "|".join(filter_list) if 0 < len(filter_list) else None
 
         if self.config["simplepdf_use_weasyprint_api"]:
-
             doc = weasyprint.HTML(index_path)
 
             doc.write_pdf(
