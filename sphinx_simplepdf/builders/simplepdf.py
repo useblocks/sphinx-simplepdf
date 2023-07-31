@@ -186,6 +186,8 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
                 if len(headings) - 1 == number:
                     class_attr.append("last")
 
+                heading.attrs["class"] = class_attr
+
         return soup.prettify(formatter="html")
 
 
