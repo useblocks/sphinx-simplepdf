@@ -27,6 +27,7 @@
 body div.body {
     min-width: unset;
     max-width: unset;
+    break-before: always;
 }
 
 .docutils {
@@ -82,7 +83,7 @@ html {
     h1 {
       color: $primary;
       font-size: 30pt;
-      page-break-before: always;
+      page-break-before: avoid;
     }
 
     h2, h3, h4 {
