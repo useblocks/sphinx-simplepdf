@@ -26,6 +26,8 @@ extensions = [
     'sphinxcontrib.plantuml',
     'sphinx_needs',
     'sphinx.ext.autodoc',
+    'sphinx.ext.imgmath',
+
 ]
 
 version = "1.0"  # Will not be raised
@@ -74,6 +76,7 @@ plantuml_output_format = "svg_img"
 local_plantuml_path = os.path.join(os.path.dirname(__file__), "../", "docs", "utils", "plantuml.jar")
 plantuml = f"java -Djava.awt.headless=true -jar {local_plantuml_path}"
 
+imgmath_image_format = 'svg'
 
 def setup_jquery(app, exception):
     """
