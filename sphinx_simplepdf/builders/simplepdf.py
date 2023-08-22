@@ -143,6 +143,7 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
 
         else:
             retries = self.config["simplepdf_weasyprint_retries"]
+            success = False
             for n in range(1 + retries):
                 try:
                     wp_out = subprocess.check_output(args, timeout=timeout, text=True, stderr=subprocess.STDOUT)
@@ -152,11 +153,14 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
                             pass
                         else:
                             print(line)
+                    success = True
                     break
-                except: # subprocess.TimeoutExpired or subprocess.CalledProcessError
-                    logger.warning(f"exception in weasyprint, retrying")
-
-                    if n == retries - 1:
+                except subprocess.TimeoutExpired:
+                    logger.warning(f"TimeoutExpired in weasyprint, retrying")
+                except subprocess.CalledProcessError as e:
+                    logger.warning(f"CalledProcessError in weasyprint, retrying\n{str(e)}")
+                finally:
+                    if (n == retries - 1) and not success:
                         raise RuntimeError(f"maximum number of retries {retries} failed in weasyprint")
 
     def _toctree_fix(self, html):
