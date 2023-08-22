@@ -29,7 +29,7 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         if self.app.config.simplepdf_theme is not None:
-            print(f"Setting theme to {self.app.config.simplepdf_theme}")
+            logger.info(f"Setting theme to {self.app.config.simplepdf_theme}")
             self.app.config.html_theme = self.app.config.simplepdf_theme
 
         # We need to overwrite some config values, as they are set for the normal html build, but
@@ -53,7 +53,7 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
         self.app.config.html_context["spd"] = debug_sphinx
 
         # Generate main.css
-        print("Generating css files from scss-templates")
+        logger.info("Generating css files from scss-templates")
         css_folder = os.path.join(self.app.outdir, f"_static")
         scss_folder = os.path.join(
             os.path.dirname(__file__), "..", "themes", "simplepdf_theme", "static", "styles", "sources"
