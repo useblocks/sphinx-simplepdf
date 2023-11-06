@@ -2,6 +2,7 @@ import os
 import re
 from typing import Any, Dict
 import subprocess
+from importlib import import_module
 import weasyprint
 
 import sass
@@ -44,7 +45,7 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
 
         debug_sphinx = {
             "version": __version__,
-            "confidr": self.app.confdir,
+            "confdir": self.app.confdir,
             "srcdir": self.app.srcdir,
             "outdir": self.app.outdir,
             "extensions": self.app.config.extensions,
@@ -55,9 +56,19 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
         # Generate main.css
         logger.info("Generating css files from scss-templates")
         css_folder = os.path.join(self.app.outdir, f"_static")
-        scss_folder = os.path.join(
-            os.path.dirname(__file__), "..", "themes", "simplepdf_theme", "static", "styles", "sources"
-        )
+
+        theme_folder = os.path.join(os.path.dirname(__file__), "..", "themes", "simplepdf_theme")
+
+        if self.app.config.simplepdf_theme is not None:
+            try:
+                theme_folder = os.path.dirname(import_module(self.app.config.html_theme).__file__)
+            except ImportError:
+                logger.warning(f"Could not import {self.app.config.html_theme}")
+                # use built-in theme
+                pass
+
+        scss_folder = os.path.join(theme_folder, "static", "styles", "sources")
+
         sass.compile(
             dirname=(scss_folder, css_folder),
             output_style="nested",
