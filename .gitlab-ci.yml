@@ -6,9 +6,8 @@ stages:
   - publish
 
 before_script:
-  - pip install poetry
-  - poetry install
-  - source $(poetry env info --path)/bin/activate
+  - echo "This is the before script"
+  - pip install twine
 
 testing:
   stage: test
@@ -22,9 +21,7 @@ publishing:
     - when: manual
   script:
     - echo "This is the publish stage"
-    - poetry config repositories.gitlab ${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/pypi
-    - echo "Repository gitlab configured..."
-    - poetry build
+    - python setup.py sdist
     - echo "Build done..."
-    - poetry publish --repository gitlab -u gitlab-ci-token -p "$CI_JOB_TOKEN"
+    - twine upload --repository-url ${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/pypi -u gitlab-ci-token -p "$CI_JOB_TOKEN" dist/*
     - echo "Publish done..."
