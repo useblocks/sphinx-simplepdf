@@ -1,0 +1,30 @@
+default:
+  image: python:3.9
+
+stages:
+  - test
+  - publish
+
+before_script:
+  - pip install poetry
+  - poetry install
+  - source $(poetry env info --path)/bin/activate
+
+testing:
+  stage: test
+  script:
+    - echo "This is the test stage"
+
+publishing:
+  stage: publish
+  rules:
+    - if: '$CI_COMMIT_REF_NAME == "main"'
+    - when: manual
+  script:
+    - echo "This is the publish stage"
+    - poetry config repositories.gitlab ${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/pypi
+    - echo "Repository gitlab configured..."
+    - poetry build
+    - echo "Build done..."
+    - poetry publish --repository gitlab -u gitlab-ci-token -p "$CI_JOB_TOKEN"
+    - echo "Publish done..."
