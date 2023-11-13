@@ -4,8 +4,6 @@ from typing import Any, Dict
 import subprocess
 import weasyprint
 
-import sass
-
 from bs4 import BeautifulSoup
 
 from sphinx import __version__
@@ -51,53 +49,6 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
             "simple_config": {x.name: x.value for x in self.app.config if x.name.startswith("simplepdf")},
         }
         self.app.config.html_context["spd"] = debug_sphinx
-
-        # Generate main.css
-        logger.info("Generating css files from scss-templates")
-        css_folder = os.path.join(self.app.outdir, f"_static")
-        scss_folder = os.path.join(
-            os.path.dirname(__file__), "..", "themes", "simplepdf_theme", "static", "styles", "sources"
-        )
-        sass.compile(
-            dirname=(scss_folder, css_folder),
-            output_style="nested",
-            custom_functions={
-                sass.SassFunction("config", ("$a", "$b"), self.get_config_var),
-                sass.SassFunction("theme_option", ("$a", "$b"), self.get_theme_option_var),
-            },
-        )
-
-    def get_config_var(self, name, default):
-        """
-        Gets a config variables for scss out of the Sphinx configuration.
-        If name is not found in config, the specified default var is returned.
-
-        Args:
-            name: Name of the config var to use
-            default: Default value, if name can not be found in config
-
-        Returns: Value
-        """
-        simplepdf_vars = self.app.config.simplepdf_vars
-        if name not in simplepdf_vars:
-            return default
-        return simplepdf_vars[name]
-
-    def get_theme_option_var(self, name, default):
-        """
-        Gets a option  variables for scss out of the Sphinx theme options.
-        If name is not found in theme options, the specified default var is returned.
-
-        Args:
-            name: Name of the option var to use
-            default: Default value, if name can not be found in config
-
-        Returns: Value
-        """
-        simplepdf_theme_options = self.app.config.simplepdf_theme_options
-        if name not in simplepdf_theme_options:
-            return default
-        return simplepdf_theme_options[name]
 
     def finish(self) -> None:
         super().finish()
