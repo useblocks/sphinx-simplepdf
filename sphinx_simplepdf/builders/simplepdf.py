@@ -5,8 +5,6 @@ import subprocess
 from importlib import import_module
 import weasyprint
 
-import sass
-
 from bs4 import BeautifulSoup
 
 from sphinx import __version__
@@ -32,6 +30,8 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
         if self.app.config.simplepdf_theme is not None:
             logger.info(f"Setting theme to {self.app.config.simplepdf_theme}")
             self.app.config.html_theme = self.app.config.simplepdf_theme
+        else:
+            logger.error('The simplepdf_theme is not set')
 
         # We need to overwrite some config values, as they are set for the normal html build, but
         # simplepdf can normally not handle them.
@@ -57,58 +57,28 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
         logger.info("Generating css files from scss-templates")
         css_folder = os.path.join(self.app.outdir, f"_static")
 
-        theme_folder = os.path.join(os.path.dirname(__file__), "..", "themes", "simplepdf_theme")
-
         if self.app.config.simplepdf_theme is not None:
             try:
-                theme_folder = os.path.dirname(import_module(self.app.config.html_theme).__file__)
+                theme_mod = import_module(name=self.app.config.simplepdf_theme)
+                logger.warning(f"Loaded theme {self.app.config.simplepdf_theme}")
             except ImportError:
-                logger.warning(f"Could not import {self.app.config.html_theme}")
+                logger.warning(f"Could not load theme {self.app.config.simplepdf_theme}")
                 # use built-in theme
-                pass
+                # theme_mod = import_module(name='sphinx_simplepdf.themes.simplepdf_theme')
+                theme_mod = import_module(
+                    name='..themes.simplepdf_theme',
+                    package=__package__
+                )
+                logger.warning("Loaded builtin theme .themes.simplepdf_theme")
 
-        scss_folder = os.path.join(theme_folder, "static", "styles", "sources")
-
-        sass.compile(
-            dirname=(scss_folder, css_folder),
-            output_style="nested",
-            custom_functions={
-                sass.SassFunction("config", ("$a", "$b"), self.get_config_var),
-                sass.SassFunction("theme_option", ("$a", "$b"), self.get_theme_option_var),
-            },
-        )
-
-    def get_config_var(self, name, default):
-        """
-        Gets a config variables for scss out of the Sphinx configuration.
-        If name is not found in config, the specified default var is returned.
-
-        Args:
-            name: Name of the config var to use
-            default: Default value, if name can not be found in config
-
-        Returns: Value
-        """
-        simplepdf_vars = self.app.config.simplepdf_vars
-        if name not in simplepdf_vars:
-            return default
-        return simplepdf_vars[name]
-
-    def get_theme_option_var(self, name, default):
-        """
-        Gets a option  variables for scss out of the Sphinx theme options.
-        If name is not found in theme options, the specified default var is returned.
-
-        Args:
-            name: Name of the option var to use
-            default: Default value, if name can not be found in config
-
-        Returns: Value
-        """
-        simplepdf_theme_options = self.app.config.simplepdf_theme_options
-        if name not in simplepdf_theme_options:
-            return default
-        return simplepdf_theme_options[name]
+        try:
+            theme_mod.gen_dynamic_style(
+                css_folder,
+                self.app.config.simplepdf_vars,
+                self.app.config.simplepdf_theme_options
+            )
+        except AttributeError:
+            pass  # theme is not parametrized
 
     def finish(self) -> None:
         super().finish()
