@@ -1,3 +1,4 @@
+from collections import Counter
 import os
 import re
 from typing import Any, Dict
@@ -187,6 +188,40 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
                     class_attr.append("last")
 
                 heading.attrs["class"] = class_attr
+
+        # search for duplicates
+        counts = dict(Counter(links))
+        duplicates = {key:value for key, value in counts.items() if value > 1}
+        
+        if duplicates:
+            print("found duplicate references in toctree attempting to fix")
+
+        for text, counter in duplicates.items():
+            
+            ref = re.findall("href=\"#.*\"", str(text))
+
+            cleaned_ref_toc = ref[0].strip("href=\"")
+            cleaned_ref_target = ref[0].strip("href=\"#")
+
+            
+            # occurences = soup.find_all('a', attrs={"class": "headerlink", "href": cleaned_ref})
+            occurences = soup.find_all('section', attrs={"id": cleaned_ref_target})
+            # print(occurences)
+
+            # rename duplicate references
+
+            replace_counter = 0
+            
+            for link in links:
+                if link["href"] == cleaned_ref_toc:
+                    # edit reference in table of content
+                    link["href"] = link["href"] + "-" + str(replace_counter + 1)
+                    
+                    # edit target reference
+                    # occurences[replace_counter]["href"] = occurences[replace_counter]["href"] + "-" + str(replace_counter + 1)
+                    occurences[replace_counter]["id"] = occurences[replace_counter]["id"] + "-" + str(replace_counter + 1)
+                    
+                    replace_counter += 1
 
         return soup.prettify(formatter="html")
 
