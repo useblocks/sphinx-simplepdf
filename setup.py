@@ -24,6 +24,7 @@ setup(
               'sphinx_simplepdf.builders',
               'sphinx_simplepdf.directives',
               'sphinx_simplepdf.themes/simplepdf_theme',
+              'sphinx_simplepdf.writers',
               ],
     package_data={'sphinx_simplepdf/themes/simplepdf_theme': [
         'theme.conf',

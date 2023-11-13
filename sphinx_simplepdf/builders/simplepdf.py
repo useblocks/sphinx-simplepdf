@@ -18,6 +18,8 @@ from sphinx_simplepdf.builders.debug import DebugPython
 
 from sphinx.util import logging
 
+from sphinx_simplepdf.writers.simplepdf import SimplepdfTranslator
+
 logger = logging.getLogger(__name__)
 
 
@@ -26,6 +28,8 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
     format = "html"  # Must be html instead of "pdf", otherwise plantuml has problems
     file_suffix = ".pdf"
     links_suffix = None
+
+    default_translator_class = SimplepdfTranslator
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
