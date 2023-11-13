@@ -2,7 +2,6 @@ import os
 import re
 from typing import Any, Dict
 import subprocess
-from importlib import import_module
 import weasyprint
 
 from bs4 import BeautifulSoup
@@ -30,8 +29,6 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
         if self.app.config.simplepdf_theme is not None:
             logger.info(f"Setting theme to {self.app.config.simplepdf_theme}")
             self.app.config.html_theme = self.app.config.simplepdf_theme
-        else:
-            logger.error('The simplepdf_theme is not set')
 
         # We need to overwrite some config values, as they are set for the normal html build, but
         # simplepdf can normally not handle them.
@@ -110,7 +107,7 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
                     success = True
                     break
                 except subprocess.TimeoutExpired:
-                    logger.warning(f"TimeoutExpired in weasyprint, retrying")
+                    logger.warning("TimeoutExpired in weasyprint, retrying")
                 except subprocess.CalledProcessError as e:
                     logger.warning(f"CalledProcessError in weasyprint, retrying\n{str(e)}")
                 finally:
