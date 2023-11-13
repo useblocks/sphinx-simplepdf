@@ -53,33 +53,6 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
         }
         self.app.config.html_context["spd"] = debug_sphinx
 
-        # Generate main.css
-        logger.info("Generating css files from scss-templates")
-        css_folder = os.path.join(self.app.outdir, f"_static")
-
-        if self.app.config.simplepdf_theme is not None:
-            try:
-                theme_mod = import_module(name=self.app.config.simplepdf_theme)
-                logger.warning(f"Loaded theme {self.app.config.simplepdf_theme}")
-            except ImportError:
-                logger.warning(f"Could not load theme {self.app.config.simplepdf_theme}")
-                # use built-in theme
-                # theme_mod = import_module(name='sphinx_simplepdf.themes.simplepdf_theme')
-                theme_mod = import_module(
-                    name='..themes.simplepdf_theme',
-                    package=__package__
-                )
-                logger.warning("Loaded builtin theme .themes.simplepdf_theme")
-
-        try:
-            theme_mod.gen_dynamic_style(
-                css_folder,
-                self.app.config.simplepdf_vars,
-                self.app.config.simplepdf_theme_options
-            )
-        except AttributeError:
-            pass  # theme is not parametrized
-
     def finish(self) -> None:
         super().finish()
 

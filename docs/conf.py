@@ -20,8 +20,7 @@ author = 'team useblocks'
 extensions = [
     'sphinx_simplepdf',
     'sphinxcontrib.plantuml',
-#    'sphinxcontrib.needs',
-    'sphinx_needs',
+    'sphinxcontrib.needs',
     'sphinx_copybutton',
 ]
 
