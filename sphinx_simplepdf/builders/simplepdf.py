@@ -186,15 +186,16 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
             for text, counter in duplicates.items():
 
                 ref = re.findall("href=\"#.*\"", str(text))
-
-                cleaned_ref_toc = ref[0].strip("href=\"")
-                cleaned_ref_target = ref[0].strip("href=\"#")
+                
+                # clean href data for searching
+                cleaned_ref_toc = ref[0].replace("href=\"", "").replace("\"", "") # "#target"
+                cleaned_ref_target = ref[0].replace("href=\"#", "").replace("\"", "") # "target"
 
                 # occurences = soup.find_all('a', attrs={"class": "headerlink", "href": cleaned_ref})
                 occurences = soup.find_all('section', attrs={"id": cleaned_ref_target})
                 # print(occurences)
 
-                # rename duplicate references
+                # rename duplicate references, relies on fact -> order in toc is order of occurence in document
 
                 replace_counter = 0
 
