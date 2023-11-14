@@ -173,12 +173,9 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
             for link in links:
                 link["href"] = link["href"].replace(f"{self.app.config.root_doc}.html", "")
 
-            print(links)
-
             # search for duplicates
             counts = dict(Counter([str(x).split(">")[0] for x in links]))
             duplicates = {key: value for key, value in counts.items() if value > 1}
-            print(duplicates)
 
             if duplicates:
                 print("found duplicate references in toctree attempting to fix")
@@ -191,12 +188,9 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
                 cleaned_ref_toc = ref[0].replace("href=\"", "").replace("\"", "") # "#target"
                 cleaned_ref_target = ref[0].replace("href=\"#", "").replace("\"", "") # "target"
 
-                # occurences = soup.find_all('a', attrs={"class": "headerlink", "href": cleaned_ref})
                 occurences = soup.find_all('section', attrs={"id": cleaned_ref_target})
-                # print(occurences)
 
                 # rename duplicate references, relies on fact -> order in toc is order of occurence in document
-
                 replace_counter = 0
 
                 for link in links:
@@ -205,12 +199,10 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
                         link["href"] = link["href"] + "-" + str(replace_counter + 1)
 
                         # edit target reference
-                        # occurences[replace_counter]["href"] = occurences[replace_counter]["href"] + "-" + str(replace_counter + 1)
                         occurences[replace_counter]["id"] = occurences[replace_counter]["id"] + "-" + str(
                             replace_counter + 1)
 
                         replace_counter += 1
-
 
         for heading_tag in ["h1", "h2"]:
             headings = soup.find_all(heading_tag, class_="")
