@@ -161,9 +161,9 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
                     success = True
                     break
                 except subprocess.TimeoutExpired:
-                    logger.warning(f"TimeoutExpired in weasyprint, retrying")
+                    logger.info(f"TimeoutExpired in weasyprint, retrying")
                 except subprocess.CalledProcessError as e:
-                    logger.warning(f"CalledProcessError in weasyprint, retrying\n{str(e)}")
+                    logger.info(f"CalledProcessError in weasyprint, retrying\n{str(e)}")
                 finally:
                     if (n == retries - 1) and not success:
                         raise RuntimeError(f"maximum number of retries {retries} failed in weasyprint")
@@ -182,7 +182,7 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
             duplicates = {key: value for key, value in counts.items() if value > 1}
 
             if duplicates:
-                print("found duplicate references in toctree attempting to fix")
+                logger.info("found duplicate references in toctree attempting to fix")
 
             for text, counter in duplicates.items():
 
