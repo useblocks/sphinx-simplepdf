@@ -104,10 +104,25 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
             return default
         return simplepdf_theme_options[name]
 
+    def write_documents(self, _docnames: Set[str]) -> None:
+        self.prepare_writing(self.env.all_docs.keys())
+    
+        with progress_message(__("assembling single document"), nonl=False):
+            doctree = self.assemble_doctree()
+            self.env.toc_secnumbers = self.assemble_toc_secnumbers()
+            self.env.toc_fignumbers = self.assemble_toc_fignumbers()
+    
+        with progress_message(__("writing")):
+            self.write_doc_serialized(
+                self.config.root_doc.split("/")[-1], doctree  # type:ignore
+            )
+            self.write_doc(self.config.root_doc.split("/")[-1], doctree)  # type:ignore
+
+
     def finish(self) -> None:
         super().finish()
 
-        index_path = os.path.join(self.app.outdir, f"{self.app.config.root_doc}.html")
+        index_path = os.path.join(self.app.outdir, f"{self.app.config.root_doc.split("/")[-1]}.html")
 
         # Manipulate index.html
         with open(index_path, "rt", encoding="utf-8") as index_file:
