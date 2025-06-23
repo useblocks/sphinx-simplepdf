@@ -224,6 +224,7 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
 
                 heading.attrs["class"] = class_attr
 
+        logger.debug(soup.prettify(formatter="html"))
         return str(soup)
 
 
