@@ -53,7 +53,11 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
             "srcdir": self.app.srcdir,
             "outdir": self.app.outdir,
             "extensions": self.app.config.extensions,
-            "simple_config": {x.name: x.value for x in self.app.config if x.name.startswith("simplepdf")},
+            "simple_config": {
+                x.name: x.value
+                for x in self.app.config
+                if x.name.startswith("simplepdf")
+            },
         }
         self.app.config.html_context["spd"] = debug_sphinx
 
@@ -61,14 +65,22 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
         logger.info("Generating css files from scss-templates")
         css_folder = os.path.join(self.app.outdir, f"_static")
         scss_folder = os.path.join(
-            os.path.dirname(__file__), "..", "themes", "simplepdf_theme", "static", "styles", "sources"
+            os.path.dirname(__file__),
+            "..",
+            "themes",
+            "simplepdf_theme",
+            "static",
+            "styles",
+            "sources",
         )
         sass.compile(
             dirname=(scss_folder, css_folder),
             output_style="nested",
             custom_functions={
                 sass.SassFunction("config", ("$a", "$b"), self.get_config_var),
-                sass.SassFunction("theme_option", ("$a", "$b"), self.get_theme_option_var),
+                sass.SassFunction(
+                    "theme_option", ("$a", "$b"), self.get_theme_option_var
+                ),
             },
         )
 
@@ -125,7 +137,9 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
         ):
             args.extend(self.config["simplepdf_weasyprint_flags"])
 
-        file_name = self.app.config.simplepdf_file_name or f"{self.app.config.project}.pdf"
+        file_name = (
+            self.app.config.simplepdf_file_name or f"{self.app.config.project}.pdf"
+        )
 
         args.extend(
             [
@@ -137,7 +151,9 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
         timeout = self.config["simplepdf_weasyprint_timeout"]
 
         filter_list = self.config["simplepdf_weasyprint_filter"]
-        filter_pattern = "(?:% s)" % "|".join(filter_list) if 0 < len(filter_list) else None
+        filter_pattern = (
+            "(?:% s)" % "|".join(filter_list) if 0 < len(filter_list) else None
+        )
 
         if self.config["simplepdf_use_weasyprint_api"]:
             doc = weasyprint.HTML(index_path)
@@ -151,10 +167,14 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
             success = False
             for n in range(1 + retries):
                 try:
-                    wp_out = subprocess.check_output(args, timeout=timeout, text=True, stderr=subprocess.STDOUT)
+                    wp_out = subprocess.check_output(
+                        args, timeout=timeout, text=True, stderr=subprocess.STDOUT
+                    )
 
                     for line in wp_out.splitlines():
-                        if filter_pattern is not None and re.match(filter_pattern, line):
+                        if filter_pattern is not None and re.match(
+                            filter_pattern, line
+                        ):
                             pass
                         else:
                             print(line)
@@ -163,50 +183,162 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
                 except subprocess.TimeoutExpired:
                     logger.warning(f"TimeoutExpired in weasyprint, retrying")
                 except subprocess.CalledProcessError as e:
-                    logger.warning(f"CalledProcessError in weasyprint, retrying\n{str(e)}")
+                    logger.warning(
+                        f"CalledProcessError in weasyprint, retrying\n{str(e)}"
+                    )
                 finally:
                     if (n == retries - 1) and not success:
-                        raise RuntimeError(f"maximum number of retries {retries} failed in weasyprint")
+                        raise RuntimeError(
+                            f"maximum number of retries {retries} failed in weasyprint"
+                        )
+
+    """
+    attempts to fix cases where a document has multiple chapters that have the same name.
+
+    the following structure would be a problem for showing the toc correctly:
+
+    Documentation:
+    1. Hardware
+        1.1 Introduction
+        1.2 Description
+        1.3 Content
+    2. Software
+        2.1 Structure
+            2.1.1 Introduction
+            2.1.2 Description
+            2.1.3 Content
+    3. Backend
+        3.1 Introduction
+        3.2 Description
+
+    we want a toctree showing only lvl 1 and lvl 2 chapters
+    since there lvl 3 chapters with the same name as a lvl 2 chapter and we merge all the documentation into a single HTML for the PDF build
+    the counting for chapters in the PDF toctree gets messed up
+
+    """
 
     def _toctree_fix(self, html):
+        print("checking for potential toctree page numbering errors")
         soup = BeautifulSoup(html, "html.parser")
         sidebar = soup.find("div", class_="sphinxsidebarwrapper")
 
+        # sidebar contains the toctree
         if sidebar is not None:
-            links = sidebar.find_all("a", class_="reference internal")
-            for link in links:
-                link["href"] = link["href"].replace(f"{self.app.config.root_doc}.html", "")
+            toc_links = sidebar.find_all("a", class_="reference internal")
+
+            # find max toctree lvl
+            toctree_lvls = set(
+                sidebar.find_all("li", class_=re.compile("toctree-l[1-9]"))
+            )
+
+            max_toctree_lvl = 0
+
+            for i in toctree_lvls:
+                lvl = int(
+                    i["class"][0].split("-l")[-1]
+                )  # toctree entries have a single class, example "toctree-l1" for lvl 1, get lvl
+                if lvl > max_toctree_lvl:
+                    max_toctree_lvl = lvl
+
+            # remove document file reference
+            for toc_link in toc_links:
+                toc_link["href"] = toc_link["href"].replace(
+                    f"{self.app.config.root_doc}.html", ""
+                )
 
             # search for duplicates
-            counts = dict(Counter([str(x).split(">")[0] for x in links]))
-            duplicates = {key: value for key, value in counts.items() if value > 1}
+            counts = dict(Counter([str(x).split(">")[0] for x in toc_links]))
+            references = {key: value for key, value in counts.items()}
 
-            if duplicates:
-                print("found duplicate references in toctree attempting to fix")
+            if references:
 
-            for text, counter in duplicates.items():
+                print(f"found duplicate chapters:\n{references}")
 
-                ref = re.findall("href=\"#.*\"", str(text))
-                
+            for text in references.keys():
+
+                ref = re.findall('href="#.*"', str(text))
+
                 # clean href data for searching
-                cleaned_ref_toc = ref[0].replace("href=\"", "").replace("\"", "") # "#target"
-                cleaned_ref_target = ref[0].replace("href=\"#", "").replace("\"", "") # "target"
+                cleaned_ref_toc = (
+                    ref[0].replace('href="', "").replace('"', "")
+                )  # "#target"
+                cleaned_ref_target = (
+                    ref[0].replace('href="#', "").replace('"', "")
+                )  # "target"
 
-                occurences = soup.find_all('section', attrs={"id": cleaned_ref_target})
+                occurences = soup.find_all("section", attrs={"id": cleaned_ref_target})
 
-                # rename duplicate references, relies on fact -> order in toc is order of occurence in document
+                # name occurences section-id which is the target for internal refs with increasing id
+                # occurence-0, occurence-1, occurence-2 ...
+                if len(occurences) > 1:
+                    occ_counter = 0
+                    for occ in occurences:
+                        occ["id"] = occ["id"] + "-" + str(occ_counter)
+                        occ_counter += 1
+
+                else:
+                    continue
+
+                # index of toctree entry
                 replace_counter = 0
 
-                for link in links:
-                    if link["href"] == cleaned_ref_toc:
-                        # edit reference in table of content
-                        link["href"] = link["href"] + "-" + str(replace_counter + 1)
+                # scan all occurences, if occurenca has too high of a HTML headline level compared to the max_toctree_level (depth)
+                # the occurence is a "deeper" level which does not correspond to the toctree refernce. This is only needed when there
+                # are chaptters with the same name AND one of them is at a level which should not be referenced in the toc but becomes an
 
-                        # edit target reference
-                        occurences[replace_counter]["id"] = occurences[replace_counter]["id"] + "-" + str(
-                            replace_counter + 1)
+                for toc_link in toc_links:
+                    if toc_link["href"] == cleaned_ref_toc:
+                        # edit toctree reference
+                        try:
 
-                        replace_counter += 1
+                            match_found = False
+
+                            for j in range(replace_counter, len(occurences)):
+
+                                if match_found:
+                                    break
+
+                                children = set(occurences[j].contents)
+
+                                target_lvl = 99
+
+                                for element in children:
+                                    name = element.name
+
+                                    # find headline of chapter
+                                    if name and re.search("h[1-9]", name):
+                                        try:
+                                            e_class = element.contents[0].attrs[
+                                                "class"
+                                            ][0]
+                                        except KeyError:
+                                            continue
+
+                                        if e_class == "section-number":
+                                            target_lvl = int(name[-1])
+
+                                            # if headlinelevel either is max_toctree lvl or + 1 the chapter should be included in the toc
+                                            # break both loops and edit occurrence via repalce_counter
+                                            if (
+                                                target_lvl == max_toctree_lvl + 1
+                                                or target_lvl == max_toctree_lvl
+                                            ):
+                                                match_found = True
+                                                break  # headline match found
+
+                                            else:
+                                                # skip this occurrence if headline level too big
+                                                replace_counter += 1
+                                                continue
+
+                            # edit target of toc reference with correct occurence
+                            toc_link["href"] = (
+                                toc_link["href"] + "-" + str(replace_counter)
+                            )
+                            replace_counter += 1
+
+                        except IndexError:
+                            continue
 
         for heading_tag in ["h1", "h2"]:
             headings = soup.find_all(heading_tag, class_="")
@@ -238,7 +370,9 @@ def setup(app: Sphinx) -> Dict[str, Any]:
     app.add_config_value("simplepdf_use_weasyprint_api", None, "html", types=[bool])
     app.add_config_value("simplepdf_theme", "simplepdf_theme", "html", types=[str])
     app.add_config_value("simplepdf_theme_options", {}, "html", types=[dict])
-    app.add_config_value("simplepdf_sidebars", {"**": ["localtoc.html"]}, "html", types=[dict])
+    app.add_config_value(
+        "simplepdf_sidebars", {"**": ["localtoc.html"]}, "html", types=[dict]
+    )
     app.add_builder(SimplePdfBuilder)
 
     return {
