@@ -356,7 +356,8 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
 
                 heading.attrs["class"] = class_attr
 
-        return soup.prettify(formatter="html")
+        logger.debug(soup.prettify(formatter="html"))
+        return str(soup)
 
 
 def setup(app: Sphinx) -> Dict[str, Any]:
