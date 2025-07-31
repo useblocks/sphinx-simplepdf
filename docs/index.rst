@@ -10,10 +10,9 @@ This Sphinx extension provides an easy way to build beautiful PDFs based on CSS 
 
 It contains:
 
- * A PDF specific, CSS based Sphinx theme: ``sphinx_simplepdf``.
- * A Sphinx builder, called ``simplepdf``
- * :ref:`Directives <directives>` to
-
+* A PDF specific, CSS based Sphinx theme: ``sphinx_simplepdf``.
+* A Sphinx builder, called ``simplepdf``
+* :ref:`Directives <directives>` to
    * control different structures and content for ``HTML`` and ``PDF`` builds.
    * embed PDF inside HTML views.
 
@@ -90,7 +89,6 @@ Showcase
 
 
     .. toctree::
-       :caption: Content
        :maxdepth: 3
 
        installation
@@ -99,6 +97,6 @@ Showcase
        directives
        css
        tech_details
-       examples/index
+       examples/sphinx_needs
        changelog
        license

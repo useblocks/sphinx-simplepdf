@@ -12,6 +12,7 @@ Release 1.6
 -----------
 :released: 20.01.2023
 
+* **Improvement**: Updated project documentation to use the Useblocks theme customization.
 * **Bugfix** [#60] Fix TOC hrefs for sections that use file title anchors.
 * **Enhancement** [#62] Added config option to build PDFs with the weasyprint Python API instead of the binary. 
 
