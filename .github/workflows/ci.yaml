@@ -1,0 +1,72 @@
+name: ci
+on:
+  push:
+    branches: [master]
+  pull_request:
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version-file: ".python-version"
+      - uses: pre-commit/action@v3.0.1
+  tests:
+    name: Test ${{ matrix.tox-env }}-${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        tox-env:
+          - py310-sphinx74
+          - py311-sphinx74
+          - py311-sphinx82
+          - py312-sphinx74
+          - py312-sphinx82
+          - py313-sphinx74
+          - py313-sphinx82
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version-file: ".python-version"
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+      - name: Install tox
+        run: uv pip install --system tox tox-uv
+      - name: Run tox environment
+        run: uv run tox -e ${{ matrix.tox-env }}
+  docs:
+    name: Docs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version-file: ".python-version"
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+      - name: Install tox
+        run: uv pip install --system tox tox-uv
+      - name: Build documentation
+        run: uv run tox -e docs
+  all_good:
+    # This job does nothing and is only used for the branch protection
+    # see https://github.com/marketplace/actions/alls-green#why
+    if: ${{ !cancelled() }}
+    needs:
+      - lint
+      - tests
+      - docs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Decide whether the needed jobs succeeded or failed
+        uses: re-actors/alls-green@release/v1
+        with:
+          jobs: ${{ toJSON(needs) }}

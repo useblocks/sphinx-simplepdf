@@ -1,0 +1,151 @@
+[build-system]
+requires = ["flit_core >=3.4,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "sphinx-simplepdf"
+version = "1.6.0"
+description = "An easy to use PDF Builder for Sphinx with a modern PDF-Theme."
+readme = "README.rst"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [{ name = "team useblocks", email = "info@useblocks.com" }]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Documentation",
+  "Topic :: Utilities",
+  "Framework :: Sphinx :: Extension",
+]
+dependencies = [
+  "sphinx>=4.0",
+  "weasyprint>=66.0",
+  "libsass",
+  "beautifulsoup4",
+  "packaging>=20.0", # Modern replacement for pkg_resources.parse_version
+  "fonttools>=4.0.0",
+  "pillow>=9.1.0",
+  "pydyf>=0.10.0",
+  "cffi>=0.6",
+  "pycairo"
+]
+
+[project.entry-points."sphinx.html_themes"]
+simplepdf_theme = "sphinx_simplepdf.themes.simplepdf_theme"
+
+[project.entry-points."sphinx.builders"]
+simplepdf = "sphinx_simplepdf.builders.simplepdf"
+
+
+
+[project.optional-dependencies]
+dev = [
+  "pre-commit>=3.5",
+  "pytest>=7.0",
+  "pytest-xdist>=3.0",
+  "tox>=4.0",
+  "tox-uv>=1.0",
+  "ruff>=0.4.0",
+]
+docs = [
+    "sphinx>=4.0",
+    "sphinxcontrib-plantuml",
+    "sphinx-needs",
+    "sphinx-copybutton"
+]
+
+[project.urls]
+Homepage = "https://github.com/useblocks/sphinx-simplepdf"
+Documentation = "https://sphinx-simplepdf.readthedocs.io/en/latest/"
+Repository = "https://github.com/useblocks/sphinx-simplepdf"
+"Bug Tracker" = "https://github.com/useblocks/sphinx-simplepdf/issues"
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+extend-select = [
+  "B",   # flake8-bugbear
+  "C4",  # flake8-comprehensions
+  "F",   # pyflakes (includes unused imports)
+  "I",   # isort
+  "ICN", # flake8-import-conventions
+  "ISC", # flake8-implicit-str-concat
+  "N",   # pep8-naming
+  "RUF", # Ruff-specific rules
+  "SIM", # flake8-simplify
+  "UP",  # pyupgrade
+]
+extend-ignore = ["B904", "ISC001", "ICN001", "N818", "RUF012"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["sphinx_simplepdf"]
+force-sort-within-sections = true
+
+[tool.tox]
+# To use tox, see https://tox.readthedocs.io
+# $ pipx install tox
+# it is suggested to use with https://github.com/tox-dev/tox-uv or https://github.com/tox-dev/tox-conda
+# $ pipx inject tox tox-uv
+
+legacy_tox_ini = """
+[tox]
+env_list =
+    py{310,311,312,313}-sphinx{74,82}
+    docs
+    linkcheck
+requires =
+    tox>=4
+    tox-uv>=1.0
+
+[testenv]
+runner = uv-venv-runner
+description = Run tests with pytest
+deps =
+    pytest>=7.0
+    pytest-xdist>=3.0
+    sphinx74: sphinx==7.4.*
+    sphinx82: sphinx==8.2.*
+extras = docs
+commands =
+    pytest -n auto --tb=long tests/
+
+[testenv:docs]
+description = Build documentation with Sphinx
+basepython = python3.12
+deps =
+    sphinx>=7.0
+extras = docs
+commands =
+    sphinx-build -W -a -E -j auto -b html docs/ docs/_build
+
+[testenv:linkcheck]
+description = Check documentation links
+basepython = python3.12
+deps =
+    sphinx>=7.0
+extras = docs
+commands =
+    sphinx-build -b linkcheck docs/ docs/_build/linkcheck
+"""
+
+# [tool.setuptools.packages.find]
+# where = ["sphinx_simplepdf/themes/simplepdf_theme"]
+
+# [tool.setuptools.package-data]
+# sphinx_simplepdf=[
+#     'theme.conf',
+#     '*.html',
+#     'static/styles/*.css',
+#     'static/js/*.js',
+#     'static/fonts/*.*'
+# ]

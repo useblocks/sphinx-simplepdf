@@ -428,6 +428,3 @@ Landscape tables
       :file: /_static/example.csv
       :header-rows: 2
       :class: ssp-tiny
-
-
-

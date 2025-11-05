@@ -13,7 +13,7 @@ Release 1.6
 :released: 20.01.2023
 
 * **Bugfix** [#60] Fix TOC hrefs for sections that use file title anchors.
-* **Enhancement** [#62] Added config option to build PDFs with the weasyprint Python API instead of the binary. 
+* **Enhancement** [#62] Added config option to build PDFs with the weasyprint Python API instead of the binary.
 
 Release 1.5
 -----------

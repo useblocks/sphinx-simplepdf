@@ -6,37 +6,35 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-import os
-import sphinx
 import datetime
+import os
 
-project = 'Sphinx-SimplePDF'
-copyright = '2022, team useblocks'
-author = 'team useblocks'
+import sphinx
+
+project = "Sphinx-SimplePDF"
+copyright = f"{datetime.datetime.now().year}, team useblocks"
+author = "team useblocks"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
-    'sphinx_simplepdf',
-    'sphinxcontrib.plantuml',
-    'sphinxcontrib.needs',
-    'sphinx_copybutton',
+    "sphinx_simplepdf",
+    "sphinxcontrib.plantuml",
+    "sphinx_needs",
+    "sphinx_copybutton",
 ]
 
 version = "1.6.0"
 
-templates_path = ['_templates']
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+templates_path = ["_templates"]
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 plantuml_output_format = "svg_img"
 local_plantuml_path = os.path.join(os.path.dirname(__file__), "utils", "plantuml.jar")
 plantuml = f"java -Djava.awt.headless=true -jar {local_plantuml_path}"
 
-simplepdf_vars = {
-    'cover-overlay': 'rgba(150, 26, 26, 0.7)',
-    'cover-bg': 'url(cover-bg.jpg) no-repeat center'
-}
+simplepdf_vars = {"cover-overlay": "rgba(150, 26, 26, 0.7)", "cover-bg": "url(cover-bg.jpg) no-repeat center"}
 
 # use this to force using the weasyprint python API instead of building via the binary
 # simplepdf_use_weasyprint_api = True
@@ -44,25 +42,25 @@ simplepdf_vars = {
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-#html_theme = 'sphinx_immaterial'
-html_theme = 'alabaster'
-#html_theme = 'sphinx_needs_pdf'
-html_static_path = ['_static']
+# html_theme = 'sphinx_immaterial'
+html_theme = "alabaster"
+# html_theme = 'sphinx_needs_pdf'
+html_static_path = ["_static"]
 
 html_theme_options = {
-    'github_user': 'useblocks',
-    'github_repo': 'sphinx-simplepdf',
-    'fixed_sidebar': True,
-    'github_banner': True,
-    'github_button': False,
+    "github_user": "useblocks",
+    "github_repo": "sphinx-simplepdf",
+    "fixed_sidebar": True,
+    "github_banner": True,
+    "github_button": False,
 }
 
 html_context = {
-    'docs_scope': 'external',
-    'cover_logo_title': '',
-    'cover_meta_data': 'The simple PDF builder for Sphinx.',
-    'cover_footer': f'Build: {datetime.datetime.now().strftime("%d.%m.%Y")}<br>'
-                    f'Maintained by <a href="https://useblocks.com">team useblocks</a>',
+    "docs_scope": "external",
+    "cover_logo_title": "",
+    "cover_meta_data": "The simple PDF builder for Sphinx.",
+    "cover_footer": f"Build: {datetime.datetime.now().strftime('%d.%m.%Y')}<br>"
+    f'Maintained by <a href="https://useblocks.com">team useblocks</a>',
 }
 
 
@@ -78,12 +76,10 @@ def setup_jquery(app, exception):
         # https://jquery.com/download/#using-jquery-with-a-cdn
         jquery_cdn_url = "https://code.jquery.com/jquery-3.6.0.min.js"
         html_js_files = getattr(app.config, "html_js_files", [])
-        html_js_files.append((
-            jquery_cdn_url,
-            {
-                'integrity': 'sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=',
-                'crossorigin': 'anonymous'
-            }
-        ))
+        html_js_files.append(
+            (
+                jquery_cdn_url,
+                {"integrity": "sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=", "crossorigin": "anonymous"},
+            )
+        )
         app.config.html_js_files = html_js_files
-

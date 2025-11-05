@@ -6,77 +6,81 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
+import datetime
 import os
 import sys
+
 import sphinx
-import datetime
 
 sys.path.append(os.path.dirname(__file__))  # Needed for test_py_module
 
 # project = 'Sphinx-SimplePDF-DEMO'
-project = 'Sphinx-SimplePDF-DEMO'
-copyright = '2022, team useblocks'
-author = 'team useblocks'
+project = "Sphinx-SimplePDF-DEMO"
+copyright = "2022, team useblocks"
+author = "team useblocks"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
-    'sphinx_simplepdf',
-    'sphinxcontrib.plantuml',
-    'sphinx_needs',
-    'sphinx.ext.autodoc',
-    'sphinx.ext.imgmath',
-
+    "sphinx_simplepdf",
+    "sphinxcontrib.plantuml",
+    "sphinx_needs",
+    "sphinx.ext.autodoc",
+    "sphinx.ext.imgmath",
 ]
 
 version = "1.0"  # Will not be raised
 
-templates_path = ['_templates']
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+templates_path = ["_templates"]
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 plantuml_output_format = "svg_img"
 
 simplepdf_debug = True
 
-simplepdf_file_name = 'Sphinx-SimplePDF-DEMO.pdf'
+simplepdf_file_name = "Sphinx-SimplePDF-DEMO.pdf"
+
+# Use WeasyPrint Python API instead of subprocess to avoid segfaults
+simplepdf_use_weasyprint_api = True
 
 simplepdf_vars = {
-    'cover-overlay': 'rgba(26, 150, 26, 0.7)',
-    'primary-opaque': 'rgba(26, 150, 26, 0.7)',
-    'cover-bg': 'url(frog.jpg) no-repeat center',
-    'primary': '#1a961a',
-    'secondary': '#379683',
-    'cover': '#ffffff',
-    'white': '#ffffff',
-    'links': '#1a961a',
-    'top-left-content': '"Header left"',
-    'top-center-content': '"Header center"',
-    'top-right-content': '"Header right"',
-    'bottom-left-content': 'counter(page)',
-    'bottom-center-content': '"Bottom center"',
-    'bottom-right-content': 'string(heading)',
+    "cover-overlay": "rgba(26, 150, 26, 0.7)",
+    "primary-opaque": "rgba(26, 150, 26, 0.7)",
+    "cover-bg": "url(frog.jpg) no-repeat center",
+    "primary": "#1a961a",
+    "secondary": "#379683",
+    "cover": "#ffffff",
+    "white": "#ffffff",
+    "links": "#1a961a",
+    "top-left-content": '"Header left"',
+    "top-center-content": '"Header center"',
+    "top-right-content": '"Header right"',
+    "bottom-left-content": "counter(page)",
+    "bottom-center-content": '"Bottom center"',
+    "bottom-right-content": "string(heading)",
 }
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'alabaster'
-html_static_path = ['_static']
+html_theme = "alabaster"
+html_static_path = ["_static"]
 
 html_context = {
-    'docs_scope': 'external',
-    'cover_logo_title': '',
-    'cover_meta_data': 'DEMO PDF of Sphinx-SimplePDF',
-    'cover_footer': f'Build: {datetime.datetime.now().strftime("%d.%m.%Y")}<br>'
-                    f'Maintained by <a href="https://useblocks.com">team useblocks</a>',
+    "docs_scope": "external",
+    "cover_logo_title": "",
+    "cover_meta_data": "DEMO PDF of Sphinx-SimplePDF",
+    "cover_footer": f"Build: {datetime.datetime.now().strftime('%d.%m.%Y')}<br>"
+    f'Maintained by <a href="https://useblocks.com">team useblocks</a>',
 }
 
 plantuml_output_format = "svg_img"
 local_plantuml_path = os.path.join(os.path.dirname(__file__), "../", "docs", "utils", "plantuml.jar")
 plantuml = f"java -Djava.awt.headless=true -jar {local_plantuml_path}"
 
-imgmath_image_format = 'svg'
+imgmath_image_format = "svg"
+
 
 def setup_jquery(app, exception):
     """
@@ -90,12 +94,10 @@ def setup_jquery(app, exception):
         # https://jquery.com/download/#using-jquery-with-a-cdn
         jquery_cdn_url = "https://code.jquery.com/jquery-3.6.0.min.js"
         html_js_files = getattr(app.config, "html_js_files", [])
-        html_js_files.append((
-            jquery_cdn_url,
-            {
-                'integrity': 'sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=',
-                'crossorigin': 'anonymous'
-            }
-        ))
+        html_js_files.append(
+            (
+                jquery_cdn_url,
+                {"integrity": "sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=", "crossorigin": "anonymous"},
+            )
+        )
         app.config.html_js_files = html_js_files
-

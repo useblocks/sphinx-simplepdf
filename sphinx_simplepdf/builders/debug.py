@@ -1,10 +1,11 @@
-import sys
 import pkgutil
-import pkg_resources
 import platform
+import sys
+
+from importlib.metadata import version, PackageNotFoundError
+
 
 class DebugPython:
-
     @property
     def py_exec(self):
         return sys.executable
@@ -17,11 +18,11 @@ class DebugPython:
         final = {}
         for name in names:
             try:
-                version = pkg_resources.get_distribution(name).version
-            except (Exception):
-                final[name] = 'unknown'
+                pkg_version = version(name)
+            except PackageNotFoundError:
+                final[name] = "unknown"
             else:
-                final[name] = version
+                final[name] = pkg_version
 
         return final
 

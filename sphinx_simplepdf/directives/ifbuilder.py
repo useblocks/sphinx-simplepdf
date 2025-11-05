@@ -1,9 +1,8 @@
 from docutils import nodes
 from docutils.parsers.rst import Directive
 from docutils.statemachine import ViewList
-from sphinx.util.nodes import nested_parse_with_titles
-
 from sphinx.util import logging
+from sphinx.util.nodes import nested_parse_with_titles
 
 logger = logging.getLogger(__name__)
 
@@ -12,6 +11,7 @@ class IfBuilderDirective(Directive):
     """
     Directive to add content based on builder.
     """
+
     has_content = True
     required_arguments = 1
     optional_arguments = 0

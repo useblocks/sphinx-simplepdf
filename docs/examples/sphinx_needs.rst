@@ -54,5 +54,3 @@ Using ``plantuml`` to render image.
 ..    :file: example.csv
 ..    :header-rows: 2
 ..    :class: break
-
-

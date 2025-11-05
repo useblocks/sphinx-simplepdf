@@ -1,9 +1,7 @@
-# -*- coding: utf-8 -*-
 """Test Module for sphinx_rtd_theme."""
 
 
 class Foo:
-
     """Docstring for class Foo.
 
     This text tests for the formatting of docstrings generated from output
@@ -50,7 +48,7 @@ class Foo:
     #: It can have multiple lines.
     bar = 1
 
-    flox = 1.5   #: Doc comment for Foo.flox. One line only.
+    flox = 1.5  #: Doc comment for Foo.flox. One line only.
 
     baz = 2
     """Docstring for class attribute Foo.baz."""

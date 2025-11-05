@@ -10,4 +10,3 @@ Quickstart
 1. ``pip install sphinx-simplepdf``.
 2. ``make simplepdf`` inside your Sphinx documentation project.
 3. Open your PDF under ``_build/simplepdf``.
-

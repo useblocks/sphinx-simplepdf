@@ -64,5 +64,3 @@ Sphinx-Needs needimport
 .. needimport:: needs.json
    :tags: imported
    :collapse: True
-
-

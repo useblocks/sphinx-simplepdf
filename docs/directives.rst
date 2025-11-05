@@ -68,7 +68,7 @@ if-include
 include nested in a if-builder statement. You can list multiple files and use different builders.
 
 .. code-block:: rst
-   
+
    .. if-builder:: simplepdf
 
       .. include:: ./path/to/my/file.xy
@@ -79,9 +79,9 @@ include nested in a if-builder statement. You can list multiple files and use di
 is the same as
 
 .. code-block:: rst
-   
-   .. if-include:: simplepdf 
-      
+
+   .. if-include:: simplepdf
+
       ./path/to/my/file.xy
       ./path/to/my/other/file.xy
 
@@ -94,7 +94,7 @@ is the same as
 
 The following chapter should only be visible in the PDF version of this documentation
 
-.. if-include:: simplepdf  
+.. if-include:: simplepdf
 
    ./if_pdf_include.rst
 
