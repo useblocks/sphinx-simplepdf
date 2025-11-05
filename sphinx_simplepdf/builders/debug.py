@@ -1,8 +1,7 @@
+from importlib.metadata import PackageNotFoundError, version
 import pkgutil
 import platform
 import sys
-
-from importlib.metadata import version, PackageNotFoundError
 
 
 class DebugPython:

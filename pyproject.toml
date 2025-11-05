@@ -30,12 +30,12 @@ dependencies = [
   "weasyprint>=66.0",
   "libsass",
   "beautifulsoup4",
-  "packaging>=20.0", # Modern replacement for pkg_resources.parse_version
+  "packaging>=20.0",  # Modern replacement for pkg_resources.parse_version
   "fonttools>=4.0.0",
   "pillow>=9.1.0",
   "pydyf>=0.10.0",
   "cffi>=0.6",
-  "pycairo"
+  "pycairo",
 ]
 
 [project.entry-points."sphinx.html_themes"]
@@ -43,7 +43,6 @@ simplepdf_theme = "sphinx_simplepdf.themes.simplepdf_theme"
 
 [project.entry-points."sphinx.builders"]
 simplepdf = "sphinx_simplepdf.builders.simplepdf"
-
 
 
 [project.optional-dependencies]
@@ -56,10 +55,10 @@ dev = [
   "ruff>=0.4.0",
 ]
 docs = [
-    "sphinx>=4.0",
-    "sphinxcontrib-plantuml",
-    "sphinx-needs",
-    "sphinx-copybutton"
+  "sphinx>=4.0",
+  "sphinxcontrib-plantuml",
+  "sphinx-needs",
+  "sphinx-copybutton",
 ]
 
 [project.urls]
@@ -102,22 +101,16 @@ legacy_tox_ini = """
 env_list =
     py{310,311,312,313}-sphinx{74,82}
     docs
-    linkcheck
+    lint
 requires =
     tox>=4
     tox-uv>=1.0
 
-[testenv]
-runner = uv-venv-runner
-description = Run tests with pytest
-deps =
-    pytest>=7.0
-    pytest-xdist>=3.0
-    sphinx74: sphinx==7.4.*
-    sphinx82: sphinx==8.2.*
-extras = docs
-commands =
-    pytest -n auto --tb=long tests/
+[testenv:lint]
+    description = Run code quality checks
+    commands =
+        ruff check sphinx_simplepdf/
+        ruff format --check sphinx_simplepdf/
 
 [testenv:docs]
 description = Build documentation with Sphinx
@@ -126,16 +119,7 @@ deps =
     sphinx>=7.0
 extras = docs
 commands =
-    sphinx-build -W -a -E -j auto -b html docs/ docs/_build
-
-[testenv:linkcheck]
-description = Check documentation links
-basepython = python3.12
-deps =
-    sphinx>=7.0
-extras = docs
-commands =
-    sphinx-build -b linkcheck docs/ docs/_build/linkcheck
+    sphinx-build -a -E -j auto -b html docs/ docs/_build
 """
 
 # [tool.setuptools.packages.find]

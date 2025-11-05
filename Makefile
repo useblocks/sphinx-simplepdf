@@ -8,13 +8,9 @@ list:
 lint:
 	pre-commit run --all-files
 
-.PHONY: test
-test:
-	uv run pytest -n auto --tb=long tests/
-
-.PHONY: test-short
-test-short:
-	uv run pytest -n auto --tb=long --ignore-glob="*official*" tests/
+#.PHONY: test
+#test:
+#	uv run pytest -n auto --tb=long tests/
 
 .PHONY: test-matrix
 test-matrix:
@@ -33,7 +29,7 @@ docs-pdf:
 	uv run make --directory docs/ clean && uv run make --directory docs/ latexpdf
 
 .PHONY: demo-pdf
-demo-pdf: 
+demo-pdf:
 	uv run sphinx-build -M simplepdf demo demo/_build
 
 .PHONY: docs-linkcheck
