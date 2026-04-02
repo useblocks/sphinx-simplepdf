@@ -115,6 +115,7 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
             index_html = "".join(index_file.readlines())
 
         new_index_html = self._toctree_fix(index_html)
+        new_index_html = self._strip_document_prefix_from_all_internal_links(new_index_html)
 
         with open(index_path, "w", encoding="utf-8") as index_file:
             index_file.writelines(new_index_html)
@@ -169,27 +170,18 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
                     if (n == retries - 1) and not success:
                         raise RuntimeError(f"maximum number of retries {retries} failed in weasyprint")
 
-    """
-    Fixes a link that refers to a sub-headline.
+    def _strip_document_prefix_from_all_internal_links(self, html):
+        """Strip everything before the last '#' in all internal references (i.e. <a class="reference internal">).
+        """
+        soup = BeautifulSoup(html, "html.parser")
+        body = soup.find("body")
+        internal_links = body.find_all("a", class_="reference internal")
+        
+        for link in internal_links:
+            # Returns only the part of the link after the last #
+            link["href"] = "#" + link["href"].rsplit("#", 1)[-1]
 
-    For instance the broken link:
-        #headline#sub-headline#sub-sub-headline
-    Will be fixed to:
-        #sub-sub-headline
-
-    If the link is not a sub-headline, the link isn't modified
-
-    Args:
-        link_to_fix: The link to fix
-
-    Returns: If no modification is needed, link_to_fix otherwise the fixed link
-    """
-    def fix_link(self, link_to_fix):
-        pos = link_to_fix.rfind("#")
-        if pos != -1:
-            # In case we only find one #, this will still work as it won't affect the link
-            link_to_fix = link_to_fix [pos::]
-        return link_to_fix
+        return str(soup)
 
     """
     attempts to fix cases where a document has multiple chapters that have the same name.
@@ -240,8 +232,6 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
             # remove document file reference
             for toc_link in toc_links:
                 toc_link["href"] = toc_link["href"].replace(f"{self.app.config.root_doc}.html", "")
-                # In case we link to a sub-heading, fix the link, if it doesn't need fixing, nothing is done
-                toc_link["href"] = self.fix_link(toc_link["href"])
 
             # search for duplicates
             counts = dict(Counter([str(x).split(">")[0] for x in toc_links]))
