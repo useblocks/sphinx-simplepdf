@@ -96,7 +96,7 @@ The following chapter should only be visible in the PDF version of this document
 
 .. if-include:: simplepdf
 
-   ./if_pdf_include.rst
+   .. include:: if_pdf_include.rst
 
 .. _pdf-include:
 

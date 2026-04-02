@@ -7,9 +7,9 @@ name = "sphinx-simplepdf"
 version = "1.7.0"
 description = "An easy to use PDF Builder for Sphinx with a modern PDF-Theme."
 readme = "README.rst"
-license = "MIT"
-authors = [{ name = "team useblocks", email = "info@useblocks.com" }]
+license = { text = "MIT" }
 requires-python = ">=3.10"
+authors = [{ name = "team useblocks", email = "info@useblocks.com" }]
 classifiers = [
   "Framework :: Sphinx",
   "Framework :: Sphinx :: Extension",
@@ -24,7 +24,15 @@ classifiers = [
   "Topic :: Documentation",
   "Topic :: Software Development :: Documentation",
 ]
-dependencies = ["sphinx", "weasyprint>=67.0", "libsass", "beautifulsoup4"]
+dependencies = [
+  "pre-commit>=3.5",
+  "sphinx>=7.0",
+  "weasyprint==67.0",
+  "libsass",
+  "beautifulsoup4",
+  "packaging>=20.0",  # Modern replacement for pkg_resources.parse_version
+  "pytest>=7.0",
+]
 
 [project.urls]
 Homepage = "https://sphinx-simplepdf.readthedocs.io"
@@ -37,24 +45,34 @@ simplepdf_theme = "sphinx_simplepdf.themes.simplepdf_theme"
 [project.entry-points."sphinx.builders"]
 simplepdf = "sphinx_simplepdf.builders.simplepdf"
 
-[project.optional-dependencies]
-test = ["nox", "pytest", "pytest-xdist", "pytest-cov"]
+# [project.optional-dependencies]
+[dependency-groups]
+dev = [
+  "pytest>=7.0",
+  "pytest-xdist>=3.0",
+  "pytest-cov",
+  "tox>=4.0",
+  "tox-uv>=1.0",
+  "ruff>=0.4.0",
+  "pdfminer.six>=20220319",
+  "PyMuPDF>=1.24.0",        # PDF -> Image for comparison
+  "opencv-python>=4.8.0",   # cv2 for image processing
+  "scikit-image>=0.22.0",   # ssim from skimage.metrics
+]
 docs = [
+  "sphinx>=7.0,<8.2",
+  "sphinxcontrib-plantuml",
+  "sphinx-needs",
   "sphinx-copybutton",
   "sphinx-design",
   "sphinx-immaterial",
-  "sphinx-needs",
-  "sphinxcontrib-plantuml",
 ]
 
-[dependency-groups]
-dev = [
-  "pre-commit~=3.0",
-  "nox>=2025.2.9",
-  "mypy>=1.16.0",
-  "pytest",
-  "pytest-xdist",
-  "pytest-cov",
+demo = [
+  "sphinx>=7.0,<8.2",
+  "sphinxcontrib-plantuml",
+  "sphinx-needs",
+  "sphinx-copybutton",
 ]
 
 [tool.flit.module]
@@ -75,26 +93,108 @@ line-length = 120
 target-version = "py310"
 
 [tool.ruff.lint]
-select = [
-  "E",   # pycodestyle errors
-  "W",   # pycodestyle warnings
-  "F",   # pyflakes
-  "I",   # isort
-  "UP",  # pyupgrade
+extend-select = [
   "B",   # flake8-bugbear
   "C4",  # flake8-comprehensions
-  "RUF", # ruff-specific rules
+  "F",   # pyflakes (includes unused imports)
+  "I",   # isort
+  "ICN", # flake8-import-conventions
+  "ISC", # flake8-implicit-str-concat
+  "N",   # pep8-naming
+  "RUF", # Ruff-specific rules
+  "SIM", # flake8-simplify
+  "UP",  # pyupgrade
 ]
-ignore = [
-  "E501", # line too long (handled by formatter)
-]
+
+extend-ignore = ["B904", "ISC001", "ICN001", "N818", "RUF012"]
 
 [tool.ruff.lint.isort]
 known-first-party = ["sphinx_simplepdf"]
+force-sort-within-sections = true
 
-[tool.pytest.ini_options]
-testpaths = ["tests"]
-norecursedirs = [".venv", "docs", "demo"]
+[tool.tox]
+# To use tox, see https://tox.readthedocs.io
+# $ pipx install tox
+# it is suggested to use with https://github.com/tox-dev/tox-uv or https://github.com/tox-dev/tox-conda
+# $ pipx inject tox tox-uv
+
+legacy_tox_ini = """
+[tox]
+env_list =
+    lint
+    py{311,312,313}-sphinx{74,81} #82 not working, see https://github.com/sphinx-doc/sphinx/pull/13739
+requires =
+    tox>=4
+    tox-uv>=1.0
+
+[testenv]
+deps =
+    sphinx>=7.0,<8.2
+    pytest
+    pdfminer.six>=20220319
+    sphinx-simplepdf @ .
+commands =
+    pytest {posargs:tests/}
+
+[testenv:py{310,311,312,313}-sphinx74]
+deps =
+    sphinx>=7.4,<7.5
+    pytest
+    pdfminer.six>=20220319
+    PyMuPDF>=1.24.0
+    opencv-python>=4.8.0
+    scikit-image>=0.22.0
+    sphinx-simplepdf @ .
+commands =
+    pytest {posargs:tests/}
+
+[testenv:py{311,312,313}-sphinx81]
+deps =
+    sphinx>=8.1,<8.2
+    pytest
+    pdfminer.six>=20220319
+    PyMuPDF>=1.24.0
+    opencv-python>=4.8.0
+    scikit-image>=0.22.0
+    sphinx-simplepdf @ .
+commands =
+    pytest {posargs:tests/}
+
+[testenv:py{311,312,313}-sphinx82]
+deps =
+    sphinx>=8.2,<8.3
+    pytest
+    pdfminer.six>=20220319
+    PyMuPDF>=1.24.0
+    opencv-python>=4.8.0
+    scikit-image>=0.22.0
+    sphinx-simplepdf @ .
+commands =
+    pytest {posargs:tests/}
+
+[testenv:lint]
+description = Run code quality checks
+allowlist_externals =
+    ruff
+deps =
+    ruff>=0.4.0
+commands =
+    ruff check sphinx_simplepdf/
+    ruff format --check sphinx_simplepdf/
+
+"""
+
+# [tool.setuptools.packages.find]
+# where = ["sphinx_simplepdf/themes/simplepdf_theme"]
+
+# [tool.setuptools.package-data]
+# sphinx_simplepdf=[
+#     'theme.conf',
+#     '*.html',
+#     'static/styles/*.css',
+#     'static/js/*.js',
+#     'static/fonts/*.*'
+# ]
 
 [tool.mypy]
 python_version = "3.12"

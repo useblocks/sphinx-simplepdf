@@ -1,7 +1,7 @@
+from importlib.metadata import version
 import pkgutil
 import platform
 import sys
-from importlib.metadata import PackageNotFoundError, version
 
 
 class DebugPython:
@@ -17,11 +17,11 @@ class DebugPython:
         final = {}
         for name in names:
             try:
-                pkg_version = version(name)
-            except PackageNotFoundError:
+                _package_version = version(name)
+            except Exception:
                 final[name] = "unknown"
             else:
-                final[name] = pkg_version
+                final[name] = _package_version
 
         return final
 

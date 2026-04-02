@@ -1,16 +1,16 @@
+from collections import Counter
 import os
 import re
 import subprocess
-from collections import Counter
 from typing import Any
 
-import sass
-import weasyprint
 from bs4 import BeautifulSoup
+import sass
 from sphinx import __version__
 from sphinx.application import Sphinx
 from sphinx.builders.singlehtml import SingleFileHTMLBuilder
 from sphinx.util import logging
+import weasyprint
 
 from sphinx_simplepdf.builders.debug import DebugPython
 from sphinx_simplepdf.writers.simplepdf import SimplepdfTranslator
@@ -122,7 +122,7 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
         args = ["weasyprint"]
 
         if isinstance(self.config["simplepdf_weasyprint_flags"], list) and (
-            0 < len(self.config["simplepdf_weasyprint_flags"])
+            len(self.config["simplepdf_weasyprint_flags"]) > 0
         ):
             args.extend(self.config["simplepdf_weasyprint_flags"])
 
@@ -162,9 +162,9 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
                     success = True
                     break
                 except subprocess.TimeoutExpired:
-                    logger.warning("TimeoutExpired in weasyprint, retrying")
+                    logger.info("TimeoutExpired in weasyprint, retrying")
                 except subprocess.CalledProcessError as e:
-                    logger.warning(f"CalledProcessError in weasyprint, retrying\n{e!s}")
+                    logger.info(f"CalledProcessError in weasyprint, retrying\n{e!s}")
                 finally:
                     if (n == retries - 1) and not success:
                         raise RuntimeError(f"maximum number of retries {retries} failed in weasyprint")
@@ -217,7 +217,7 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
     """
 
     def _toctree_fix(self, html):
-        print("checking for potential toctree page numbering errors")
+        logger.info("checking for potential toctree page numbering errors")
         soup = BeautifulSoup(html, "html.parser")
         sidebar = soup.find("div", class_="sphinxsidebarwrapper")
 
@@ -248,9 +248,9 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
             references = dict(counts.items())
 
             if references:
-                print(f"found duplicate chapters:\n{references}")
+                logger.info(f"found duplicate chapters:\n{references}")
 
-            for text in references.keys():
+            for text in references:
                 ref = re.findall('href="#.*"', str(text))
 
                 # clean href data for searching
@@ -263,9 +263,8 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
                 # occurence-0, occurence-1, occurence-2 ...
                 if len(occurences) > 1:
                     occ_counter = 0
-                    for occ in occurences:
+                    for occ_counter, occ in enumerate(occurences):
                         occ["id"] = occ["id"] + "-" + str(occ_counter)
-                        occ_counter += 1
 
                 else:
                     continue
@@ -300,6 +299,8 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
                                             e_class = element.contents[0].attrs["class"][0]
                                         except KeyError:
                                             continue
+                                        except AttributeError:
+                                            continue
 
                                         if e_class == "section-number":
                                             target_lvl = int(name[-1])
@@ -323,22 +324,34 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
                             continue
 
         for heading_tag in ["h1", "h2"]:
-            headings = soup.find_all(heading_tag, class_="")
+            headings = soup.find_all(heading_tag)
             for number, heading in enumerate(headings):
-                class_attr = heading.attrs["class"] if heading.has_attr("class") else []
-                logger.debug(f"found heading {heading}")
-                if 0 == number:
-                    class_attr.append("first")
-                if 0 == number % 2:
-                    class_attr.append("even")
-                else:
-                    class_attr.append("odd")
-                if len(headings) - 1 == number:
-                    class_attr.append("last")
+                class_attr = heading.get("class", [])
+                if number == 0:
+                    class_attr += ["first"]
+                class_attr += [f"heading-{number}"]
+                heading["class"] = class_attr
 
-                heading.attrs["class"] = class_attr
+                parent = heading.find_parent("section")
+                # is the parent a section
+                if parent and parent.name == "section":
+                    prev_span = parent.find_previous_sibling("span", id=True)
+                    # check if previous sibling is span with an id
+                    if prev_span:
+                        # add classes for css handling
+                        prev_span["class"] = [*prev_span.get("class", []), "anchor-before-heading"]
+                        if number == 0:
+                            prev_span["class"] = [*prev_span.get("class", []), "first"]
+                        if number % 2 == 0:
+                            prev_span["class"] = [*prev_span.get("class", []), "even"]
+                        else:
+                            prev_span["class"] = [*prev_span.get("class", []), "odd"]
+                        if len(headings) - 1 == number:
+                            prev_span["class"] = [*prev_span.get("class", []), "last"]
 
+        logger.debug("DEBUG HTML START")
         logger.debug(soup.prettify(formatter="html"))
+        logger.debug("DEBUG HTML END")
         return str(soup)
 
 

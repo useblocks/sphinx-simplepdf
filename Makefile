@@ -32,27 +32,36 @@ lint format:
 
 .PHONY: test
 test:
-	uv run pytest -n auto || test $$? -eq 5
+	uv sync --group dev && uv run pytest
 
 .PHONY: test-matrix
 test-matrix:
-	uv run nox
+	uv sync --group dev && uv run tox
 
 .PHONY: coverage
 coverage:
 	uv run pytest --cov=sphinx_simplepdf --cov-report=html --cov-report=term || test $$? -eq 5
 
+.PHONY: docs-demo
+docs-demo:
+	uv sync --group demo && uv run sphinx-build -M simplepdf demo demo/_build
+
+.PHONY: docs-demo-deploy
+docs-demo-deploy: docs-demo
+	mkdir -p docs/_build
+	cp demo/_build/simplepdf/Sphinx-SimplePDF-DEMO.pdf docs/_static
+
 .PHONY: docs-html
-docs-html:
-	uv sync --extra docs && uv run sphinx-build -M html docs docs/_build
+docs-html: docs-demo-deploy
+	uv sync --group docs && uv run sphinx-build -M html docs docs/_build
 
 .PHONY: docs-pdf
-docs-pdf:
-	uv sync --extra docs && $(WEASYPRINT_ENV) uv run sphinx-build -M simplepdf docs docs/_build
+docs-pdf: docs-demo-deploy
+	uv sync --group docs && $(WEASYPRINT_ENV) uv run sphinx-build -M simplepdf docs docs/_build
 
 .PHONY: docs-linkcheck
-docs-linkcheck:
-	uv sync --extra docs && uv run sphinx-build -M linkcheck docs docs/_build
+docs-linkcheck: docs-demo-deploy
+	uv sync --group docs && uv run sphinx-build -M linkcheck docs docs/_build
 
 .PHONY: install
 install:

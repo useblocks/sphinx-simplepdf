@@ -57,6 +57,22 @@ Showcase
        directives
        css
        tech_details
+       examples/sphinx_needs
+       changelog
+       license
+
+.. if-builder:: linkcheck
+
+    .. toctree::
+
+       quickstart
+       installation
+       building
+       configuration
+       directives
+       css
+       tech_details
+       examples/sphinx_needs
        changelog
        license
 
