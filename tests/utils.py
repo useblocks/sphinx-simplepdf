@@ -3,7 +3,7 @@ from pdfminer.high_level import extract_pages, extract_text
 
 
 def extract_pdf_text(pdf_path):
-    """Extrahiere gesamten Text aus PDF."""
+    """Extract all text from a PDF."""
     return extract_text(str(pdf_path))
 
 
@@ -21,7 +21,7 @@ def prettify_html(html):
 
 
 def build_and_capture_stdout(sphinx_build, capsys, srcdir, build_kwargs=None, **sphinx_kwargs):
-    """Baue das PDF und liefere das captured stdout zurück."""
+    """Build the PDF and return the result with captured stdout."""
     build_kwargs = build_kwargs or {}
     result = sphinx_build(srcdir=srcdir, **sphinx_kwargs).build(**build_kwargs)
     captured = capsys.readouterr()

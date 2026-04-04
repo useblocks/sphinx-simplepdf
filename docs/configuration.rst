@@ -166,7 +166,34 @@ simplepdf_theme
 ---------------
 .. versionadded:: 1.5
 
-Add custom theme for simplepdf. This overrides the default theme ``simplepdf_theme``
+Name of the theme to use for PDF output. This overrides the default theme ``simplepdf_theme``.
+The value must match both the Sphinx theme name and the importable Python module name.
+
+.. code-block:: python
+
+   simplepdf_theme = "my_custom_pdf_theme"
+
+The theme module must define a ``get_scss_sources_path()`` function that returns
+the path to its SCSS sources directory. This is how the builder locates the SCSS
+files to compile into CSS for the PDF. Prefer returning an absolute path
+based on ``__file__`` so behavior does not depend on Sphinx's working directory.
+
+**Minimal example:**
+
+.. code-block:: python
+
+   from os import path
+
+   def get_scss_sources_path():
+       """Return the absolute path to the SCSS sources directory."""
+       return path.join(path.abspath(path.dirname(__file__)), "static", "styles", "sources")
+
+The SCSS sources directory should contain a ``main.scss`` file as the entry point.
+You can use the bundled ``simplepdf_theme`` as a reference for the expected
+directory structure and SCSS files.
+
+.. note:: If the theme module cannot be imported or does not define ``get_scss_sources_path()``,
+   the builder falls back to the bundled ``simplepdf_theme`` SCSS sources and emits a warning.
 
 .. _theme_options:
 
