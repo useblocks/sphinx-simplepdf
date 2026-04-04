@@ -215,6 +215,7 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
                     logger.info(f"CalledProcessError in weasyprint, retrying\n{e!s}")
                 finally:
                     if (n == retries - 1) and not success:
+                        logger.warning(f"weasyprint failed after {retries} retries")
                         raise RuntimeError(f"maximum number of retries {retries} failed in weasyprint")
 
     """
