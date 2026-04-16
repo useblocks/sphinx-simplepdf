@@ -27,7 +27,7 @@ If this is set to ``break``, then a page break will be introduced in front of th
 Page Orientation
 ~~~~~~~~~~~~~~~~
 
-The default orientation is portrait. To change the page orientation for a side, you can add the css class
+The default orientation is portrait. To change the page orientation for a page, you can add the css class
 ``ssp-landscape`` to
 
 * directives supporting the option ``:class:``
@@ -41,7 +41,7 @@ The default orientation is portrait. To change the page orientation for a side, 
     .. csv-table:: CSV Table
        :file: example.csv
 
-    .. or as alternaitve
+    .. or as alternative
 
     .. container:: break_before ssp-landscape
 
@@ -57,7 +57,7 @@ Table content wrap
 ~~~~~~~~~~~~~~~~~~
 
 By default table content is wrapped at whitespaces. If you have table content that can not be wrapped due to
-side limitations, the table is drawn out of the margins. This behaviour can be changed by using the css class
+size limitations, the table is drawn out of the margins. This behaviour can be changed by using the css class
 ``ssp-table-wrap``. This allows the table to break the content anywhere.
 
 This requires a fixed table layout, so you have to set the ``widths`` options (or e.g. ``colwidths`` option
@@ -113,5 +113,5 @@ config() functions
 Inside ``scss`` files you can use ``config(name, default)`` to get access to the values from
 ``simplepdf_vars``.
 
-The **default** values is used, if the **name** can not be found inside ``simplepdf_vars``, which is the normal case, as
+The **default** value is used, if the **name** can not be found inside ``simplepdf_vars``, which is the normal case, as
 ``simplepdf_vars`` is an empty dictionary by default.

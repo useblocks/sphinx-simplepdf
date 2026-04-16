@@ -381,7 +381,7 @@ Tables with non-breakable text
   :class: ssp-table-wrap
 
   * - True
-    - This text could be broken at all whitespaces occuring in the text
+    - This text could be broken at all whitespaces occurring in the text
   * - False
     - This is a code block line, normaly could also be broken at all whitespaces in text
   * - True

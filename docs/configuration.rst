@@ -25,7 +25,7 @@ The key is used as identifier inside scss-files and the value must be a css/scss
        'bottom-center-content': '"Custom footer content"',
    }
 
-This values are used then inside the scss files, which define the PDF layout.
+These values are used then inside the scss files, which define the PDF layout.
 
 Config vars
 ~~~~~~~~~~~
@@ -37,7 +37,7 @@ Config vars
 :white: A color representing white
 :links: Color for links
 :cover-bg: Cover background image. Can be a single color or even an image path.
-:cover-overlay: RBG based color overlay for the cover-image. Example: ``rgba(250, 35, 35, 0.5)``
+:cover-overlay: RGB based color overlay for the cover-image. Example: ``rgba(250, 35, 35, 0.5)``
 :top-left-content: Text or css function to display on pdf output. Example: ``counter(page)``
 :top-center-content: Text or css function to display on pdf output.
 :top-right-content: Text or css function to display on pdf output.
@@ -46,7 +46,7 @@ Config vars
 :bottom-right-content: Text or css function to display on pdf output.
 
 
-All variables are defined inside ``/themes/sphinx_simplepdf/sttuc/stles/sources/_variables.scss``.
+All variables are defined inside ``sphinx_simplepdf/themes/simplepdf_theme/static/styles/sources/_variables.scss``.
 
 .. hint::
 
@@ -76,7 +76,7 @@ File references
    }
 
 The file path must be relative to the Sphinx _static folder.
-So in the above example the image is stored under ``/_static/cover-bg-jpg``.
+So in the above example the image is stored under ``/_static/cover-bg.jpg``.
 
 SimplePDF docs
 ++++++++++++++
@@ -106,7 +106,7 @@ Default: project name
 
 simplepdf_debug
 ----------------
-A boolean value. If set to ``True``, **Sphinx-SimplePDF** will add some debug information add the end of the PDF.
+A boolean value. If set to ``True``, **Sphinx-SimplePDF** will add some debug information at the end of the PDF.
 
 This contains data about the used Python Environment and the Sphinx project.
 It is mainly used if any problems occur and extra information is needed.
@@ -124,7 +124,7 @@ simplepdf_use_weasyprint_api
 ----------------------------
 .. versionadded:: 1.6
 
-This forces simplepdf to use the weasyprint `python API <https://doc.courtbouillon.org/weasyprint/stable/api_reference.html#python-api>`_ instead of calling the binary via subproces.
+This forces simplepdf to use the weasyprint `python API <https://doc.courtbouillon.org/weasyprint/stable/api_reference.html#python-api>`_ instead of calling the binary via subprocess.
 
 ``simplepdf_use_weasyprint_api = True``
 
@@ -136,7 +136,7 @@ simplepdf_weasyprint_flags
 --------------------------
 .. versionadded:: 1.5
 
-List of flags to pass to **weasyprint** subprocess. This may be helpfull in debugging the pdf creation
+List of flags to pass to **weasyprint** subprocess. This may be helpful in debugging the pdf creation
 
 ``simplepdf_weasyprint_flags = ['-v']``
 
@@ -158,7 +158,7 @@ simplepdf_weasyprint_retries
 .. versionadded:: 1.6
 
 In rare cases **weasyprint** seems to run into infinite loops during processing of the input file.
-In case a ``subprocess.TimeoutExpired`` exception occured and retries are configured **weasyprint** is started again.
+In case a ``subprocess.TimeoutExpired`` exception occurred and retries are configured **weasyprint** is started again.
 
 ``simplepdf_weasyprint_retries = 1``
 
@@ -217,4 +217,4 @@ To reduce output noise the output can be filtered by a list of regular expressio
 
 ``simplepdf_weasyprint_filter = ["WARNING: Ignored"]``
 
-To suppress all output, the quite flag `-q` should be used.
+To suppress all output, the quiet flag `-q` should be used.

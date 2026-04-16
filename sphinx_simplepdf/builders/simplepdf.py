@@ -284,8 +284,8 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
 
                 occurences = soup.find_all("section", attrs={"id": cleaned_ref_target})
 
-                # name occurences section-id which is the target for internal refs with increasing id
-                # occurence-0, occurence-1, occurence-2 ...
+                # name occurrences section-id which is the target for internal refs with increasing id
+                # occurrence-0, occurrence-1, occurrence-2 ...
                 if len(occurences) > 1:
                     occ_counter = 0
                     for occ_counter, occ in enumerate(occurences):
@@ -297,9 +297,9 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
                 # index of toctree entry
                 replace_counter = 0
 
-                # scan all occurences, if occurenca has too high of a HTML headline level compared to the max_toctree_level (depth)
-                # the occurence is a "deeper" level which does not correspond to the toctree refernce. This is only needed when there
-                # are chaptters with the same name AND one of them is at a level which should not be referenced in the toc but becomes an
+                # scan all occurrences, if occurrence has too high of a HTML headline level compared to the max_toctree_level (depth)
+                # the occurrence is a "deeper" level which does not correspond to the toctree reference. This is only needed when there
+                # are chapters with the same name AND one of them is at a level which should not be referenced in the toc but becomes an
 
                 for toc_link in toc_links:
                     if toc_link["href"] == cleaned_ref_toc:
@@ -331,7 +331,7 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
                                             target_lvl = int(name[-1])
 
                                             # if headlinelevel either is max_toctree lvl or + 1 the chapter should be included in the toc
-                                            # break both loops and edit occurrence via repalce_counter
+                                            # break both loops and edit occurrence via replace_counter
                                             if target_lvl == max_toctree_lvl + 1 or target_lvl == max_toctree_lvl:
                                                 match_found = True
                                                 break  # headline match found
@@ -341,7 +341,7 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
                                                 replace_counter += 1
                                                 continue
 
-                            # edit target of toc reference with correct occurence
+                            # edit target of toc reference with correct occurrence
                             toc_link["href"] = toc_link["href"] + "-" + str(replace_counter)
                             replace_counter += 1
 
