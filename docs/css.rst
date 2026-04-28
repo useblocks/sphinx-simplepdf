@@ -85,7 +85,7 @@ rows and columns. Together with  :ref:`css_orientation` huge tables can be prese
           :file: /_static/example.csv
           :class: ssp-tiny
 
-Take a look into our `Demo PDF </_static/Sphinx-SimplePDF-DEMO.pdf>`_ for some examples of how tables could look like.
+Take a look into our `Demo PDF </en/latest/_static/Sphinx-SimplePDF-DEMO.pdf>`_ for some examples of how tables could look like.
 
 
 Sphinx-Needs elements
