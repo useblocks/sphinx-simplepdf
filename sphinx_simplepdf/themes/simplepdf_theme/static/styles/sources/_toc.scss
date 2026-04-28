@@ -71,6 +71,7 @@
 }
 
 // .. toctree:: config
+@if not $notoc {
 .sphinxsidebarwrapper {
 
     page-break-before: always;
@@ -159,3 +160,4 @@
         }
     }
 }
+} // @if not $notoc

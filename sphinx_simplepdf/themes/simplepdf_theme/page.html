@@ -1,5 +1,6 @@
 {%- extends "layout.html" %}
 {%- set render_cover = (not theme_nocover|tobool) %}
+{%- set render_toc = (not theme_notoc|tobool) %}
 
 {%- block extrahead %}
 
@@ -8,7 +9,7 @@
     {%- if render_cover %}
         {%- include "cover.html" -%}
     {%- endif %}
-    {{ sidebar() }}
+    {%- if render_toc %}{{ sidebar() }}{%- endif %}
 {% endblock %}
 {% block body %}
     {{ body }}

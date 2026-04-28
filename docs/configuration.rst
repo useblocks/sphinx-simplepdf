@@ -206,6 +206,7 @@ Additional options for the theme. The default theme ``simplepdf_theme`` inherits
 ``simplepdf_theme`` options:
 
 :nocover: Do not display cover pages (front and back cover)
+:notoc: Do not display the Table of Contents page
 
 
 simplepdf_weasyprint_filter
