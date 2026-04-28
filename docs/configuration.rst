@@ -31,7 +31,7 @@ Config vars
 ~~~~~~~~~~~
 
 :primary: Primary color
-:primary_opaque: Primary color with opaqueness. Example ``rgba(150, 26, 26, .5)``
+:primary-opaque: Primary color with opaqueness. Example ``rgba(150, 26, 26, .5)``
 :secondary: Secondary color
 :cover: Text color on the cover
 :white: A color representing white
