@@ -218,3 +218,36 @@ To reduce output noise the output can be filtered by a list of regular expressio
 ``simplepdf_weasyprint_filter = ["WARNING: Ignored"]``
 
 To suppress all output, the quiet flag `-q` should be used.
+
+.. _simplepdf_parallel_build:
+
+simplepdf_parallel_build
+------------------------
+.. versionadded:: Unreleased
+
+A boolean value. If set to ``True``, a PDF is generated alongside your primary build when that build is one of Sphinx’s built-in HTML site builders.
+Other builders (for example ``latex`` or ``epub``) are unchanged; use a separate ``sphinx-build -b simplepdf`` run if you need a PDF from those workflows.
+
+This means you no longer need a dedicated ``simplepdf`` build step — the PDF is produced as a side effect of your normal build. Because the PDF build runs in parallel with the main builder, overall wall-clock time stays close to whichever of the two builds takes longer, not the sum of both.
+
+**Example** — in ``conf.py``:
+
+.. code-block:: python
+
+   simplepdf_parallel_build = True
+
+Then build as usual (for example ``make html`` or ``sphinx-build -M html . _build``).
+
+The PDF copied into the HTML output directory uses the same rules as a normal ``simplepdf`` build:
+:ref:`simplepdf_file_name` if set (the file is taken from the same path under the subprocess output directory),
+otherwise ``<project>.pdf``. Only the file name is placed in the HTML output directory, not any directory
+components from ``simplepdf_file_name``.
+
+The PDF subprocess is started with its own arguments (source directory, separate output and doctree
+locations, and ``-q``). **Options you pass only on the parent command line**—for example ``-D``,
+``-A``, ``-t``, ``-c``, or ``-n``—**are not forwarded** to that subprocess. The PDF build therefore
+reads ``conf.py`` (and the environment) like a normal standalone run. If you need the PDF to match
+a one-off CLI invocation, put those settings in ``conf.py`` (or run a separate
+``sphinx-build -b simplepdf`` with the same flags).
+
+Default: ``False``

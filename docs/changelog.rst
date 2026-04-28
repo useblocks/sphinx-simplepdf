@@ -4,6 +4,7 @@ Changelog
 Unreleased
 ----------
 
+* **Enhancement**: Add ``simplepdf_parallel_build`` config option to generate PDFs alongside HTML builds via a concurrent subprocess.
 * **Bugfix** [#134] Improve support for external theme packages by using a ``get_scss_sources_path()`` convention.
 
   - If needed, theme warnings can be suppressed via ``suppress_warnings = ["simplepdf.theme"]``.

@@ -12,7 +12,6 @@ from sphinx.application import Sphinx
 from sphinx.builders.singlehtml import SingleFileHTMLBuilder
 from sphinx.errors import ExtensionError
 from sphinx.util import logging
-import weasyprint
 
 from sphinx_simplepdf.builders.debug import DebugPython
 from sphinx_simplepdf.writers.simplepdf import SimplepdfTranslator
@@ -189,6 +188,10 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
         filter_pattern = "(?:{})".format("|".join(filter_list)) if len(filter_list) > 0 else None
 
         if self.config["simplepdf_use_weasyprint_api"]:
+            # Import only when this code path runs so ``extensions = ["sphinx_simplepdf"]`` on
+            # ``-b html`` does not load WeasyPrint's native dependencies (e.g. macOS CI).
+            import weasyprint
+
             doc = weasyprint.HTML(index_path)
 
             doc.write_pdf(
