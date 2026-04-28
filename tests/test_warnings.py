@@ -17,10 +17,13 @@ def test_broken_anchors_warning(sphinx_build, capsys):
     assert len(anchor_warnings) > 0
 
 
-def test_missing_image_warning(sphinx_build, tmp_path):
+def test_missing_image_warning(sphinx_build, capsys):
     """Test that missing images produce warnings."""
-    # This would require a test doc with broken image reference
-    pytest.skip("Requires test doc with broken image")
+    result = build_and_capture_stdout(sphinx_build, capsys, srcdir="with_missing_image")
+
+    assert result.has_warnings()
+    image_warnings = result.get_warnings_matching(r"(image|nonexistent|not found|not readable)")
+    assert len(image_warnings) > 0
 
 
 def test_build_warnings_are_captured(sphinx_build, capsys):

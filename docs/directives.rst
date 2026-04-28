@@ -56,7 +56,7 @@ chosen builder name. The argument is case-insensitive.
 
 .. note:: Why not using the ``.. only::`` directive?
 
-   The ``only`` directive works differently and does not support for instance ``toctree`` and other mechanism for
+   The ``only`` directive works differently and does not support for instance ``toctree`` and other mechanisms for
    controlling the documentation structure.
 
 .. _if-include:
@@ -102,7 +102,7 @@ The following chapter should only be visible in the PDF version of this document
 
 pdf-include
 -----------
-Includes a PDF file inside the the HTML code.
+Includes a PDF file inside the HTML code.
 The browser decides mostly, what kind of PDF-viewer.
 
 
