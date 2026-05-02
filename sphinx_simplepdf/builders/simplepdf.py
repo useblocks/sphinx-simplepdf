@@ -1,4 +1,5 @@
 from collections import Counter
+from collections.abc import Callable
 import importlib
 import os
 import re
@@ -6,11 +7,12 @@ import subprocess
 from typing import Any
 
 from bs4 import BeautifulSoup
+from bs4.element import Tag
 import sass
 from sphinx import __version__
 from sphinx.application import Sphinx
 from sphinx.builders.singlehtml import SingleFileHTMLBuilder
-from sphinx.errors import ExtensionError
+from sphinx.errors import ConfigError, ExtensionError
 from sphinx.util import logging
 import weasyprint
 
@@ -28,7 +30,7 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
 
     default_translator_class = SimplepdfTranslator
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, *args: Any, **kwargs: Any) -> None:
         super().__init__(*args, **kwargs)
         if self.app.config.simplepdf_theme is not None:
             logger.info(f"Setting theme to {self.app.config.simplepdf_theme}")
@@ -66,6 +68,8 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
                 sass.SassFunction("theme_option", ("$a", "$b"), self.get_theme_option_var),
             },
         )
+
+        self._html_hook_func: Callable[[BeautifulSoup, Sphinx], BeautifulSoup] | None = self._load_html_hook()
 
     def get_config_var(self, name, default):
         """
@@ -162,7 +166,10 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
         with open(index_path, encoding="utf-8") as index_file:
             index_html = "".join(index_file.readlines())
 
-        new_index_html = self._toctree_fix(index_html)
+        soup = BeautifulSoup(index_html, "html.parser")
+        soup = self._toctree_fix(soup)
+        soup = self._execute_html_hook(soup)
+        new_index_html = str(soup)
 
         with open(index_path, "w", encoding="utf-8") as index_file:
             index_file.writelines(new_index_html)
@@ -218,6 +225,84 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
                         logger.warning(f"weasyprint failed after {retries} retries")
                         raise RuntimeError(f"maximum number of retries {retries} failed in weasyprint")
 
+    def _load_html_hook(self) -> Callable[[BeautifulSoup, Sphinx], BeautifulSoup] | None:
+        """Load the HTML hook function from the configured path.
+
+        The script must define a function named ``html_hook``.
+
+        Returns:
+            The hook function if configured, None otherwise.
+
+        Raises:
+            ConfigError: If the hook configuration is invalid.
+        """
+        hook_path = self.config["simplepdf_html_hook"]
+        if hook_path is None:
+            return None
+
+        script_path = hook_path
+
+        # Resolve path relative to conf.py directory
+        if not os.path.isabs(script_path):
+            script_path = os.path.join(self.app.confdir, script_path)
+
+        # Check if file exists
+        if not os.path.isfile(script_path):
+            raise ConfigError(f"simplepdf_html_hook script not found: {script_path}")
+
+        # Load the module. Use a unique virtual module name so parallel builds
+        # do not share one sys.modules entry for different hook paths.
+        mod_name = f"simplepdf_hook_{id(self)}"
+        spec = importlib.util.spec_from_file_location(mod_name, script_path)
+        if spec is None or spec.loader is None:
+            raise ConfigError(f"Cannot load module from: {script_path}")
+
+        module = importlib.util.module_from_spec(spec)
+        try:
+            spec.loader.exec_module(module)
+        except Exception as e:
+            raise ConfigError(f"Error loading simplepdf_html_hook script '{script_path}': {e}") from e
+
+        hook_func = getattr(module, "html_hook", None)
+        if not callable(hook_func):
+            raise ConfigError(
+                f"Function 'html_hook' not found or not callable in simplepdf_html_hook script: {script_path}"
+            )
+
+        return hook_func
+
+    def _execute_html_hook(self, soup: BeautifulSoup) -> BeautifulSoup:
+        """Execute the user-defined HTML hook if configured.
+
+        Args:
+            soup: The BeautifulSoup object to pass to the hook.
+
+        Returns:
+            The modified BeautifulSoup object.
+
+        Raises:
+            ExtensionError: If the hook raises an exception, returns ``None``, or returns a value
+                that is not a ``BeautifulSoup`` instance.
+        """
+        hook_func = self._html_hook_func
+        if hook_func is None:
+            return soup
+
+        logger.info("Executing simplepdf_html_hook")
+
+        try:
+            result = hook_func(soup, self.app)
+        except Exception as e:
+            raise ExtensionError(f"simplepdf_html_hook raised an exception: {e}") from e
+
+        if result is None:
+            raise ExtensionError("simplepdf_html_hook returned None. The hook must return a BeautifulSoup object.")
+
+        if not isinstance(result, BeautifulSoup):
+            raise ExtensionError(f"simplepdf_html_hook must return a BeautifulSoup object, got {type(result).__name__}")
+
+        return result
+
     """
     attempts to fix cases where a document has multiple chapters that have the same name.
 
@@ -243,13 +328,20 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
 
     """
 
-    def _toctree_fix(self, html):
+    def _toctree_fix(self, soup: BeautifulSoup) -> BeautifulSoup:
+        """Fix toctree page numbering issues for documents with duplicate chapter names.
+
+        Args:
+            soup: The BeautifulSoup object with parsed HTML.
+
+        Returns:
+            The modified BeautifulSoup object.
+        """
         logger.info("checking for potential toctree page numbering errors")
-        soup = BeautifulSoup(html, "html.parser")
         sidebar = soup.find("div", class_="sphinxsidebarwrapper")
 
         # sidebar contains the toctree
-        if sidebar is not None:
+        if isinstance(sidebar, Tag):
             toc_links = sidebar.find_all("a", class_="reference internal")
 
             # find max toctree lvl
@@ -377,7 +469,7 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
         logger.debug("DEBUG HTML START")
         logger.debug(soup.prettify(formatter="html"))
         logger.debug("DEBUG HTML END")
-        return str(soup)
+        return soup
 
 
 def setup(app: Sphinx) -> dict[str, Any]:
@@ -392,6 +484,7 @@ def setup(app: Sphinx) -> dict[str, Any]:
     app.add_config_value("simplepdf_theme", "simplepdf_theme", "html", types=[str])
     app.add_config_value("simplepdf_theme_options", {}, "html", types=[dict])
     app.add_config_value("simplepdf_sidebars", {"**": ["localtoc.html"]}, "html", types=[dict])
+    app.add_config_value("simplepdf_html_hook", None, "html", types=[str])
     app.add_builder(SimplePdfBuilder)
 
     return {
