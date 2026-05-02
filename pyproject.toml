@@ -27,10 +27,10 @@ classifiers = [
 dependencies = [
   "pre-commit>=3.5",
   "sphinx>=7.0",
-  "weasyprint==67.0",
+  "weasyprint>=67.0,<69",
   "libsass",
   "beautifulsoup4",
-  "packaging>=20.0",  # Modern replacement for pkg_resources.parse_version
+  "packaging>=20.0",      # Modern replacement for pkg_resources.parse_version
   "pytest>=7.0",
 ]
 
