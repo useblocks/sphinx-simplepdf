@@ -1958,9 +1958,6 @@ source = { editable = "." }
 dependencies = [
     { name = "beautifulsoup4" },
     { name = "libsass" },
-    { name = "packaging" },
-    { name = "pre-commit" },
-    { name = "pytest" },
     { name = "sphinx" },
     { name = "weasyprint" },
 ]
@@ -1975,6 +1972,7 @@ demo = [
 dev = [
     { name = "opencv-python" },
     { name = "pdfminer-six" },
+    { name = "pre-commit" },
     { name = "pymupdf" },
     { name = "pytest" },
     { name = "pytest-cov" },
@@ -1999,9 +1997,6 @@ docs = [
 requires-dist = [
     { name = "beautifulsoup4" },
     { name = "libsass" },
-    { name = "packaging", specifier = ">=20.0" },
-    { name = "pre-commit", specifier = ">=3.5" },
-    { name = "pytest", specifier = ">=7.0" },
     { name = "sphinx", specifier = ">=7.0" },
     { name = "weasyprint", specifier = "==67.0" },
 ]
@@ -2016,6 +2011,7 @@ demo = [
 dev = [
     { name = "opencv-python", specifier = ">=4.8.0" },
     { name = "pdfminer-six", specifier = ">=20220319" },
+    { name = "pre-commit", specifier = ">=3.5" },
     { name = "pymupdf", specifier = ">=1.24.0" },
     { name = "pytest", specifier = ">=7.0" },
     { name = "pytest-cov" },

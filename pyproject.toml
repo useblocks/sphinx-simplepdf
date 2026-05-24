@@ -25,13 +25,10 @@ classifiers = [
   "Topic :: Software Development :: Documentation",
 ]
 dependencies = [
-  "pre-commit>=3.5",
   "sphinx>=7.0",
   "weasyprint==67.0",
   "libsass",
   "beautifulsoup4",
-  "packaging>=20.0",  # Modern replacement for pkg_resources.parse_version
-  "pytest>=7.0",
 ]
 
 [project.urls]
@@ -48,6 +45,7 @@ simplepdf = "sphinx_simplepdf.builders.simplepdf"
 # [project.optional-dependencies]
 [dependency-groups]
 dev = [
+  "pre-commit>=3.5",
   "pytest>=7.0",
   "pytest-xdist>=3.0",
   "pytest-cov",
