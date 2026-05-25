@@ -60,6 +60,7 @@ body {
 
 .highlight {
   pre {
+    font-family: "Fira Mono", monospace;
     padding: 1em;
     //white-space: -moz-pre-wrap;
     white-space: -o-pre-wrap;
@@ -171,6 +172,7 @@ img {
     hyphens: none;
     color: #552977;
     background-color: #f1f1f1;
+    font-family: "Fira Mono", monospace;
     font-size: 9pt;
     padding: 1pt 3pt;
 }
