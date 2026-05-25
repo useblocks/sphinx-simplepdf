@@ -22,6 +22,34 @@ If this is set to ``break``, then a page break will be introduced in front of th
        :file: example.csv
        :class: break
 
+Heading classes
+~~~~~~~~~~~~~~~
+The internal toctree fix adds generated classes to level 1 and level 2 headings so that PDF-specific CSS can
+target headings and their anchors.
+
+Each ``h1`` and ``h2`` receives a stable ``heading-N`` class, where ``N`` is the zero-based position of the
+heading among headings with the same tag name. The first heading of each tag name also receives ``first``.
+
+The ``even``, ``odd`` and ``last`` classes are applied to the anchor ``span`` immediately before the heading's
+``section`` instead of to the heading element itself. The span also receives ``anchor-before-heading``.
+
+If custom CSS targets the old heading selectors, update them to select through the anchor span:
+
+.. code-block:: css
+
+   /* Old selector. */
+   h2.even {
+       break-before: page;
+   }
+
+   /* New selector. */
+   span.anchor-before-heading.even + section h2 {
+       break-before: page;
+   }
+
+The same pattern applies to ``odd`` and ``last`` selectors, for example
+``span.anchor-before-heading.last + section h2``.
+
 .. _css_orientation:
 
 Page Orientation
