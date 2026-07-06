@@ -32,6 +32,9 @@ table.docutils {
 
     tbody {
         tr {
+            page-break-inside: avoid;
+            break-inside: avoid-page;
+
             &.row-odd {
                 background: #f6f6f6;
             }
