@@ -16,6 +16,11 @@ table.docutils {
     background-color: transparent;
     border-spacing: 0;
 
+    caption {
+        page-break-after: avoid;
+        break-after: avoid-page;
+    }
+
     td, th {
         padding: .75rem;
         vertical-align: top;
@@ -32,6 +37,9 @@ table.docutils {
 
     tbody {
         tr {
+            page-break-inside: avoid;
+            break-inside: avoid-page;
+
             &.row-odd {
                 background: #f6f6f6;
             }

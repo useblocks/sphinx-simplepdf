@@ -4,6 +4,7 @@ Changelog
 Unreleased
 ----------
 
+* **Bugfix**: [#155] Prevent table rows from splitting across pages and table captions from separating from their tables.
 * **Bugfix** [#134] Improve support for external theme packages by using a ``get_scss_sources_path()`` convention.
 
   - If needed, theme warnings can be suppressed via ``suppress_warnings = ["simplepdf.theme"]``.
