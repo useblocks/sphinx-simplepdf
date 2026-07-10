@@ -114,6 +114,11 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
         def bundled_scss_folder():
             return fallback_module.get_scss_sources_path()
 
+        # The default importable module lives under sphinx_simplepdf.themes
+        # skip dynamic import for the default configuration.
+        if theme_name == "simplepdf_theme":
+            return bundled_scss_folder()
+
         try:
             # theme_name comes from conf.py; dynamic import is no extra trust boundary vs. Sphinx config.
             theme_module = importlib.import_module(theme_name)
