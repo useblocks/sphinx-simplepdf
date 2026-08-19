@@ -163,6 +163,7 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
             index_html = "".join(index_file.readlines())
 
         new_index_html = self._toctree_fix(index_html)
+        new_index_html = self._strip_document_prefix_from_all_internal_links(new_index_html)
 
         with open(index_path, "w", encoding="utf-8") as index_file:
             index_file.writelines(new_index_html)
@@ -217,6 +218,19 @@ class SimplePdfBuilder(SingleFileHTMLBuilder):
                     if (n == retries - 1) and not success:
                         logger.warning(f"weasyprint failed after {retries} retries")
                         raise RuntimeError(f"maximum number of retries {retries} failed in weasyprint")
+
+    def _strip_document_prefix_from_all_internal_links(self, html):
+        """Strip everything before the last '#' in all internal references (i.e. <a class="reference internal">).
+        """
+        soup = BeautifulSoup(html, "html.parser")
+        body = soup.find("body")
+        internal_links = body.find_all("a", class_="reference internal")
+        
+        for link in internal_links:
+            # Returns only the part of the link after the last #
+            link["href"] = "#" + link["href"].rsplit("#", 1)[-1]
+
+        return str(soup)
 
     """
     attempts to fix cases where a document has multiple chapters that have the same name.
