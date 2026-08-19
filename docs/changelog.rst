@@ -1,6 +1,13 @@
 Changelog
 =========
 
+Unreleased
+----------
+
+* **Bugfix** [#134] Improve support for external theme packages by using a ``get_scss_sources_path()`` convention.
+
+  - If needed, theme warnings can be suppressed via ``suppress_warnings = ["simplepdf.theme"]``.
+
 Release 1.7
 -----------
 :released: 02.12.2025
@@ -28,7 +35,7 @@ Release 1.5
 :released: 26.10.2022
 
 * **Enhancement**: ``nocover`` option for :ref:`theme_options`.
-* **Enhancement**: New config options to directly configue the weasyprint build.
+* **Enhancement**: New config options to directly configure the weasyprint build.
 * **Enhancement**: New config option :ref:`simplepdf_file_name` allows to specify the output file name.
 * **Enhancement**: Provides :ref:`pdf-include` directive to embed PDF files in HTML views.
 

@@ -6,7 +6,7 @@ A sphinx builder, called ``simplepdf``. Code inside ``/builders/simplepdf.py``.
 
 A sphinx theme, called ``sphinx-simplepdf``. Files under ``/themes/sphinx_simplepdf``.
 
-During package installation, builder and theme get registered for Sphinx. This is done via the ``enytry__points``
+During package installation, builder and theme get registered for Sphinx. This is done via the ``entry_points``
 mechanism.
 
 .. literalinclude:: ../pyproject.toml
@@ -25,7 +25,7 @@ Workflow
 
    * Fixes toc-tree links
 
-7. Builders starts **weasyprint** with ``index.html`` as input
+7. Builder starts **weasyprint** with ``index.html`` as input
 8. Done, PDF file exists under ``_build/simplepdf``.
 
 DEMO project
@@ -33,7 +33,7 @@ DEMO project
 The DEMO project is stored under `/demo/` and provides a common way for all
 developers and users to test everything on a common base.
 
-It can be build by the following steps:
+It can be built by the following steps:
 
 - ``git clone git@github.com:useblocks/sphinx-simplepdf.git``
 - ``cd sphinx-simplepdf``

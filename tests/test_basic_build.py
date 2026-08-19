@@ -10,7 +10,6 @@ def test_basic_build_succeeds(sphinx_build, capsys):
     result = build_and_capture_stdout(sphinx_build, capsys, srcdir="basic_doc")
 
     assert result.pdf_exists()
-    # assert not result.has_warnings()
     assert not result.has_warnings("ERROR:")
 
 

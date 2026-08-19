@@ -1,7 +1,7 @@
 Installation
 ============
 
-From PyPi
+From PyPI
 ---------
 
 .. code-block:: bash
@@ -30,7 +30,7 @@ In this case please run also ``brew install pango``.
 
 Windows installation
 ~~~~~~~~~~~~~~~~~~~~
-**Sphinx-SimplePDF** is based on WeasypPrint, which is not so easy to get installed on Windows.
+**Sphinx-SimplePDF** is based on WeasyPrint, which is not so easy to get installed on Windows.
 
 Please follow their instructions about
 `how to install WeasyPrint on Windows <https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#windows>`_.
@@ -55,7 +55,7 @@ ReadTheDocs configuration
 -------------------------
 **Sphinx-SimplePDF** can be also used on `Read The Docs (RTD) <https://readthedocs.io>`_ to generate your PDF.
 As it is not supported by RTD by default, you need to create a ``.readthedocs.yaml`` configuration file on the root level
-of our project.
+of your project.
 
 You can take the one from **Sphinx-SimplePDF** as a good example:
 

@@ -93,16 +93,16 @@ class SphinxBuild:
 
             debug_buffer = io.StringIO() if debug else None
 
-            # Eigenen Handler OHNE Sphinx-Filter für Debug
+            # Custom handler without Sphinx filter for debug output
             debug_handler = logging.StreamHandler(debug_buffer)
             debug_handler.setLevel(logging.DEBUG)
             debug_handler.setFormatter(logging.Formatter("%(levelname)s: %(message)s"))
 
-            # An Extension-Logger hängen (umgeht Sphinx-Filter!)
+            # Attach to extension logger (bypasses Sphinx filter)
             ext_logger = sphinx_logging.getLogger("sphinx_simplepdf")
             ext_logger.logger.addHandler(debug_handler)
             ext_logger.logger.setLevel(logging.DEBUG)
-            ext_logger.logger.propagate = False  # Verhindere Doppel-Logging
+            ext_logger.logger.propagate = False  # Prevent duplicate logging
 
         self.app.build(force_all=force_all)
         self.outdir = Path(self.app.builder.outdir)

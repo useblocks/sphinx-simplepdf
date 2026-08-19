@@ -59,6 +59,7 @@ Showcase
        tech_details
        examples/sphinx_needs
        changelog
+       contributing
        license
 
 .. if-builder:: linkcheck
@@ -74,6 +75,7 @@ Showcase
        tech_details
        examples/sphinx_needs
        changelog
+       contributing
        license
 
 
@@ -117,4 +119,5 @@ Showcase
        tech_details
        examples/sphinx_needs
        changelog
+       contributing
        license
